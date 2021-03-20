@@ -7,5 +7,9 @@ target 'bankcard' do
 
   # Pods for bankcard
   pod 'ZJTableViewManager', '~> 1.0.7'
-
+  #多语言
+  pod 'L10n-swift', '~> 5.4.1'
+  
+  #空状态
+  pod 'EmptyDataSet-Swift', '~>4.2.0'
 end

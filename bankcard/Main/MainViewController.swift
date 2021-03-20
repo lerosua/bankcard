@@ -17,7 +17,28 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "UpdateHeight"
+        self.setupNavbar()
+        self.setupTableView()
+    }
+
+    func cellTapEvent(item: CardTableViewCellItem) {
+        item.isOpen = !item.isOpen
+        if item.isOpen {
+            item.openCard()
+            if lastOpenItem != item { // 关闭上一次打开的cell/ close the cell that was last opened
+                lastOpenItem?.closeCard()
+                lastOpenItem = item
+            }
+        } else {
+            item.closeCard()
+        }
+        // 注意：Xcode11.3.1 模拟器上tableview update height存在bug
+        // 如果cell是透明的，动画过程中透明部分会变成不透明，影响动画的效果。
+        // 真机上面是正常的
+        manager.updateHeight()
+    }
+    
+    func setupTableView(){
         tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.separatorStyle = .none
         view.addSubview(tableView)
@@ -45,22 +66,16 @@ class MainViewController: UIViewController {
 
         manager.reload()
     }
-
-    func cellTapEvent(item: CardTableViewCellItem) {
-        item.isOpen = !item.isOpen
-        if item.isOpen {
-            item.openCard()
-            if lastOpenItem != item { // 关闭上一次打开的cell/ close the cell that was last opened
-                lastOpenItem?.closeCard()
-                lastOpenItem = item
-            }
-        } else {
-            item.closeCard()
-        }
-        // 注意：Xcode11.3.1 模拟器上tableview update height存在bug
-        // 如果cell是透明的，动画过程中透明部分会变成不透明，影响动画的效果。
-        // 真机上面是正常的
-        manager.updateHeight()
+    func setupNavbar() {
+        title = "Bank Card"
+        let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        navigationItem.rightBarButtonItems = [add]
+    }
+    
+    @objc func addButtonTapped(){
+        let vc = AddViewController()
+        let nav = UINavigationController(rootViewController:vc)
+        present(nav,animated:true,completion:nil)
     }
 }
 
