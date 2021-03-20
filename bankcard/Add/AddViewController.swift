@@ -23,7 +23,9 @@ class AddViewController: UITableViewController {
         self.tableView.tableFooterView = UIView()
         
         let headView = AddHeadView.loadFromNIB()
-        self.tableView.tableHeaderView = headView
+        let boxView = UIView(frame: CGRect(x: 0,y: 0,width: screenWidth,height: 120))
+        boxView.addSubview(headView)
+        self.tableView.tableHeaderView = boxView
 
         
     }
@@ -39,7 +41,7 @@ class AddViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,15 +49,21 @@ class AddViewController: UITableViewController {
         return 3
     }
 
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Bank Card".l10n()
+        case 1:
+            return "Birth Card".l10n()
+        default:
+            return "ID Card".l10n()
+        }
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddCell", for: indexPath) as! AddCell
 
-//        if(indexPath.row < self.albumList.count){
-//            let name = self.albumList[indexPath.row]
-//            cell.nameLabel?.text = name
-//            cell.coverImageView?.image = self.getCoverImage(name: name)
-//        }
+
         return cell
     }
     
