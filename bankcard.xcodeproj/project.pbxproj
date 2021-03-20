@@ -20,6 +20,7 @@
 		C18217DE2605A08B0010F354 /* AddCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18217DC2605A08B0010F354 /* AddCell.swift */; };
 		C18217DF2605A08B0010F354 /* AddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C18217DD2605A08B0010F354 /* AddCell.xib */; };
 		C18217E22605A4B10010F354 /* AddBankCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18217E12605A4B10010F354 /* AddBankCardViewController.swift */; };
+		C18217F02605BF9D0010F354 /* CardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18217EF2605BF9D0010F354 /* CardType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		C18217DC2605A08B0010F354 /* AddCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCell.swift; sourceTree = "<group>"; };
 		C18217DD2605A08B0010F354 /* AddCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCell.xib; sourceTree = "<group>"; };
 		C18217E12605A4B10010F354 /* AddBankCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBankCardViewController.swift; sourceTree = "<group>"; };
+		C18217EF2605BF9D0010F354 /* CardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 		C18217B62604E1260010F354 /* bankcard */ = {
 			isa = PBXGroup;
 			children = (
+				C18217EE2605BF7E0010F354 /* Model */,
 				C18217D626059E080010F354 /* Add */,
 				C18217D526059DF20010F354 /* Main */,
 				C18217B72604E1260010F354 /* AppDelegate.swift */,
@@ -123,6 +126,14 @@
 				C18217E12605A4B10010F354 /* AddBankCardViewController.swift */,
 			);
 			path = Add;
+			sourceTree = "<group>";
+		};
+		C18217EE2605BF7E0010F354 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C18217EF2605BF9D0010F354 /* CardType.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +257,7 @@
 				C18217E22605A4B10010F354 /* AddBankCardViewController.swift in Sources */,
 				C18217B82604E1260010F354 /* AppDelegate.swift in Sources */,
 				C18217DE2605A08B0010F354 /* AddCell.swift in Sources */,
+				C18217F02605BF9D0010F354 /* CardType.swift in Sources */,
 				C18217BA2604E1260010F354 /* SceneDelegate.swift in Sources */,
 				C18217D32604E7560010F354 /* CardTableViewCell.swift in Sources */,
 			);

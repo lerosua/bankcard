@@ -7,6 +7,7 @@
 
 import UIKit
 import ZJTableViewManager
+import L10n_swift
 
 class MainViewController: UIViewController {
 
@@ -67,8 +68,9 @@ class MainViewController: UIViewController {
         manager.reload()
     }
     func setupNavbar() {
-        title = "Bank Card"
+        title = "Bank Card".l10n()
         let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        add.tintColor = .green
         navigationItem.rightBarButtonItems = [add]
     }
     
