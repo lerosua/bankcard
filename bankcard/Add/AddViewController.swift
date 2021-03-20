@@ -21,6 +21,11 @@ class AddViewController: UITableViewController {
         self.tableView.register(UINib(nibName: "AddCell", bundle: nil), forCellReuseIdentifier: "AddCell")
 //        self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         self.tableView.tableFooterView = UIView()
+        
+        let headView = AddHeadView.loadFromNIB()
+        self.tableView.tableHeaderView = headView
+
+        
     }
     
     func setupNavbar() {

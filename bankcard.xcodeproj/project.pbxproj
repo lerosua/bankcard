@@ -21,6 +21,9 @@
 		C18217DF2605A08B0010F354 /* AddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C18217DD2605A08B0010F354 /* AddCell.xib */; };
 		C18217E22605A4B10010F354 /* AddBankCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18217E12605A4B10010F354 /* AddBankCardViewController.swift */; };
 		C18217F02605BF9D0010F354 /* CardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18217EF2605BF9D0010F354 /* CardType.swift */; };
+		C18217F32605CD070010F354 /* AddHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C18217F22605CD070010F354 /* AddHeadView.xib */; };
+		C18217F62605CF050010F354 /* AddHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18217F52605CF050010F354 /* AddHeadView.swift */; };
+		C18217FE2605D5780010F354 /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18217FD2605D5780010F354 /* Tool.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		C18217DD2605A08B0010F354 /* AddCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCell.xib; sourceTree = "<group>"; };
 		C18217E12605A4B10010F354 /* AddBankCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBankCardViewController.swift; sourceTree = "<group>"; };
 		C18217EF2605BF9D0010F354 /* CardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardType.swift; sourceTree = "<group>"; };
+		C18217F22605CD070010F354 /* AddHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddHeadView.xib; sourceTree = "<group>"; };
+		C18217F52605CF050010F354 /* AddHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHeadView.swift; sourceTree = "<group>"; };
+		C18217FD2605D5780010F354 /* Tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,7 @@
 		C18217B62604E1260010F354 /* bankcard */ = {
 			isa = PBXGroup;
 			children = (
+				C18217F82605D09D0010F354 /* Tools */,
 				C18217EE2605BF7E0010F354 /* Model */,
 				C18217D626059E080010F354 /* Add */,
 				C18217D526059DF20010F354 /* Main */,
@@ -124,6 +131,8 @@
 				C18217DC2605A08B0010F354 /* AddCell.swift */,
 				C18217DD2605A08B0010F354 /* AddCell.xib */,
 				C18217E12605A4B10010F354 /* AddBankCardViewController.swift */,
+				C18217F22605CD070010F354 /* AddHeadView.xib */,
+				C18217F52605CF050010F354 /* AddHeadView.swift */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -134,6 +143,14 @@
 				C18217EF2605BF9D0010F354 /* CardType.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C18217F82605D09D0010F354 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				C18217FD2605D5780010F354 /* Tool.swift */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C18217F32605CD070010F354 /* AddHeadView.xib in Resources */,
 				C18217C42604E1260010F354 /* LaunchScreen.storyboard in Resources */,
 				C18217C12604E1260010F354 /* Assets.xcassets in Resources */,
 				C18217BF2604E1260010F354 /* Main.storyboard in Resources */,
@@ -253,7 +271,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C18217D826059E350010F354 /* AddViewController.swift in Sources */,
+				C18217F62605CF050010F354 /* AddHeadView.swift in Sources */,
 				C18217BC2604E1260010F354 /* MainViewController.swift in Sources */,
+				C18217FE2605D5780010F354 /* Tool.swift in Sources */,
 				C18217E22605A4B10010F354 /* AddBankCardViewController.swift in Sources */,
 				C18217B82604E1260010F354 /* AppDelegate.swift in Sources */,
 				C18217DE2605A08B0010F354 /* AddCell.swift in Sources */,
