@@ -24,6 +24,9 @@
 		C18217F32605CD070010F354 /* AddHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C18217F22605CD070010F354 /* AddHeadView.xib */; };
 		C18217F62605CF050010F354 /* AddHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18217F52605CF050010F354 /* AddHeadView.swift */; };
 		C18217FE2605D5780010F354 /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18217FD2605D5780010F354 /* Tool.swift */; };
+		C18218022605DA230010F354 /* TypeBankInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18218002605DA230010F354 /* TypeBankInfoViewController.swift */; };
+		C18218062605DA920010F354 /* InputBankCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C18218052605DA920010F354 /* InputBankCardView.xib */; };
+		C18218092605DBFF0010F354 /* InputBankCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18218082605DBFF0010F354 /* InputBankCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,9 @@
 		C18217F22605CD070010F354 /* AddHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddHeadView.xib; sourceTree = "<group>"; };
 		C18217F52605CF050010F354 /* AddHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHeadView.swift; sourceTree = "<group>"; };
 		C18217FD2605D5780010F354 /* Tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
+		C18218002605DA230010F354 /* TypeBankInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeBankInfoViewController.swift; sourceTree = "<group>"; };
+		C18218052605DA920010F354 /* InputBankCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputBankCardView.xib; sourceTree = "<group>"; };
+		C18218082605DBFF0010F354 /* InputBankCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBankCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +137,11 @@
 				C18217DC2605A08B0010F354 /* AddCell.swift */,
 				C18217DD2605A08B0010F354 /* AddCell.xib */,
 				C18217E12605A4B10010F354 /* AddBankCardViewController.swift */,
+				C18218002605DA230010F354 /* TypeBankInfoViewController.swift */,
 				C18217F22605CD070010F354 /* AddHeadView.xib */,
 				C18217F52605CF050010F354 /* AddHeadView.swift */,
+				C18218052605DA920010F354 /* InputBankCardView.xib */,
+				C18218082605DBFF0010F354 /* InputBankCardView.swift */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -218,6 +227,7 @@
 				C18217BF2604E1260010F354 /* Main.storyboard in Resources */,
 				C18217DF2605A08B0010F354 /* AddCell.xib in Resources */,
 				C18217D22604E7560010F354 /* CardTableViewCell.xib in Resources */,
+				C18218062605DA920010F354 /* InputBankCardView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,9 +287,11 @@
 				C18217E22605A4B10010F354 /* AddBankCardViewController.swift in Sources */,
 				C18217B82604E1260010F354 /* AppDelegate.swift in Sources */,
 				C18217DE2605A08B0010F354 /* AddCell.swift in Sources */,
+				C18218022605DA230010F354 /* TypeBankInfoViewController.swift in Sources */,
 				C18217F02605BF9D0010F354 /* CardType.swift in Sources */,
 				C18217BA2604E1260010F354 /* SceneDelegate.swift in Sources */,
 				C18217D32604E7560010F354 /* CardTableViewCell.swift in Sources */,
+				C18218092605DBFF0010F354 /* InputBankCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

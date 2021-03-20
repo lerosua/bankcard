@@ -70,7 +70,7 @@ class AddViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let vc = AddBankCardViewController()
+        let vc = TypeBankInfoViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
