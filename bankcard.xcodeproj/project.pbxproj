@@ -27,6 +27,7 @@
 		C18218022605DA230010F354 /* TypeBankInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18218002605DA230010F354 /* TypeBankInfoViewController.swift */; };
 		C18218062605DA920010F354 /* InputBankCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C18218052605DA920010F354 /* InputBankCardView.xib */; };
 		C18218092605DBFF0010F354 /* InputBankCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18218082605DBFF0010F354 /* InputBankCardView.swift */; };
+		C182180D2605FE950010F354 /* PassCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C182180C2605FE950010F354 /* PassCore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		C18218002605DA230010F354 /* TypeBankInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeBankInfoViewController.swift; sourceTree = "<group>"; };
 		C18218052605DA920010F354 /* InputBankCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputBankCardView.xib; sourceTree = "<group>"; };
 		C18218082605DBFF0010F354 /* InputBankCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBankCardView.swift; sourceTree = "<group>"; };
+		C182180C2605FE950010F354 /* PassCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassCore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				C18217EF2605BF9D0010F354 /* CardType.swift */,
+				C182180C2605FE950010F354 /* PassCore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C182180D2605FE950010F354 /* PassCore.swift in Sources */,
 				C18217D826059E350010F354 /* AddViewController.swift in Sources */,
 				C18217F62605CF050010F354 /* AddHeadView.swift in Sources */,
 				C18217BC2604E1260010F354 /* MainViewController.swift in Sources */,

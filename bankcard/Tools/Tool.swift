@@ -10,3 +10,5 @@ import UIKit
 
 let screenWidth:CGFloat =  UIScreen.main.bounds.size.width
 let screenHeight:CGFloat = UIScreen.main.bounds.size.width
+
+let shareDefaults: Void = UserDefaults.resetStandardUserDefaults()
