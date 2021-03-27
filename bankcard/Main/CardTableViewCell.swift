@@ -33,7 +33,11 @@ class CardTableViewCellItem: ZJTableViewItem {
 
 class CardTableViewCell: UITableViewCell, ZJCellProtocol {
     var item: CardTableViewCellItem!
-
+    @IBOutlet var nameLabel:UILabel!
+    @IBOutlet var numberLabel:UILabel!
+    @IBOutlet var passLabel:UILabel!
+    @IBOutlet var bgImgView:UIImageView!
+    
     typealias ZJCellItemClass = CardTableViewCellItem
 
     @IBOutlet var cardView: UIView!
