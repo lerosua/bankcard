@@ -28,6 +28,7 @@
 		C18218062605DA920010F354 /* InputBankCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C18218052605DA920010F354 /* InputBankCardView.xib */; };
 		C18218092605DBFF0010F354 /* InputBankCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18218082605DBFF0010F354 /* InputBankCardView.swift */; };
 		C182180D2605FE950010F354 /* PassCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C182180C2605FE950010F354 /* PassCore.swift */; };
+		C1821826260EDE800010F354 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C1821828260EDE800010F354 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,8 @@
 		C18218052605DA920010F354 /* InputBankCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputBankCardView.xib; sourceTree = "<group>"; };
 		C18218082605DBFF0010F354 /* InputBankCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBankCardView.swift; sourceTree = "<group>"; };
 		C182180C2605FE950010F354 /* PassCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassCore.swift; sourceTree = "<group>"; };
+		C1821827260EDE800010F354 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C182182A260EDE850010F354 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,7 @@
 				C18217C02604E1260010F354 /* Assets.xcassets */,
 				C18217C22604E1260010F354 /* LaunchScreen.storyboard */,
 				C18217C52604E1260010F354 /* Info.plist */,
+				C1821822260EDE750010F354 /* Localizable */,
 			);
 			path = bankcard;
 			sourceTree = "<group>";
@@ -165,6 +169,14 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
+		C1821822260EDE750010F354 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				C1821828260EDE800010F354 /* Localizable.strings */,
+			);
+			path = Localizable;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -208,6 +220,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = C18217AB2604E1260010F354;
 			productRefGroup = C18217B52604E1260010F354 /* Products */;
@@ -224,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1821826260EDE800010F354 /* Localizable.strings in Resources */,
 				C18217F32605CD070010F354 /* AddHeadView.xib in Resources */,
 				C18217C42604E1260010F354 /* LaunchScreen.storyboard in Resources */,
 				C18217C12604E1260010F354 /* Assets.xcassets in Resources */,
@@ -318,6 +332,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		C1821828260EDE800010F354 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C1821827260EDE800010F354 /* en */,
+				C182182A260EDE850010F354 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -325,6 +348,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -386,6 +410,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

@@ -8,6 +8,9 @@
 import UIKit
 import L10n_swift
 
+var bankNameList = ["BOC","ABC","CCB","ICBC"]
+
+
 class AddViewController: UITableViewController {
 
     override func viewDidLoad() {
@@ -19,7 +22,6 @@ class AddViewController: UITableViewController {
     func setupTableView(){
         self.view.backgroundColor = .white
         self.tableView.register(UINib(nibName: "AddCell", bundle: nil), forCellReuseIdentifier: "AddCell")
-//        self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         self.tableView.tableFooterView = UIView()
         
         let headView = AddHeadView.loadFromNIB()
@@ -46,6 +48,9 @@ class AddViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if section == 0 {
+            return bankNameList.count
+        }
         return 3
     }
 
@@ -62,8 +67,10 @@ class AddViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddCell", for: indexPath) as! AddCell
-
-
+        
+         let name = bankNameList[indexPath.item]
+        cell.setupWithBank(name: name)
+        
         return cell
     }
     

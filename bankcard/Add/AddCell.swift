@@ -8,7 +8,9 @@
 import UIKit
 
 class AddCell: UITableViewCell {
-
+    @IBOutlet var imgView:UIImageView!
+    @IBOutlet var nameLabel:UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,4 +22,9 @@ class AddCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setupWithBank(name:String){
+        
+        imageView?.image = UIImage(named: name)
+        nameLabel.text = name.l10n()
+    }
 }
