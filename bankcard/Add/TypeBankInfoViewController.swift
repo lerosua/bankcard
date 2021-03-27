@@ -19,7 +19,11 @@ class TypeBankInfoViewController: UIViewController {
 
     }
 
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        bodyView.firstTextField.becomeFirstResponder()
+        
+    }
     func setupUI(){
         bodyView = InputBankCardView.loadFromNIB()
         
@@ -27,6 +31,7 @@ class TypeBankInfoViewController: UIViewController {
         
     }
 
+    
     func setupNavbar() {
         self.title = "Add".l10n()
         let button = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(doneButtonItemClicked(sender:)))

@@ -8,6 +8,7 @@
 import UIKit
 import ZJTableViewManager
 import L10n_swift
+import EmptyDataSet_Swift
 
 class MainViewController: UIViewController {
 
@@ -16,6 +17,8 @@ class MainViewController: UIViewController {
     var section: ZJTableViewSection!
     var lastOpenItem: CardTableViewCellItem?
 
+    var dataList = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupNavbar()
@@ -43,21 +46,25 @@ class MainViewController: UIViewController {
         tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.separatorStyle = .none
         view.addSubview(tableView)
+        
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
+        
         manager = ZJTableViewManager(tableView: tableView)
         manager.register(CardTableViewCell.self, CardTableViewCellItem.self)
         section = ZJTableViewSection()
         manager.add(section: section)
-        section.footerTitle = "银行卡密码管理系统"
+//        section.footerTitle = "银行卡密码管理系统"
 
-        for index in 0 ..< 5 {
-            let item = CardTableViewCellItem()
-            section.add(item: item)
-            item.zPosition = CGFloat(index)
-            // cell tap event
-            item.setSelectionHandler { [unowned self] (selectItem: CardTableViewCellItem) in
-                self.cellTapEvent(item: selectItem)
-            }
-        }
+//        for index in 0 ..< 5 {
+//            let item = CardTableViewCellItem()
+//            section.add(item: item)
+//            item.zPosition = CGFloat(index)
+//            // cell tap event
+//            item.setSelectionHandler { [unowned self] (selectItem: CardTableViewCellItem) in
+//                self.cellTapEvent(item: selectItem)
+//            }
+//        }
 
         if let lastItem = section.items.last as? CardTableViewCellItem {
             // Last cell keep open and don't respond to the tap event
@@ -78,6 +85,24 @@ class MainViewController: UIViewController {
         let vc = AddViewController()
         let nav = UINavigationController(rootViewController:vc)
         present(nav,animated:true,completion:nil)
+    }
+}
+
+
+extension MainViewController:EmptyDataSetSource,EmptyDataSetDelegate {
+    
+    func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
+                return UIImage(named: "empty_bank_list")
+    }
+    
+    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView) -> Bool {
+        return self.dataList.count == 0
+    }
+    func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView) -> Bool {
+        return true
+    }
+    func verticalOffset(forEmptyDataSet scrollView: UIScrollView) -> CGFloat {
+        return -180;
     }
 }
 
