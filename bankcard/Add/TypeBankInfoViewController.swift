@@ -26,8 +26,9 @@ class TypeBankInfoViewController: UIViewController {
     }
     func setupUI(){
         bodyView = InputBankCardView.loadFromNIB()
-        
+        bodyView.frame = CGRect(x: 0, y: 64, width: screenWidth, height: 500)
         self.view.addSubview(bodyView)
+        self.view.backgroundColor = UIColor.white
         
     }
 
