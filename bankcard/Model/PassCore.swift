@@ -23,21 +23,20 @@ extension Encodable {
 class CardPassObj:Codable {
     var type:Int
     var name:String
-//    var bankNO:String
     var cardNumber:String
     var password:String
-//    var comment:String
+    var comment:String
 //    var imageURL:URL
     
     
-    init(type:Int,name:String,cardNumber:String,password:String){
-        self.type = type
-        self.name = name
-        self.cardNumber = cardNumber
-        self.password = password
-//        self.bankNO = ""
-//        self.comment = ""
-    }
+//    init(type:Int,name:String,cardNumber:String,password:String){
+//        self.type = type
+//        self.name = name
+//        self.cardNumber = cardNumber
+//        self.password = password
+////        self.bankNO = ""
+////        self.comment = ""
+//    }
     
     func save(){
         

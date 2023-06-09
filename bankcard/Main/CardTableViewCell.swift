@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import ZJTableViewManager
 
 let openHeight: CGFloat = (UIScreen.main.bounds.size.width - 30) * (593 / 939) + 25
 let closeHeight: CGFloat = 54
@@ -33,7 +32,7 @@ class CardTableViewCellItem: ZJTableViewItem {
 
 class CardTableViewCell: UITableViewCell, ZJCellProtocol {
     func cellPrepared() {
-        return
+        layer.zPosition = item.zPosition
     }
     
     var item: CardTableViewCellItem!
@@ -62,6 +61,15 @@ class CardTableViewCell: UITableViewCell, ZJCellProtocol {
     }
 
     func cellWillAppear() {
-        layer.zPosition = item.zPosition
+         layer.masksToBounds = false
+        contentView.layer.masksToBounds = false
     }
+    
+    @IBAction func editButtonAction(sender :UIButton){
+        print("edit action")
+    }
+    @IBAction func showButtonAction(sender :UIButton){
+        print("show pass")
+    }
+    
 }

@@ -23,6 +23,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         self.setupNavbar()
         self.setupTableView()
+        self.loadData()
     }
 
     func cellTapEvent(item: CardTableViewCellItem) {
@@ -55,23 +56,14 @@ class MainViewController: UIViewController {
         manager.add(section: section)
 //        section.footerTitle = "银行卡密码管理系统"
 
-        for index in 0 ..< 5 {
-            let item = CardTableViewCellItem()
-            section.add(item: item)
-            item.zPosition = CGFloat(index)
-            // cell tap event
-            item.setSelectionHandler { [unowned self] (selectItem: CardTableViewCellItem) in
-                self.cellTapEvent(item: selectItem)
-            }
-        }
 
-        if let lastItem = section.items.last as? CardTableViewCellItem {
-            // Last cell keep open and don't respond to the tap event
-            lastItem.openCard()
-            lastItem.selectionHandler = nil
-        }
-
-        manager.reload()
+//        if let lastItem = section.items.last as? CardTableViewCellItem {
+//            // Last cell keep open and don't respond to the tap event
+//            lastItem.openCard()
+//            lastItem.selectionHandler = nil
+//        }
+//
+//        manager.reload()
     }
     func setupNavbar() {
         title = "Bank Card".l10n()
@@ -84,6 +76,20 @@ class MainViewController: UIViewController {
         let vc = AddViewController()
         let nav = UINavigationController(rootViewController:vc)
         present(nav,animated:true,completion:nil)
+    }
+    
+    func loadData(){
+        for index in 0 ..< 5 {
+            let item = CardTableViewCellItem()
+            section.add(item: item)
+            item.zPosition = CGFloat(index)
+            // cell tap event
+            item.setSelectionHandler { [unowned self] (selectItem: CardTableViewCellItem) in
+                self.cellTapEvent(item: selectItem)
+            }
+        }
+        manager.reload()
+
     }
 }
 

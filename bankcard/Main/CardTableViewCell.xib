@@ -48,16 +48,28 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaO-nJ-wiJ">
-                                <rect key="frame" x="308" y="197" width="54" height="35"/>
+                                <rect key="frame" x="325" y="169" width="47" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Edit"/>
+                                <buttonConfiguration key="configuration" style="plain" image="pencil" catalog="system"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="l10nTitle" value="Edit"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="editButtonActionWithSender:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="WnJ-Pb-ncU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kU-66-PdA">
+                                <rect key="frame" x="112" y="180" width="16" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="key" catalog="system"/>
+                                <connections>
+                                    <action selector="showButtonActionWithSender:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="9HM-Jm-u3c"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="******" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wU9-wm-lN5">
-                                <rect key="frame" x="136" y="179" width="76" height="21"/>
+                                <rect key="frame" x="136" y="180" width="76" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemBackgroundColor"/>
@@ -98,6 +110,8 @@
     </objects>
     <resources>
         <image name="chip" width="33.666667938232422" height="27"/>
+        <image name="key" catalog="system" width="85" height="128"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
