@@ -36,10 +36,9 @@ class MainViewController: UIViewController {
         } else {
             item.closeCard()
         }
-        // 注意：Xcode11.3.1 模拟器上tableview update height存在bug
-        // 如果cell是透明的，动画过程中透明部分会变成不透明，影响动画的效果。
-        // 真机上面是正常的
         manager.updateHeight()
+        //解决动画闪烁问题
+        tableView.fixCellBounds()
     }
     
     func setupTableView(){
@@ -106,3 +105,14 @@ extension MainViewController:EmptyDataSetSource,EmptyDataSetDelegate {
     }
 }
 
+// https://stackoverflow.com/questions/62899815/shadow-cell-flickers-when-animating-the-height
+extension UITableView {
+    func fixCellBounds() {
+        DispatchQueue.main.async { [weak self] in
+            for cell in self?.visibleCells ?? [] {
+                cell.layer.masksToBounds = false
+                cell.contentView.layer.masksToBounds = false
+            }
+        }
+    }
+}
