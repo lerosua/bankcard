@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import ZJTableViewManager
+//import ZJTableViewManager
 
 let openHeight: CGFloat = (UIScreen.main.bounds.size.width - 30) * (593 / 939) + 25
 let closeHeight: CGFloat = 54
@@ -32,6 +32,10 @@ class CardTableViewCellItem: ZJTableViewItem {
 }
 
 class CardTableViewCell: UITableViewCell, ZJCellProtocol {
+    func cellPrepared() {
+        return
+    }
+    
     var item: CardTableViewCellItem!
     @IBOutlet var nameLabel:UILabel!
     @IBOutlet var numberLabel:UILabel!

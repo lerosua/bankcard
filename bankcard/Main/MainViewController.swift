@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import ZJTableViewManager
+//import ZJTableViewManager
 import L10n_swift
 import EmptyDataSet_Swift
 
@@ -54,17 +54,17 @@ class MainViewController: UIViewController {
         manager.register(CardTableViewCell.self, CardTableViewCellItem.self)
         section = ZJTableViewSection()
         manager.add(section: section)
-//        section.footerTitle = "银行卡密码管理系统"
+        section.footerTitle = "银行卡密码管理系统"
 
-//        for index in 0 ..< 5 {
-//            let item = CardTableViewCellItem()
-//            section.add(item: item)
-//            item.zPosition = CGFloat(index)
-//            // cell tap event
-//            item.setSelectionHandler { [unowned self] (selectItem: CardTableViewCellItem) in
-//                self.cellTapEvent(item: selectItem)
-//            }
-//        }
+        for index in 0 ..< 5 {
+            let item = CardTableViewCellItem()
+            section.add(item: item)
+            item.zPosition = CGFloat(index)
+            // cell tap event
+            item.setSelectionHandler { [unowned self] (selectItem: CardTableViewCellItem) in
+                self.cellTapEvent(item: selectItem)
+            }
+        }
 
         if let lastItem = section.items.last as? CardTableViewCellItem {
             // Last cell keep open and don't respond to the tap event

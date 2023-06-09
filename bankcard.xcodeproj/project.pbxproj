@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A1F06278BC260BC8854A9F48 /* Pods_bankcard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF5721F96FA0F42445A81D1 /* Pods_bankcard.framework */; };
 		C18217B82604E1260010F354 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18217B72604E1260010F354 /* AppDelegate.swift */; };
 		C18217BA2604E1260010F354 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18217B92604E1260010F354 /* SceneDelegate.swift */; };
 		C18217BC2604E1260010F354 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18217BB2604E1260010F354 /* MainViewController.swift */; };
@@ -29,12 +28,17 @@
 		C18218092605DBFF0010F354 /* InputBankCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18218082605DBFF0010F354 /* InputBankCardView.swift */; };
 		C182180D2605FE950010F354 /* PassCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C182180C2605FE950010F354 /* PassCore.swift */; };
 		C1821826260EDE800010F354 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C1821828260EDE800010F354 /* Localizable.strings */; };
+		C18589342A32D21B00ABD633 /* ZJDefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C185892C2A32D21B00ABD633 /* ZJDefaultCell.swift */; };
+		C18589352A32D21B00ABD633 /* ZJTableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C185892D2A32D21B00ABD633 /* ZJTableViewSection.swift */; };
+		C18589362A32D21B00ABD633 /* ZJProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C185892E2A32D21B00ABD633 /* ZJProtocol.swift */; };
+		C18589372A32D21B00ABD633 /* ZJTableViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C185892F2A32D21B00ABD633 /* ZJTableViewItem.swift */; };
+		C18589382A32D21B00ABD633 /* ZJTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18589302A32D21B00ABD633 /* ZJTableViewManager.swift */; };
+		C18589392A32D21B00ABD633 /* ZJExpandTreeCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18589322A32D21B00ABD633 /* ZJExpandTreeCellItem.swift */; };
+		C1D04CA12A32CC3200E66C7C /* EmptyDataSet-Swift in Frameworks */ = {isa = PBXBuildFile; productRef = C1D04CA02A32CC3200E66C7C /* EmptyDataSet-Swift */; };
+		C1D04CA42A32CC5D00E66C7C /* L10n-swift in Frameworks */ = {isa = PBXBuildFile; productRef = C1D04CA32A32CC5D00E66C7C /* L10n-swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0EF5721F96FA0F42445A81D1 /* Pods_bankcard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bankcard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D33CDB2A07F279D3999A76C /* Pods-bankcard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bankcard.debug.xcconfig"; path = "Target Support Files/Pods-bankcard/Pods-bankcard.debug.xcconfig"; sourceTree = "<group>"; };
-		A6C00D380CCA0C6EAB9888C4 /* Pods-bankcard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bankcard.release.xcconfig"; path = "Target Support Files/Pods-bankcard/Pods-bankcard.release.xcconfig"; sourceTree = "<group>"; };
 		C18217B42604E1260010F354 /* bankcard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bankcard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C18217B72604E1260010F354 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C18217B92604E1260010F354 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +63,13 @@
 		C182180C2605FE950010F354 /* PassCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassCore.swift; sourceTree = "<group>"; };
 		C1821827260EDE800010F354 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C182182A260EDE850010F354 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		C185892C2A32D21B00ABD633 /* ZJDefaultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJDefaultCell.swift; sourceTree = "<group>"; };
+		C185892D2A32D21B00ABD633 /* ZJTableViewSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewSection.swift; sourceTree = "<group>"; };
+		C185892E2A32D21B00ABD633 /* ZJProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJProtocol.swift; sourceTree = "<group>"; };
+		C185892F2A32D21B00ABD633 /* ZJTableViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewItem.swift; sourceTree = "<group>"; };
+		C18589302A32D21B00ABD633 /* ZJTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewManager.swift; sourceTree = "<group>"; };
+		C18589322A32D21B00ABD633 /* ZJExpandTreeCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJExpandTreeCellItem.swift; sourceTree = "<group>"; };
+		C18589332A32D21B00ABD633 /* ZJTableViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJTableViewManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,37 +77,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1F06278BC260BC8854A9F48 /* Pods_bankcard.framework in Frameworks */,
+				C1D04CA42A32CC5D00E66C7C /* L10n-swift in Frameworks */,
+				C1D04CA12A32CC3200E66C7C /* EmptyDataSet-Swift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		77D9FD572B40E1F90A2ABB10 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0EF5721F96FA0F42445A81D1 /* Pods_bankcard.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7B3155F7A7D31DE0FDF720B2 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2D33CDB2A07F279D3999A76C /* Pods-bankcard.debug.xcconfig */,
-				A6C00D380CCA0C6EAB9888C4 /* Pods-bankcard.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		C18217AB2604E1260010F354 = {
 			isa = PBXGroup;
 			children = (
 				C18217B62604E1260010F354 /* bankcard */,
 				C18217B52604E1260010F354 /* Products */,
-				7B3155F7A7D31DE0FDF720B2 /* Pods */,
-				77D9FD572B40E1F90A2ABB10 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,6 +104,7 @@
 		C18217B62604E1260010F354 /* bankcard */ = {
 			isa = PBXGroup;
 			children = (
+				C185892A2A32D21B00ABD633 /* ZJTableViewManager */,
 				C18217F82605D09D0010F354 /* Tools */,
 				C18217EE2605BF7E0010F354 /* Model */,
 				C18217D626059E080010F354 /* Add */,
@@ -177,6 +171,36 @@
 			path = Localizable;
 			sourceTree = SOURCE_ROOT;
 		};
+		C185892A2A32D21B00ABD633 /* ZJTableViewManager */ = {
+			isa = PBXGroup;
+			children = (
+				C185892B2A32D21B00ABD633 /* Core */,
+				C18589312A32D21B00ABD633 /* Other */,
+				C18589332A32D21B00ABD633 /* ZJTableViewManager.h */,
+			);
+			path = ZJTableViewManager;
+			sourceTree = "<group>";
+		};
+		C185892B2A32D21B00ABD633 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C185892C2A32D21B00ABD633 /* ZJDefaultCell.swift */,
+				C185892D2A32D21B00ABD633 /* ZJTableViewSection.swift */,
+				C185892E2A32D21B00ABD633 /* ZJProtocol.swift */,
+				C185892F2A32D21B00ABD633 /* ZJTableViewItem.swift */,
+				C18589302A32D21B00ABD633 /* ZJTableViewManager.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C18589312A32D21B00ABD633 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				C18589322A32D21B00ABD633 /* ZJExpandTreeCellItem.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -184,17 +208,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C18217C82604E1260010F354 /* Build configuration list for PBXNativeTarget "bankcard" */;
 			buildPhases = (
-				E32D346CFFD1A01648B134D5 /* [CP] Check Pods Manifest.lock */,
 				C18217B02604E1260010F354 /* Sources */,
 				C18217B12604E1260010F354 /* Frameworks */,
 				C18217B22604E1260010F354 /* Resources */,
-				AC64BDC9F3431BF8CBCC5E93 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = bankcard;
+			packageProductDependencies = (
+				C1D04CA02A32CC3200E66C7C /* EmptyDataSet-Swift */,
+				C1D04CA32A32CC5D00E66C7C /* L10n-swift */,
+			);
 			productName = bankcard;
 			productReference = C18217B42604E1260010F354 /* bankcard.app */;
 			productType = "com.apple.product-type.application";
@@ -205,8 +231,9 @@
 		C18217AC2604E1260010F354 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					C18217B32604E1260010F354 = {
 						CreatedOnToolsVersion = 12.4;
@@ -214,7 +241,7 @@
 				};
 			};
 			buildConfigurationList = C18217AF2604E1260010F354 /* Build configuration list for PBXProject "bankcard" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -223,6 +250,10 @@
 				"zh-Hans",
 			);
 			mainGroup = C18217AB2604E1260010F354;
+			packageReferences = (
+				C1D04C9F2A32CC3200E66C7C /* XCRemoteSwiftPackageReference "EmptyDataSet-Swift" */,
+				C1D04CA22A32CC5D00E66C7C /* XCRemoteSwiftPackageReference "L10n-swift" */,
+			);
 			productRefGroup = C18217B52604E1260010F354 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -250,60 +281,24 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		AC64BDC9F3431BF8CBCC5E93 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-bankcard/Pods-bankcard-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-bankcard/Pods-bankcard-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bankcard/Pods-bankcard-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E32D346CFFD1A01648B134D5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-bankcard-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		C18217B02604E1260010F354 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C18589352A32D21B00ABD633 /* ZJTableViewSection.swift in Sources */,
+				C18589362A32D21B00ABD633 /* ZJProtocol.swift in Sources */,
 				C182180D2605FE950010F354 /* PassCore.swift in Sources */,
 				C18217D826059E350010F354 /* AddViewController.swift in Sources */,
 				C18217F62605CF050010F354 /* AddHeadView.swift in Sources */,
+				C18589392A32D21B00ABD633 /* ZJExpandTreeCellItem.swift in Sources */,
+				C18589372A32D21B00ABD633 /* ZJTableViewItem.swift in Sources */,
 				C18217BC2604E1260010F354 /* MainViewController.swift in Sources */,
 				C18217FE2605D5780010F354 /* Tool.swift in Sources */,
 				C18217E22605A4B10010F354 /* AddBankCardViewController.swift in Sources */,
 				C18217B82604E1260010F354 /* AppDelegate.swift in Sources */,
+				C18589342A32D21B00ABD633 /* ZJDefaultCell.swift in Sources */,
+				C18589382A32D21B00ABD633 /* ZJTableViewManager.swift in Sources */,
 				C18217DE2605A08B0010F354 /* AddCell.swift in Sources */,
 				C18218022605DA230010F354 /* TypeBankInfoViewController.swift in Sources */,
 				C18217F02605BF9D0010F354 /* CardType.swift in Sources */,
@@ -396,7 +391,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -452,7 +447,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -464,13 +459,14 @@
 		};
 		C18217C92604E1260010F354 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D33CDB2A07F279D3999A76C /* Pods-bankcard.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AD83Y6284S;
+				DEVELOPMENT_TEAM = 97CWPB3835;
 				INFOPLIST_FILE = bankcard/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -484,13 +480,14 @@
 		};
 		C18217CA2604E1260010F354 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A6C00D380CCA0C6EAB9888C4 /* Pods-bankcard.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AD83Y6284S;
+				DEVELOPMENT_TEAM = 97CWPB3835;
 				INFOPLIST_FILE = bankcard/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -524,6 +521,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C1D04C9F2A32CC3200E66C7C /* XCRemoteSwiftPackageReference "EmptyDataSet-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Xiaoye220/EmptyDataSet-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		C1D04CA22A32CC5D00E66C7C /* XCRemoteSwiftPackageReference "L10n-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Decybel07/L10n-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C1D04CA02A32CC3200E66C7C /* EmptyDataSet-Swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1D04C9F2A32CC3200E66C7C /* XCRemoteSwiftPackageReference "EmptyDataSet-Swift" */;
+			productName = "EmptyDataSet-Swift";
+		};
+		C1D04CA32A32CC5D00E66C7C /* L10n-swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1D04CA22A32CC5D00E66C7C /* XCRemoteSwiftPackageReference "L10n-swift" */;
+			productName = "L10n-swift";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C18217AC2604E1260010F354 /* Project object */;
 }
