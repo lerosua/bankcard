@@ -13,12 +13,20 @@ let closeHeight: CGFloat = 54
 class CardTableViewCellItem: ZJTableViewItem {
     var isOpen = false
     var zPosition: CGFloat = 0
+    var data:CardPassObj?
+    
     override init() {
         super.init()
         cellHeight = closeHeight
         selectionStyle = .none
     }
-
+    init(obj :CardPassObj){
+        super.init()
+        cellHeight = closeHeight
+        selectionStyle = .none
+        data = obj
+    }
+    
     func openCard() {
         isOpen = true
         cellHeight = openHeight
@@ -31,15 +39,14 @@ class CardTableViewCellItem: ZJTableViewItem {
 }
 
 class CardTableViewCell: UITableViewCell, ZJCellProtocol {
-    func cellPrepared() {
-        layer.zPosition = item.zPosition
-    }
+
+
     
     var item: CardTableViewCellItem!
     @IBOutlet var nameLabel:UILabel!
     @IBOutlet var numberLabel:UILabel!
     @IBOutlet var passLabel:UILabel!
-    @IBOutlet var bgImgView:UIImageView!
+//    @IBOutlet var bgImgView:UIImageView!
     @IBOutlet var editBtn :UIButton!
     @IBOutlet var logoView:UIImageView!
     
@@ -59,10 +66,16 @@ class CardTableViewCell: UITableViewCell, ZJCellProtocol {
         cardImg.layer.cornerRadius = radius
         cardImg.clipsToBounds = true
     }
-
+    func cellPrepared() {
+        layer.zPosition = item.zPosition
+    }
     func cellWillAppear() {
          layer.masksToBounds = false
         contentView.layer.masksToBounds = false
+        self.nameLabel.text = item.data?.name
+        self.numberLabel.text = item.data?.cardNumber
+        self.passLabel.text = item.data?.password
+    
     }
     
     @IBAction func editButtonAction(sender :UIButton){
@@ -71,5 +84,6 @@ class CardTableViewCell: UITableViewCell, ZJCellProtocol {
     @IBAction func showButtonAction(sender :UIButton){
         print("show pass")
     }
+    
     
 }

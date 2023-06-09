@@ -14,10 +14,10 @@ class MainViewController: UIViewController {
 
     var tableView: UITableView!
     var manager: ZJTableViewManager!
-    var section: ZJTableViewSection!
+    var dataSection: ZJTableViewSection!
     var lastOpenItem: CardTableViewCellItem?
 
-    var dataList = [String]()
+    var dataList = [CardPassObj]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,8 +52,8 @@ class MainViewController: UIViewController {
         
         manager = ZJTableViewManager(tableView: tableView)
         manager.register(CardTableViewCell.self, CardTableViewCellItem.self)
-        section = ZJTableViewSection()
-        manager.add(section: section)
+        dataSection = ZJTableViewSection()
+        manager.add(section: dataSection)
 //        section.footerTitle = "银行卡密码管理系统"
 
 
@@ -79,19 +79,29 @@ class MainViewController: UIViewController {
     }
     
     func loadData(){
+        
+        let obj = CardPassObj(type: BankType.Other.rawValue, name: "普通银行", cardNumber: "00481123", password: "passwordxxx", comment: "工资卡")
+        
         for index in 0 ..< 5 {
-            let item = CardTableViewCellItem()
-            section.add(item: item)
+            let item = CardTableViewCellItem(obj: obj)
+            dataSection.add(item: item)
             item.zPosition = CGFloat(index)
             // cell tap event
             item.setSelectionHandler { [unowned self] (selectItem: CardTableViewCellItem) in
                 self.cellTapEvent(item: selectItem)
             }
         }
+        if let lastItem = dataSection.items.last as? CardTableViewCellItem {
+            // Last cell keep open and don't respond to the tap event
+            lastItem.openCard()
+            lastItem.selectionHandler = nil
+        }
         manager.reload()
 
     }
 }
+
+
 
 
 extension MainViewController:EmptyDataSetSource,EmptyDataSetDelegate {
