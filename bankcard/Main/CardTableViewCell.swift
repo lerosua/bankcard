@@ -41,6 +41,8 @@ class CardTableViewCell: UITableViewCell, ZJCellProtocol {
     @IBOutlet var numberLabel:UILabel!
     @IBOutlet var passLabel:UILabel!
     @IBOutlet var bgImgView:UIImageView!
+    @IBOutlet var editBtn :UIButton!
+    @IBOutlet var logoView:UIImageView!
     
     typealias ZJCellItemClass = CardTableViewCellItem
 

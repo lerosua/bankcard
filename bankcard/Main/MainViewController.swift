@@ -53,7 +53,7 @@ class MainViewController: UIViewController {
         manager.register(CardTableViewCell.self, CardTableViewCellItem.self)
         section = ZJTableViewSection()
         manager.add(section: section)
-        section.footerTitle = "银行卡密码管理系统"
+//        section.footerTitle = "银行卡密码管理系统"
 
         for index in 0 ..< 5 {
             let item = CardTableViewCellItem()

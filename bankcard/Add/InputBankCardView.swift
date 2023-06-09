@@ -11,6 +11,7 @@ class InputBankCardView: UIView {
     
     @IBOutlet var firstTextField:UITextField!
     @IBOutlet var secoundTextField:UITextField!
+    @IBOutlet var commentTextView:UITextView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
