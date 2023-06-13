@@ -78,6 +78,7 @@ class AddViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let vc = TypeBankInfoViewController()
+        vc.editMode = true 
         self.navigationController?.pushViewController(vc, animated: true)
     }
 

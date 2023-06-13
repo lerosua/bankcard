@@ -67,15 +67,21 @@ class MainViewController: UIViewController {
     }
     func setupNavbar() {
         title = "Bank Card".l10n()
-        let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
-        add.tintColor = .green
-        navigationItem.rightBarButtonItems = [add]
+        let addBtn = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        addBtn.tintColor = .green
+        let sysBtn = UIBarButtonItem(barButtonSystemItem: .organize, target: self, action: #selector(sysButtonTapped))
+        sysBtn.tintColor = .green
+        navigationItem.rightBarButtonItems = [addBtn]
+        navigationItem.leftBarButtonItems = [sysBtn]
     }
     
     @objc func addButtonTapped(){
         let vc = AddViewController()
         let nav = UINavigationController(rootViewController:vc)
         present(nav,animated:true,completion:nil)
+    }
+    @objc func sysButtonTapped(){
+        print("configure tapped")
     }
     
     func loadData(){

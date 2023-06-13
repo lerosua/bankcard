@@ -10,6 +10,7 @@ import UIKit
 class TypeBankInfoViewController: UIViewController {
     
     var bodyView:InputBankCardView!
+    var editMode:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +42,37 @@ class TypeBankInfoViewController: UIViewController {
     }
     
     @objc func doneButtonItemClicked(sender:UIBarButtonItem){
+        let result =  saveData()
+        if result == "success" {
+            self.dismiss(animated: true, completion: nil)
+        }else if result == "cardNumber" {
+            print("需要弹出警告--没填写号码")
+            showNormalAlert(title: "Alert".l10n(), message: "less bank number".l10n())
+        }else if result == "password"{
+            print("需要弹出警告--没填写密码")
+            showNormalAlert(title: "Alert".l10n(), message: "less password".l10n())
+        }
         
-        self.dismiss(animated: true, completion: nil)
+        
     }
+    
+    func saveData() -> String{
+        guard let cardNumber = bodyView.firstTextField.text else { return "cardNumber" }
+        guard let password = bodyView.secoundTextField.text  else { return "password" }
+        guard let comment = bodyView.commentTextView.text  else { return "comment" }
+        
+        if cardNumber == "" {
+            return "cardNumber"
+        }else if password == "" {
+            return "password"
+        }
+        
+        let obj =   CardPassObj(type: 0, name: "", cardNumber: cardNumber, password: password, comment: comment)
+        
+
+        
+        return "success"
+        
+    }
+    
 }

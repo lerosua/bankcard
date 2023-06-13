@@ -34,6 +34,7 @@
 		C18589372A32D21B00ABD633 /* ZJTableViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C185892F2A32D21B00ABD633 /* ZJTableViewItem.swift */; };
 		C18589382A32D21B00ABD633 /* ZJTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18589302A32D21B00ABD633 /* ZJTableViewManager.swift */; };
 		C18589392A32D21B00ABD633 /* ZJExpandTreeCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18589322A32D21B00ABD633 /* ZJExpandTreeCellItem.swift */; };
+		C1BF5F7B2A38619A00C928F1 /* UIViewController+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BF5F7A2A38619A00C928F1 /* UIViewController+EX.swift */; };
 		C1D04CA12A32CC3200E66C7C /* EmptyDataSet-Swift in Frameworks */ = {isa = PBXBuildFile; productRef = C1D04CA02A32CC3200E66C7C /* EmptyDataSet-Swift */; };
 		C1D04CA42A32CC5D00E66C7C /* L10n-swift in Frameworks */ = {isa = PBXBuildFile; productRef = C1D04CA32A32CC5D00E66C7C /* L10n-swift */; };
 /* End PBXBuildFile section */
@@ -70,6 +71,7 @@
 		C18589302A32D21B00ABD633 /* ZJTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewManager.swift; sourceTree = "<group>"; };
 		C18589322A32D21B00ABD633 /* ZJExpandTreeCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJExpandTreeCellItem.swift; sourceTree = "<group>"; };
 		C18589332A32D21B00ABD633 /* ZJTableViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJTableViewManager.h; sourceTree = "<group>"; };
+		C1BF5F7A2A38619A00C928F1 /* UIViewController+EX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+EX.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				C18217FD2605D5780010F354 /* Tool.swift */,
+				C1BF5F7A2A38619A00C928F1 /* UIViewController+EX.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				C18589372A32D21B00ABD633 /* ZJTableViewItem.swift in Sources */,
 				C18217BC2604E1260010F354 /* MainViewController.swift in Sources */,
 				C18217FE2605D5780010F354 /* Tool.swift in Sources */,
+				C1BF5F7B2A38619A00C928F1 /* UIViewController+EX.swift in Sources */,
 				C18217E22605A4B10010F354 /* AddBankCardViewController.swift in Sources */,
 				C18217B82604E1260010F354 /* AppDelegate.swift in Sources */,
 				C18589342A32D21B00ABD633 /* ZJDefaultCell.swift in Sources */,
