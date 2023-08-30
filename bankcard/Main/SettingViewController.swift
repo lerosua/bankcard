@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class SettingViewController: UITableViewController {
+class SettingViewController: UITableViewController, MFMailComposeViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +42,8 @@ class SettingViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 1 {
             return 3
+        }else if section == 2 {
+                return 2
         }else{
             return 1
         }
@@ -79,10 +82,17 @@ class SettingViewController: UITableViewController {
             return cell
 
          }else{
-             let  cell = tableView.dequeueReusableCell(withIdentifier: "NormalCell", for: indexPath)
-              cell.selectionStyle = .none
-             cell.textLabel?.text = "BankCard v1.0".l10n()
-             return cell
+             if indexPath.item == 0 {
+                 let  cell = tableView.dequeueReusableCell(withIdentifier: "NormalCell", for: indexPath)
+                 cell.selectionStyle = .none
+                 cell.textLabel?.text = "BankCard v1.0(2023-08)".l10n()
+                 return cell
+             }else{
+                 let  cell = tableView.dequeueReusableCell(withIdentifier: "NormalCell", for: indexPath)
+                 cell.selectionStyle = .none
+                 cell.textLabel?.text = "contact me".l10n()
+                 return cell
+             }
          }
     }
 
@@ -90,10 +100,39 @@ class SettingViewController: UITableViewController {
         return 48
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 2 && indexPath.item == 1 {
+            // 1. 创建邮件内容
+            let mailComposeViewController = configuredMailComposeViewController()
+            // 2. 显示邮件界面
+            if MFMailComposeViewController.canSendMail() {
+              self.present(mailComposeViewController, animated: true, completion: nil)
+            } else {
+              print("设备未设置邮件账号")
+                showNormalAlert(title: "Alert".l10n(), message: "Please email me at lerosua+bankcard@gmail.com".l10n())
+            }
+        }
+    }
+    
 
 
     @objc func leftButtonItemClicked(sender:UIBarButtonItem){
         
         self.dismiss(animated: true, completion: nil)
+    }
+    func configuredMailComposeViewController() -> MFMailComposeViewController {
+      
+      let mailComposerVC = MFMailComposeViewController()
+      mailComposerVC.mailComposeDelegate = self // 遵循 MFMailComposeViewControllerDelegate 协议
+      
+      mailComposerVC.setToRecipients(["lerosua+bankcard@gmail.com"])
+      mailComposerVC.setSubject("关于BankCard的反馈")
+      mailComposerVC.setMessageBody("Hey, I have some problem with you ....", isHTML: false)
+
+      return mailComposerVC
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        self.dismiss(animated: true)
     }
 }
