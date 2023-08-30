@@ -23,6 +23,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         self.setupNavbar()
         self.setupTableView()
+        self.setupNotification()
         self.loadData()
     }
 
@@ -54,34 +55,30 @@ class MainViewController: UIViewController {
         manager.register(CardTableViewCell.self, CardTableViewCellItem.self)
         dataSection = ZJTableViewSection()
         manager.add(section: dataSection)
-//        section.footerTitle = "银行卡密码管理系统"
-
-
-//        if let lastItem = section.items.last as? CardTableViewCellItem {
-//            // Last cell keep open and don't respond to the tap event
-//            lastItem.openCard()
-//            lastItem.selectionHandler = nil
-//        }
-//
-//        manager.reload()
+        
     }
     func setupNavbar() {
         title = "Bank Card".l10n()
         let addBtn = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
-        addBtn.tintColor = .green
+        addBtn.tintColor = .black
         let sysBtn = UIBarButtonItem(barButtonSystemItem: .organize, target: self, action: #selector(sysButtonTapped))
         sysBtn.tintColor = .green
         navigationItem.rightBarButtonItems = [addBtn]
-        navigationItem.leftBarButtonItems = [sysBtn]
+//        navigationItem.leftBarButtonItems = [sysBtn]
     }
     
     @objc func addButtonTapped(){
-        let vc = AddViewController()
+//        let vc = AddViewController()
+        let vc = AddBankCardViewController()
         let nav = UINavigationController(rootViewController:vc)
         present(nav,animated:true,completion:nil)
     }
     @objc func sysButtonTapped(){
         print("configure tapped")
+    }
+    
+    func setupNotification(){
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateObj(notification:)), name: NSNotification.Name(rawValue: "updateObj"), object: nil)
     }
     
     func loadData(){
@@ -105,6 +102,12 @@ class MainViewController: UIViewController {
         manager.reload()
 
     }
+    
+    @objc func handleUpdateObj(notification:Notification){
+    //添加多一个银行卡数据
+    
+    }
+
 }
 
 

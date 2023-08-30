@@ -29,7 +29,6 @@ class AddViewController: UITableViewController {
         boxView.addSubview(headView)
         self.tableView.tableHeaderView = boxView
 
-        
     }
     
     func setupNavbar() {

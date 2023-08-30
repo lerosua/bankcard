@@ -37,6 +37,8 @@
 		C1BF5F7B2A38619A00C928F1 /* UIViewController+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BF5F7A2A38619A00C928F1 /* UIViewController+EX.swift */; };
 		C1D04CA12A32CC3200E66C7C /* EmptyDataSet-Swift in Frameworks */ = {isa = PBXBuildFile; productRef = C1D04CA02A32CC3200E66C7C /* EmptyDataSet-Swift */; };
 		C1D04CA42A32CC5D00E66C7C /* L10n-swift in Frameworks */ = {isa = PBXBuildFile; productRef = C1D04CA32A32CC5D00E66C7C /* L10n-swift */; };
+		C1EEE1512A9EE2F300DEA411 /* BankInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE14F2A9EE2F300DEA411 /* BankInputCell.swift */; };
+		C1EEE1522A9EE2F300DEA411 /* BankInputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1EEE1502A9EE2F300DEA411 /* BankInputCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		C18589322A32D21B00ABD633 /* ZJExpandTreeCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJExpandTreeCellItem.swift; sourceTree = "<group>"; };
 		C18589332A32D21B00ABD633 /* ZJTableViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJTableViewManager.h; sourceTree = "<group>"; };
 		C1BF5F7A2A38619A00C928F1 /* UIViewController+EX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+EX.swift"; sourceTree = "<group>"; };
+		C1EEE14F2A9EE2F300DEA411 /* BankInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankInputCell.swift; sourceTree = "<group>"; };
+		C1EEE1502A9EE2F300DEA411 /* BankInputCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankInputCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,8 @@
 				C18217F52605CF050010F354 /* AddHeadView.swift */,
 				C18218052605DA920010F354 /* InputBankCardView.xib */,
 				C18218082605DBFF0010F354 /* InputBankCardView.swift */,
+				C1EEE14F2A9EE2F300DEA411 /* BankInputCell.swift */,
+				C1EEE1502A9EE2F300DEA411 /* BankInputCell.xib */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -278,6 +284,7 @@
 				C18217BF2604E1260010F354 /* Main.storyboard in Resources */,
 				C18217DF2605A08B0010F354 /* AddCell.xib in Resources */,
 				C18217D22604E7560010F354 /* CardTableViewCell.xib in Resources */,
+				C1EEE1522A9EE2F300DEA411 /* BankInputCell.xib in Resources */,
 				C18218062605DA920010F354 /* InputBankCardView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +304,7 @@
 				C18589392A32D21B00ABD633 /* ZJExpandTreeCellItem.swift in Sources */,
 				C18589372A32D21B00ABD633 /* ZJTableViewItem.swift in Sources */,
 				C18217BC2604E1260010F354 /* MainViewController.swift in Sources */,
+				C1EEE1512A9EE2F300DEA411 /* BankInputCell.swift in Sources */,
 				C18217FE2605D5780010F354 /* Tool.swift in Sources */,
 				C1BF5F7B2A38619A00C928F1 /* UIViewController+EX.swift in Sources */,
 				C18217E22605A4B10010F354 /* AddBankCardViewController.swift in Sources */,
