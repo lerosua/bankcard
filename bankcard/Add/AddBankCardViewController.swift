@@ -95,6 +95,12 @@ class AddBankCardViewController: UITableViewController {
     // 完成按钮点击回调
     @objc func finishTapped() {
       print("完成按钮被点击")
+        
+        let obj =   CardPassObj(type: 1000, name: "", cardNumber: "1100", password: "xxoo", remark: "银行卡")
+        //将更新数据发送出去
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateObj"), object: obj)
+        self.dismiss(animated: true, completion: nil)
+
     }
     @objc func leftButtonItemClicked(sender:UIBarButtonItem){
         

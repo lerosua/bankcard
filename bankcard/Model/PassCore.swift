@@ -25,15 +25,15 @@ class CardPassObj {
     var name:String
     var cardNumber:String
     var password:String
-    var comment:String
+    var remark:String
  
     
-    init(type:Int,name:String,cardNumber:String,password:String,comment:String){
+    init(type:Int,name:String,cardNumber:String,password:String,remark:String){
         self.type = type
         self.name = name
         self.cardNumber = cardNumber
         self.password = password
-        self.comment = comment
+        self.remark = remark
     }
     
     func save(){

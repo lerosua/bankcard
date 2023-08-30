@@ -6,7 +6,6 @@
 //
 
 import UIKit
-//import ZJTableViewManager
 import L10n_swift
 import EmptyDataSet_Swift
 
@@ -24,7 +23,7 @@ class MainViewController: UIViewController {
         self.setupNavbar()
         self.setupTableView()
         self.setupNotification()
-        self.loadData()
+//        self.loadData()
     }
 
     func cellTapEvent(item: CardTableViewCellItem) {
@@ -83,7 +82,7 @@ class MainViewController: UIViewController {
     
     func loadData(){
         
-        let obj = CardPassObj(type: BankType.Other.rawValue, name: "普通银行", cardNumber: "00481123", password: "passwordxxx", comment: "工资卡")
+        let obj = CardPassObj(type: BankType.Other.rawValue, name: "普通银行", cardNumber: "00481123", password: "passwordxxx", remark: "工资卡")
         
         for index in 0 ..< 5 {
             let item = CardTableViewCellItem(obj: obj)
@@ -105,7 +104,17 @@ class MainViewController: UIViewController {
     
     @objc func handleUpdateObj(notification:Notification){
     //添加多一个银行卡数据
-    
+        let obj = notification.object as! CardPassObj
+        let item = CardTableViewCellItem(obj: obj)
+        dataSection.add(item: item)
+        
+        let index = dataSection.items.count
+        item.zPosition = CGFloat(index)
+        // cell tap event
+        item.setSelectionHandler { [unowned self] (selectItem: CardTableViewCellItem) in
+            self.cellTapEvent(item: selectItem)
+        }
+        manager.reload()
     }
 
 }

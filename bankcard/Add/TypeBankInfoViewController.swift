@@ -67,7 +67,7 @@ class TypeBankInfoViewController: UIViewController {
             return "password"
         }
         
-        let obj =   CardPassObj(type: 0, name: "", cardNumber: cardNumber, password: password, comment: comment)
+        let obj =   CardPassObj(type: 0, name: "", cardNumber: cardNumber, password: password, remark: comment)
         //将更新数据发送出去
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateObj"), object: obj)
         
