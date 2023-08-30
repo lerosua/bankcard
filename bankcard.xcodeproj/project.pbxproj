@@ -42,6 +42,7 @@
 		C1EEE1542A9F1BDA00DEA411 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE1532A9F1BDA00DEA411 /* SettingViewController.swift */; };
 		C1EEE1592A9F1DC100DEA411 /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE1572A9F1DC100DEA411 /* SwitchCell.swift */; };
 		C1EEE15A2A9F1DC100DEA411 /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1EEE1582A9F1DC100DEA411 /* SwitchCell.xib */; };
+		C1EEE15C2A9F347700DEA411 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE15B2A9F347700DEA411 /* UIColor+Ex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		C1EEE1532A9F1BDA00DEA411 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		C1EEE1572A9F1DC100DEA411 /* SwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
 		C1EEE1582A9F1DC100DEA411 /* SwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
+		C1EEE15B2A9F347700DEA411 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 			children = (
 				C18217FD2605D5780010F354 /* Tool.swift */,
 				C1BF5F7A2A38619A00C928F1 /* UIViewController+EX.swift */,
+				C1EEE15B2A9F347700DEA411 /* UIColor+Ex.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1EEE15C2A9F347700DEA411 /* UIColor+Ex.swift in Sources */,
 				C18589352A32D21B00ABD633 /* ZJTableViewSection.swift in Sources */,
 				C1EEE1542A9F1BDA00DEA411 /* SettingViewController.swift in Sources */,
 				C18589362A32D21B00ABD633 /* ZJProtocol.swift in Sources */,

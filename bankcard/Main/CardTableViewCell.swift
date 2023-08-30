@@ -65,6 +65,11 @@ class CardTableViewCell: UITableViewCell, ZJCellProtocol {
         cardView.layer.shadowRadius = radius
         cardImg.layer.cornerRadius = radius
         cardImg.clipsToBounds = true
+        
+        //设置渐变
+        let layerGradient = getLineGradintLayer(ui:cardImg,fromHexColor:"8FD3F4", toHexColor:"84FAB0")
+        cardImg.layer.addSublayer(layerGradient)
+        
     }
     func cellPrepared() {
         layer.zPosition = item.zPosition

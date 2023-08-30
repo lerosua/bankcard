@@ -132,7 +132,10 @@ extension MainViewController:EmptyDataSetSource,EmptyDataSetDelegate {
     func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
                 return UIImage(named: "empty_bank_list")
     }
-    
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        let title = "Record local bank card password".l10n()
+        return NSAttributedString(string: title)
+    }
     func emptyDataSetShouldDisplay(_ scrollView: UIScrollView) -> Bool {
         return self.dataList.count == 0
     }
