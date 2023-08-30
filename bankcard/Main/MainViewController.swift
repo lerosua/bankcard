@@ -70,13 +70,15 @@ class MainViewController: UIViewController {
     }
     
     @objc func addButtonTapped(){
-//        let vc = AddViewController()
         let vc = AddBankCardViewController()
         let nav = UINavigationController(rootViewController:vc)
         present(nav,animated:true,completion:nil)
     }
     @objc func sysButtonTapped(){
         print("configure tapped")
+        let vc = SettingViewController(style: .insetGrouped)
+        let nav = UINavigationController(rootViewController:vc)
+        present(nav,animated:true,completion:nil)
     }
     
     func setupNotification(){

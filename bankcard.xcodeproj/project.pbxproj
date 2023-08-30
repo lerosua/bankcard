@@ -39,6 +39,9 @@
 		C1D04CA42A32CC5D00E66C7C /* L10n-swift in Frameworks */ = {isa = PBXBuildFile; productRef = C1D04CA32A32CC5D00E66C7C /* L10n-swift */; };
 		C1EEE1512A9EE2F300DEA411 /* BankInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE14F2A9EE2F300DEA411 /* BankInputCell.swift */; };
 		C1EEE1522A9EE2F300DEA411 /* BankInputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1EEE1502A9EE2F300DEA411 /* BankInputCell.xib */; };
+		C1EEE1542A9F1BDA00DEA411 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE1532A9F1BDA00DEA411 /* SettingViewController.swift */; };
+		C1EEE1592A9F1DC100DEA411 /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE1572A9F1DC100DEA411 /* SwitchCell.swift */; };
+		C1EEE15A2A9F1DC100DEA411 /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1EEE1582A9F1DC100DEA411 /* SwitchCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +79,9 @@
 		C1BF5F7A2A38619A00C928F1 /* UIViewController+EX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+EX.swift"; sourceTree = "<group>"; };
 		C1EEE14F2A9EE2F300DEA411 /* BankInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankInputCell.swift; sourceTree = "<group>"; };
 		C1EEE1502A9EE2F300DEA411 /* BankInputCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankInputCell.xib; sourceTree = "<group>"; };
+		C1EEE1532A9F1BDA00DEA411 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		C1EEE1572A9F1DC100DEA411 /* SwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
+		C1EEE1582A9F1DC100DEA411 /* SwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				C18217BB2604E1260010F354 /* MainViewController.swift */,
+				C1EEE1532A9F1BDA00DEA411 /* SettingViewController.swift */,
 				C18217D12604E7560010F354 /* CardTableViewCell.swift */,
 				C18217D02604E7560010F354 /* CardTableViewCell.xib */,
 			);
@@ -150,6 +157,8 @@
 				C18218082605DBFF0010F354 /* InputBankCardView.swift */,
 				C1EEE14F2A9EE2F300DEA411 /* BankInputCell.swift */,
 				C1EEE1502A9EE2F300DEA411 /* BankInputCell.xib */,
+				C1EEE1572A9F1DC100DEA411 /* SwitchCell.swift */,
+				C1EEE1582A9F1DC100DEA411 /* SwitchCell.xib */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -286,6 +295,7 @@
 				C18217D22604E7560010F354 /* CardTableViewCell.xib in Resources */,
 				C1EEE1522A9EE2F300DEA411 /* BankInputCell.xib in Resources */,
 				C18218062605DA920010F354 /* InputBankCardView.xib in Resources */,
+				C1EEE15A2A9F1DC100DEA411 /* SwitchCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C18589352A32D21B00ABD633 /* ZJTableViewSection.swift in Sources */,
+				C1EEE1542A9F1BDA00DEA411 /* SettingViewController.swift in Sources */,
 				C18589362A32D21B00ABD633 /* ZJProtocol.swift in Sources */,
 				C182180D2605FE950010F354 /* PassCore.swift in Sources */,
 				C18217D826059E350010F354 /* AddViewController.swift in Sources */,
@@ -310,6 +321,7 @@
 				C18217E22605A4B10010F354 /* AddBankCardViewController.swift in Sources */,
 				C18217B82604E1260010F354 /* AppDelegate.swift in Sources */,
 				C18589342A32D21B00ABD633 /* ZJDefaultCell.swift in Sources */,
+				C1EEE1592A9F1DC100DEA411 /* SwitchCell.swift in Sources */,
 				C18589382A32D21B00ABD633 /* ZJTableViewManager.swift in Sources */,
 				C18217DE2605A08B0010F354 /* AddCell.swift in Sources */,
 				C18218022605DA230010F354 /* TypeBankInfoViewController.swift in Sources */,
