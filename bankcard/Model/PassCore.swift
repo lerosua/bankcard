@@ -20,7 +20,7 @@ extension Encodable {
     }
 }
 
-class CardPassObj {
+class CardPassObj:Codable {
     var type:Int
     var name:String
     var cardNumber:String

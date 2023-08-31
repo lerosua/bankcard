@@ -43,6 +43,7 @@
 		C1EEE1592A9F1DC100DEA411 /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE1572A9F1DC100DEA411 /* SwitchCell.swift */; };
 		C1EEE15A2A9F1DC100DEA411 /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1EEE1582A9F1DC100DEA411 /* SwitchCell.xib */; };
 		C1EEE15C2A9F347700DEA411 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE15B2A9F347700DEA411 /* UIColor+Ex.swift */; };
+		C1EEE15E2AA074B500DEA411 /* UserDefaults+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE15D2AA074B500DEA411 /* UserDefaults+EX.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		C1EEE1572A9F1DC100DEA411 /* SwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
 		C1EEE1582A9F1DC100DEA411 /* SwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
 		C1EEE15B2A9F347700DEA411 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
+		C1EEE15D2AA074B500DEA411 /* UserDefaults+EX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+EX.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 				C18217FD2605D5780010F354 /* Tool.swift */,
 				C1BF5F7A2A38619A00C928F1 /* UIViewController+EX.swift */,
 				C1EEE15B2A9F347700DEA411 /* UIColor+Ex.swift */,
+				C1EEE15D2AA074B500DEA411 /* UserDefaults+EX.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				C18589342A32D21B00ABD633 /* ZJDefaultCell.swift in Sources */,
 				C1EEE1592A9F1DC100DEA411 /* SwitchCell.swift in Sources */,
 				C18589382A32D21B00ABD633 /* ZJTableViewManager.swift in Sources */,
+				C1EEE15E2AA074B500DEA411 /* UserDefaults+EX.swift in Sources */,
 				C18217DE2605A08B0010F354 /* AddCell.swift in Sources */,
 				C18218022605DA230010F354 /* TypeBankInfoViewController.swift in Sources */,
 				C18217F02605BF9D0010F354 /* CardType.swift in Sources */,

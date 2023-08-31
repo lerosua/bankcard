@@ -9,6 +9,8 @@ import UIKit
 import L10n_swift
 import EmptyDataSet_Swift
 
+let DataListKey :String = "bankListKey"
+
 class MainViewController: UIViewController {
 
     var tableView: UITableView!
@@ -23,7 +25,7 @@ class MainViewController: UIViewController {
         self.setupNavbar()
         self.setupTableView()
         self.setupNotification()
-//        self.loadData()
+        self.loadData()
     }
 
     func cellTapEvent(item: CardTableViewCellItem) {
@@ -71,6 +73,7 @@ class MainViewController: UIViewController {
     
     @objc func addButtonTapped(){
         let vc = AddBankCardViewController()
+//        let vc = AddViewController()
         let nav = UINavigationController(rootViewController:vc)
         present(nav,animated:true,completion:nil)
     }
@@ -87,17 +90,35 @@ class MainViewController: UIViewController {
     
     func loadData(){
         
-        let obj = CardPassObj(type: BankType.Other.rawValue, name: "普通银行", cardNumber: "00481123", password: "passwordxxx", remark: "工资卡")
-        
-        for index in 0 ..< 5 {
-            let item = CardTableViewCellItem(obj: obj)
-            dataSection.add(item: item)
-            item.zPosition = CGFloat(index)
-            // cell tap event
-            item.setSelectionHandler { [unowned self] (selectItem: CardTableViewCellItem) in
-                self.cellTapEvent(item: selectItem)
+        if let rawList = UserDefaults.standard.data(forKey: DataListKey) {
+            guard let array = try? JSONDecoder().decode([CardPassObj].self, from: rawList) else { return }
+            
+            self.dataList = array
+            var index = 0
+            for obj in array {
+                let item = CardTableViewCellItem(obj: obj)
+                dataSection.add(item: item)
+                item.zPosition = CGFloat(index)
+                // cell tap event
+                item.setSelectionHandler { [unowned self] (selectItem: CardTableViewCellItem) in
+                    self.cellTapEvent(item: selectItem)
+                }
+                index += 1
             }
         }
+        
+        
+//        let obj = CardPassObj(type: BankType.Other.rawValue, name: "普通银行", cardNumber: "00481123", password: "passwordxxx", remark: "工资卡")
+//
+//        for index in 0 ..< 5 {
+//            let item = CardTableViewCellItem(obj: obj)
+//            dataSection.add(item: item)
+//            item.zPosition = CGFloat(index)
+//            // cell tap event
+//            item.setSelectionHandler { [unowned self] (selectItem: CardTableViewCellItem) in
+//                self.cellTapEvent(item: selectItem)
+//            }
+//        }
         if let lastItem = dataSection.items.last as? CardTableViewCellItem {
             // Last cell keep open and don't respond to the tap event
             lastItem.openCard()
@@ -110,6 +131,9 @@ class MainViewController: UIViewController {
     @objc func handleUpdateObj(notification:Notification){
     //添加多一个银行卡数据
         let obj = notification.object as! CardPassObj
+        
+        self.dataList.append(obj)
+        
         let item = CardTableViewCellItem(obj: obj)
         dataSection.add(item: item)
         
@@ -120,6 +144,10 @@ class MainViewController: UIViewController {
             self.cellTapEvent(item: selectItem)
         }
         manager.reload()
+        
+        //保存数据
+        UserDefaults.standard.set(classArray: self.dataList, key: DataListKey)
+        
     }
 
 }
