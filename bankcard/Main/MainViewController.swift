@@ -72,7 +72,7 @@ class MainViewController: UIViewController {
     }
     
     @objc func addButtonTapped(){
-        let vc = AddBankCardViewController()
+        let vc = AddBankCardViewController(style: .insetGrouped)
 //        let vc = AddViewController()
         let nav = UINavigationController(rootViewController:vc)
         present(nav,animated:true,completion:nil)

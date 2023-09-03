@@ -17,20 +17,25 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyA-We-N5I">
-                        <rect key="frame" x="16" y="12" width="103" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyA-We-N5I">
+                        <rect key="frame" x="16" y="12" width="39" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0yv-U5-Bpd">
-                        <rect key="frame" x="139" y="5" width="164" height="34"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0yv-U5-Bpd">
+                        <rect key="frame" x="135" y="12" width="166" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="0yv-U5-Bpd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="135" id="9IU-TF-NEZ"/>
+                    <constraint firstItem="oyA-We-N5I" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Hc9-SP-FEy"/>
+                    <constraint firstAttribute="trailing" secondItem="0yv-U5-Bpd" secondAttribute="trailing" constant="18" id="KB7-jv-a9Z"/>
+                    <constraint firstItem="0yv-U5-Bpd" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="UvY-9S-HH6"/>
+                    <constraint firstItem="oyA-We-N5I" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="p8s-Ji-gc7"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
