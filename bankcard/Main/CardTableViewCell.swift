@@ -67,8 +67,8 @@ class CardTableViewCell: UITableViewCell, ZJCellProtocol {
         cardImg.clipsToBounds = true
         
         //设置渐变
-        let layerGradient = getLineGradintLayer(ui:cardImg,fromHexColor:"8FD3F4", toHexColor:"84FAB0")
-        cardImg.layer.addSublayer(layerGradient)
+//        let layerGradient = getLineGradintLayer(ui:cardImg,fromHexColor:"8FD3F4", toHexColor:"84FAB0")
+//        cardImg.layer.addSublayer(layerGradient)
         
     }
     func cellPrepared() {

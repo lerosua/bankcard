@@ -60,13 +60,11 @@ class MainViewController: UIViewController {
     }
     func setupNavbar() {
         title = "Bank Card".l10n()
-                let addBtn = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(addButtonTapped))
-//        let addBtn = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
-        addBtn.tintColor = .black
+                let addBtn = UIBarButtonItem(image: UIImage(named: "sys_add"), style: .plain, target: self, action: #selector(addButtonTapped))
+//        addBtn.tintColor = .black
+        let sysBtn = UIBarButtonItem(image: UIImage(named: "sys_setting"), style: .plain, target: self, action: #selector(sysButtonTapped))
         
-        let sysBtn = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .plain, target: self, action: #selector(sysButtonTapped))
-        
-        sysBtn.tintColor = .black
+//        sysBtn.tintColor = .black
         navigationItem.rightBarButtonItems = [addBtn]
         navigationItem.leftBarButtonItems = [sysBtn]
     }
