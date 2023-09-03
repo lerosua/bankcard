@@ -23,7 +23,7 @@ class AddBankCardViewController: UITableViewController {
     }
     
     func setupNavbar() {
-        self.title = "Add".l10n()
+        self.title = "Add Bank Card".l10n()
         let button = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(leftButtonItemClicked(sender:)))
         button.tintColor = .red
         self.navigationItem.leftBarButtonItem = button
