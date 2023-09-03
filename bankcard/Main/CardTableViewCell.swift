@@ -38,7 +38,7 @@ class CardTableViewCellItem: ZJTableViewItem {
     }
 }
 
-var colorIndex = 1
+var colorIndex = 0
 let gradientColors = [["E42C66","F55B46"],
                       ["EABE35","EABE35"],
                       ["ED713C","ED713C"],
@@ -74,7 +74,7 @@ class CardTableViewCell: UITableViewCell, ZJCellProtocol {
         cardImg.layer.cornerRadius = radius
         cardImg.clipsToBounds = true
         
-        let colorGroup = gradientColors[gradientColors.count%colorIndex]
+        let colorGroup = gradientColors[colorIndex%gradientColors.count]
         //设置渐变
         let layerGradient = getLineGradintLayer(ui:cardImg,fromHexColor:colorGroup[0], toHexColor:colorGroup[1])
         cardImg.layer.addSublayer(layerGradient)
