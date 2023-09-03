@@ -38,6 +38,15 @@ class CardTableViewCellItem: ZJTableViewItem {
     }
 }
 
+var colorIndex = 1
+let gradientColors = [["E42C66","F55B46"],
+                      ["EABE35","EABE35"],
+                      ["ED713C","ED713C"],
+                      ["E42C66","F55B46"],
+                      ["E42C66","F55B46"],
+                      ["E42C66","F55B46"],
+                      ["E42C66","F55B46"]]
+
 class CardTableViewCell: UITableViewCell, ZJCellProtocol {
 
 
@@ -46,10 +55,11 @@ class CardTableViewCell: UITableViewCell, ZJCellProtocol {
     @IBOutlet var nameLabel:UILabel!
     @IBOutlet var numberLabel:UILabel!
     @IBOutlet var passLabel:UILabel!
-//    @IBOutlet var bgImgView:UIImageView!
     @IBOutlet var editBtn :UIButton!
     @IBOutlet var logoView:UIImageView!
-    
+    @IBOutlet var remarkLabel:UILabel!
+    @IBOutlet var lockBtn :UIButton!
+
     typealias ZJCellItemClass = CardTableViewCellItem
 
     @IBOutlet var cardView: UIView!
@@ -66,9 +76,11 @@ class CardTableViewCell: UITableViewCell, ZJCellProtocol {
         cardImg.layer.cornerRadius = radius
         cardImg.clipsToBounds = true
         
+        let colorGroup = gradientColors[gradientColors.count%colorIndex]
         //设置渐变
-        let layerGradient = getLineGradintLayer(ui:cardImg,fromHexColor:"E42C66", toHexColor:"F55B46")
+        let layerGradient = getLineGradintLayer(ui:cardImg,fromHexColor:colorGroup[0], toHexColor:colorGroup[1])
         cardImg.layer.addSublayer(layerGradient)
+        colorIndex += 1
         
     }
     func cellPrepared() {
@@ -80,6 +92,7 @@ class CardTableViewCell: UITableViewCell, ZJCellProtocol {
         self.nameLabel.text = item.data?.name
         self.numberLabel.text = item.data?.cardNumber
         self.passLabel.text = item.data?.password
+        self.lockBtn.setImage(UIImage(named: "unlock"), for: .selected)
     
     }
     
