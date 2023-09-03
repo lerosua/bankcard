@@ -49,8 +49,6 @@ let gradientColors = [["E42C66","F55B46"],
 
 class CardTableViewCell: UITableViewCell, ZJCellProtocol {
 
-
-    
     var item: CardTableViewCellItem!
     @IBOutlet var nameLabel:UILabel!
     @IBOutlet var numberLabel:UILabel!
@@ -98,9 +96,15 @@ class CardTableViewCell: UITableViewCell, ZJCellProtocol {
     
     @IBAction func editButtonAction(sender :UIButton){
         print("edit action")
+        if let handler = item.editHandler {
+            handler(item)
+        }
     }
     @IBAction func showButtonAction(sender :UIButton){
         print("show pass")
+        if let handler = item.lockHandler {
+            handler(item)
+        }
     }
     
     

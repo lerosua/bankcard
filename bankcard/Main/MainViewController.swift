@@ -72,8 +72,8 @@ class MainViewController: UIViewController {
     }
     
     @objc func addButtonTapped(){
-        let vc = AddBankCardViewController(style: .insetGrouped)
-//        let vc = AddViewController()
+//        let vc = AddBankCardViewController(style: .insetGrouped)
+        let vc = EditBankCardViewController()
         let nav = UINavigationController(rootViewController:vc)
         present(nav,animated:true,completion:nil)
     }
@@ -103,6 +103,12 @@ class MainViewController: UIViewController {
                 item.setSelectionHandler { [unowned self] (selectItem: CardTableViewCellItem) in
                     self.cellTapEvent(item: selectItem)
                 }
+                item.setEditHandler{ [unowned self] (selectItem: CardTableViewCellItem) in
+                    self.cellEditEvent(item: selectItem)
+                }
+                item.setLockHandler{ [unowned self] (selectItem: CardTableViewCellItem) in
+                    self.cellunLockEvent(item: selectItem)
+                }
                 index += 1
             }
         }
@@ -119,11 +125,11 @@ class MainViewController: UIViewController {
 //                self.cellTapEvent(item: selectItem)
 //            }
 //        }
-        if let lastItem = dataSection.items.last as? CardTableViewCellItem {
-            // Last cell keep open and don't respond to the tap event
-            lastItem.openCard()
-            lastItem.selectionHandler = nil
-        }
+//        if let lastItem = dataSection.items.last as? CardTableViewCellItem {
+//            // Last cell keep open and don't respond to the tap event
+//            lastItem.openCard()
+//            lastItem.selectionHandler = nil
+//        }
         manager.reload()
 
     }
@@ -143,6 +149,12 @@ class MainViewController: UIViewController {
         item.setSelectionHandler { [unowned self] (selectItem: CardTableViewCellItem) in
             self.cellTapEvent(item: selectItem)
         }
+        item.setEditHandler{ [unowned self] (selectItem: CardTableViewCellItem) in
+            self.cellEditEvent(item: selectItem)
+        }
+        item.setLockHandler{ [unowned self] (selectItem: CardTableViewCellItem) in
+            self.cellunLockEvent(item: selectItem)
+        }
         manager.reload()
         
         //保存数据
@@ -150,6 +162,17 @@ class MainViewController: UIViewController {
         
     }
 
+    func cellEditEvent(item: CardTableViewCellItem) {
+        print("edit action====")
+        let vc = EditBankCardViewController()
+        let nav = UINavigationController(rootViewController:vc)
+        present(nav,animated:true,completion:nil)
+
+    }
+    func cellunLockEvent(item: CardTableViewCellItem) {
+        print("show action====")
+
+    }
 }
 
 

@@ -44,6 +44,7 @@
 		C1EEE15A2A9F1DC100DEA411 /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1EEE1582A9F1DC100DEA411 /* SwitchCell.xib */; };
 		C1EEE15C2A9F347700DEA411 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE15B2A9F347700DEA411 /* UIColor+Ex.swift */; };
 		C1EEE15E2AA074B500DEA411 /* UserDefaults+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE15D2AA074B500DEA411 /* UserDefaults+EX.swift */; };
+		C1EEE1AE2AA4BA8900DEA411 /* EditBankCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE1AD2AA4BA8900DEA411 /* EditBankCardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		C1EEE1582A9F1DC100DEA411 /* SwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
 		C1EEE15B2A9F347700DEA411 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
 		C1EEE15D2AA074B500DEA411 /* UserDefaults+EX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+EX.swift"; sourceTree = "<group>"; };
+		C1EEE1AD2AA4BA8900DEA411 /* EditBankCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBankCardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				C18217DC2605A08B0010F354 /* AddCell.swift */,
 				C18217DD2605A08B0010F354 /* AddCell.xib */,
 				C18217E12605A4B10010F354 /* AddBankCardViewController.swift */,
+				C1EEE1AD2AA4BA8900DEA411 /* EditBankCardViewController.swift */,
 				C18218002605DA230010F354 /* TypeBankInfoViewController.swift */,
 				C18217F22605CD070010F354 /* AddHeadView.xib */,
 				C18217F52605CF050010F354 /* AddHeadView.swift */,
@@ -328,6 +331,7 @@
 				C18217E22605A4B10010F354 /* AddBankCardViewController.swift in Sources */,
 				C18217B82604E1260010F354 /* AppDelegate.swift in Sources */,
 				C18589342A32D21B00ABD633 /* ZJDefaultCell.swift in Sources */,
+				C1EEE1AE2AA4BA8900DEA411 /* EditBankCardViewController.swift in Sources */,
 				C1EEE1592A9F1DC100DEA411 /* SwitchCell.swift in Sources */,
 				C18589382A32D21B00ABD633 /* ZJTableViewManager.swift in Sources */,
 				C1EEE15E2AA074B500DEA411 /* UserDefaults+EX.swift in Sources */,

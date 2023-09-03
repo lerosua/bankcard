@@ -38,12 +38,28 @@ open class ZJTableViewItem: NSObject {
         }
     }
 
+    //删除事件回调
     public var deletionHandler: ZJTableViewItemBlock?
     public func setDeletionHandler<T: ZJTableViewItem>(_ handler: ((_ callBackItem: T) -> Void)?) {
         deletionHandler = { item in
             handler?(item as! T)
         }
     }
+    //编辑事件回调
+    public var editHandler: ZJTableViewItemBlock?
+    public func setEditHandler<T: ZJTableViewItem>(_ handler: ((_ callBackItem: T) -> Void)?) {
+        editHandler = { item in
+            handler?(item as! T)
+        }
+    }
+    //解锁事件回调
+    public var lockHandler: ZJTableViewItemBlock?
+    public func setLockHandler<T: ZJTableViewItem>(_ handler: ((_ callBackItem: T) -> Void)?) {
+        lockHandler = { item in
+            handler?(item as! T)
+        }
+    }
+    
 
     public var labelText: String?
     public var detailLabelText: String?
