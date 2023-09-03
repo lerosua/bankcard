@@ -60,11 +60,15 @@ class MainViewController: UIViewController {
     }
     func setupNavbar() {
         title = "Bank Card".l10n()
-                let addBtn = UIBarButtonItem(image: UIImage(named: "sys_add"), style: .plain, target: self, action: #selector(addButtonTapped))
-        let sysBtn = UIBarButtonItem(image: UIImage(named: "sys_setting"), style: .plain, target: self, action: #selector(sysButtonTapped))
-        
-        navigationItem.rightBarButtonItems = [addBtn]
-        navigationItem.leftBarButtonItems = [sysBtn]
+                let addBtn = UIBarButtonItem(image: UIImage(named: "sys_add")!.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(addButtonTapped))
+        let sysBtn = UIBarButtonItem(image: UIImage(named: "sys_setting")!.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(sysButtonTapped))
+        // 设置间距
+        let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        space.width = 10
+
+        navigationItem.rightBarButtonItems = [space,addBtn,sysBtn]
+ //        navigationItem.leftBarButtonItems = [sysBtn]
+
     }
     
     @objc func addButtonTapped(){
