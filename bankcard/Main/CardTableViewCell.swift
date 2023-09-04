@@ -92,7 +92,7 @@ class CardTableViewCell: UITableViewCell, ZJCellProtocol {
         layer.masksToBounds = false
         contentView.layer.masksToBounds = false
         self.nameLabel.text = item.data?.name
-        self.numberLabel.text = item.data?.cardNumber
+//        self.numberLabel.text = item.data?.cardNumber
         self.passLabel.text = item.data?.password
         self.hidingPassLabel.text = "**** **** ****"
         
@@ -105,9 +105,15 @@ class CardTableViewCell: UITableViewCell, ZJCellProtocol {
             self.passLabel.alpha = 0
             self.hidingPassLabel.isHidden = false
         }
-        
+        //处理号码
+        // 原始文字
+        if let originalText = item.data?.cardNumber{
+            // 显示处理后的文字
+            self.numberLabel.text = originalText.bankNumberString()
+        }
         
     }
+
     
     @IBAction func editButtonAction(sender :UIButton){
         print("edit action")

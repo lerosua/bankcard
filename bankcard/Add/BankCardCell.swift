@@ -30,6 +30,12 @@ class BankCardCell: UITableViewCell {
         cardImg.layer.cornerRadius = radius
         cardImg.clipsToBounds = true
         
+        //设置最大长度
+        nameTxtField.maxLength = 20
+        numberTxtField.maxLength = 30
+        remarkTxtField.maxLength = 80
+        passwordTxtField.maxLength = 20
+        
         //设置渐变
 //        let layerGradient = getLineGradintLayer(ui:cardImg,fromHexColor:colorGroup[0], toHexColor:colorGroup[1])
 //        cardImg.layer.addSublayer(layerGradient)
@@ -44,10 +50,9 @@ class BankCardCell: UITableViewCell {
     
     func getCardPassObj()->CardPassObj {
         let cardName = nameTxtField.text ?? ""
-      let password = passwordTxtField.text ?? ""
-      let comment = remarkTxtField.text ?? ""
-      let cardNumber = numberTxtField.text ?? ""
-
+        let password = passwordTxtField.text ?? ""
+        let comment = remarkTxtField.text ?? ""
+        let cardNumber = numberTxtField.text ?? ""
         
         let obj =   CardPassObj(type: 0, name: cardName, cardNumber: cardNumber, password: password, remark: comment)
         
