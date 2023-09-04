@@ -144,17 +144,23 @@ class MainViewController: UIViewController {
     }
     @objc func handleUpdateObj(notification:Notification){
     //应该是数据更新
-//        let obj = notification.object as! CardPassObj
-//
-//        manager.reload()
-//
-//        //保存数据
-//        UserDefaults.standard.set(classArray: self.dataList, key: DataListKey)
+        let item = notification.object as! CardTableViewCellItem
+        let cell = tableView.cellForRow(at: item.indexPath) as! CardTableViewCell
+        cell.updateData(item: item)
+        manager.reload()
+        
+        if let data = item.data {
+            let obj = self.dataList[item.indexPath.item]
+            obj.copywith(item: data)
+            //保存数据
+            UserDefaults.standard.set(classArray: self.dataList, key: DataListKey)
+            print("update data with \(data)")
+        }
     }
     @objc func handleDeleteObj(notification:Notification){
-    //添加多一个银行卡数据
+    //删除一个银行卡数据
         let item = notification.object as! CardTableViewCellItem
-        self.tableView.setEditing(true, animated: true)
+//        self.tableView.setEditing(true, animated: true)
         self.dataList.remove(at: item.indexPath.item)
         item.delete()
         manager.reload()
@@ -163,14 +169,6 @@ class MainViewController: UIViewController {
     }
     func cellEditEvent(item: CardTableViewCellItem) {
         print("edit action====with \(item.indexPath.item)")
-
-        //test delete
-//        self.tableView.setEditing(true, animated: true)
-//        self.dataList.remove(at: item.indexPath.item)
-//        item.delete()
-//        manager.reload()
-        //保存数据
-//        UserDefaults.standard.set(classArray: self.dataList, key: DataListKey)
         let vc = EditBankCardViewController(item: item)
         let nav = UINavigationController(rootViewController:vc)
         present(nav,animated:true,completion:nil)

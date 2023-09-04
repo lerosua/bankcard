@@ -23,11 +23,6 @@ class AddViewController: UITableViewController {
         self.view.backgroundColor = .white
         self.tableView.register(UINib(nibName: "AddCell", bundle: nil), forCellReuseIdentifier: "AddCell")
         self.tableView.tableFooterView = UIView()
-        
-        let headView = AddHeadView.loadFromNIB()
-        let boxView = UIView(frame: CGRect(x: 0,y: 0,width: screenWidth,height: 120))
-        boxView.addSubview(headView)
-        self.tableView.tableHeaderView = boxView
 
     }
     

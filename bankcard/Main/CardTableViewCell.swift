@@ -92,10 +92,10 @@ class CardTableViewCell: UITableViewCell, ZJCellProtocol {
         layer.masksToBounds = false
         contentView.layer.masksToBounds = false
         self.nameLabel.text = item.data?.name
-//        self.numberLabel.text = item.data?.cardNumber
         self.passLabel.text = item.data?.password
         self.hidingPassLabel.text = "**** **** ****"
-        
+        self.remarkLabel.text = item.data?.remark
+
         if item.isUnlock {
             self.lockBtn.setImage(UIImage(named: "unlock"), for: .normal)
             self.passLabel.alpha = 1
@@ -114,6 +114,14 @@ class CardTableViewCell: UITableViewCell, ZJCellProtocol {
         
     }
 
+    func updateData(item:CardTableViewCellItem){
+        self.item = item
+        self.nameLabel.text = item.data?.name
+        self.passLabel.text = item.data?.password
+        self.numberLabel.text = item.data?.cardNumber.bankNumberString()
+        self.remarkLabel.text = item.data?.remark
+    }
+    
     
     @IBAction func editButtonAction(sender :UIButton){
         print("edit action")

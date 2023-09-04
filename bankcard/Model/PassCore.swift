@@ -36,8 +36,12 @@ class CardPassObj:Codable {
         self.remark = remark
     }
     
-    func save(){
-        
+    func copywith(item:CardPassObj){
+        self.name = item.name
+        self.cardNumber = item.cardNumber
+        self.remark = item.remark
+        self.password = item.password
+        self.type = item.type
     }
 }
 

@@ -89,7 +89,20 @@ class EditBankCardViewController: UITableViewController {
     // 完成按钮点击回调
     @objc func finishTapped() {
       print("完成按钮被点击")
+        let indexPath = IndexPath(row: 0, section: 0)
+        let cell = tableView.cellForRow(at: indexPath) as! BankCardCell
         
+        let obj =  cell.getCardPassObj()
+        
+        if obj.name == "" {
+            showNormalAlert(title: "Alert".l10n(), message: "less name".l10n())
+            return
+        }else if obj.password == "" {
+            print("需要弹出警告--没填写号码")
+            showNormalAlert(title: "Alert".l10n(), message: "less password".l10n())
+            return
+        }
+        cardItem?.data = obj
         //将更新数据发送出去
         NotificationCenter.default.post(name: .updateCardNotification, object: cardItem)
         self.dismiss(animated: true, completion: nil)
