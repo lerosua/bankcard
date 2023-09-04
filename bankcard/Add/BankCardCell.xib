@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="258" id="sOb-wP-XYn" customClass="BankCardCell" customModule="bankcard" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="410" height="258"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sOb-wP-XYn" id="MhC-wM-guk">
+                <rect key="frame" x="0.0" y="0.0" width="410" height="258"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fcd-9A-MK5">
+                        <rect key="frame" x="15" y="8" width="380" height="240"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dGl-Xt-STF">
+                                <rect key="frame" x="0.0" y="0.0" width="380" height="240"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Ee2-Dh-Trt">
+                                <rect key="frame" x="0.0" y="0.0" width="380" height="240"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="Dfx-XN-837">
+                                <rect key="frame" x="24" y="17" width="210" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="rrj-5E-uLL">
+                                <rect key="frame" x="24" y="149" width="210" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="wmS-qh-0jR">
+                                <rect key="frame" x="24" y="59" width="210" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chip" translatesAutoresizingMaskIntoConstraints="NO" id="CIB-tI-lQI">
+                                <rect key="frame" x="24" y="106" width="38" height="28"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="s89-L3-cmR">
+                                <rect key="frame" x="51" y="191" width="210" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="ZTz-E5-034">
+                                <rect key="frame" x="24" y="200" width="16" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Fcd-9A-MK5" secondAttribute="height" multiplier="939:593" id="0zT-Rs-Put"/>
+                            <constraint firstItem="dGl-Xt-STF" firstAttribute="top" secondItem="Fcd-9A-MK5" secondAttribute="top" id="4Jw-cv-7RA"/>
+                            <constraint firstAttribute="trailing" secondItem="Ee2-Dh-Trt" secondAttribute="trailing" id="85P-7D-mj4"/>
+                            <constraint firstAttribute="bottom" secondItem="Ee2-Dh-Trt" secondAttribute="bottom" id="Eu8-Rr-cul"/>
+                            <constraint firstItem="CIB-tI-lQI" firstAttribute="centerY" secondItem="Fcd-9A-MK5" secondAttribute="centerY" id="KHl-tI-8jI"/>
+                            <constraint firstAttribute="bottom" secondItem="dGl-Xt-STF" secondAttribute="bottom" id="P4d-KG-YJg"/>
+                            <constraint firstItem="dGl-Xt-STF" firstAttribute="leading" secondItem="Fcd-9A-MK5" secondAttribute="leading" id="SdT-Zh-bG6"/>
+                            <constraint firstItem="Ee2-Dh-Trt" firstAttribute="leading" secondItem="Fcd-9A-MK5" secondAttribute="leading" id="elz-LL-TUX"/>
+                            <constraint firstItem="CIB-tI-lQI" firstAttribute="leading" secondItem="Fcd-9A-MK5" secondAttribute="leading" constant="24" id="kA3-9L-WgU"/>
+                            <constraint firstItem="Ee2-Dh-Trt" firstAttribute="top" secondItem="Fcd-9A-MK5" secondAttribute="top" id="kOQ-hu-9FD"/>
+                            <constraint firstAttribute="trailing" secondItem="dGl-Xt-STF" secondAttribute="trailing" id="kpQ-DA-oLq"/>
+                            <constraint firstItem="Ee2-Dh-Trt" firstAttribute="width" secondItem="dGl-Xt-STF" secondAttribute="width" id="xq9-AD-WIJ"/>
+                            <constraint firstItem="Ee2-Dh-Trt" firstAttribute="height" secondItem="dGl-Xt-STF" secondAttribute="height" id="z9B-bc-c0U"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="Fcd-9A-MK5" firstAttribute="leading" secondItem="MhC-wM-guk" secondAttribute="leading" constant="15" id="BAE-VH-Rs9"/>
+                    <constraint firstAttribute="trailing" secondItem="Fcd-9A-MK5" secondAttribute="trailing" constant="15" id="Qf9-vS-avD"/>
+                    <constraint firstItem="Fcd-9A-MK5" firstAttribute="top" secondItem="MhC-wM-guk" secondAttribute="top" constant="8" id="dhX-TR-8Vx"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="SWv-mP-hlb"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="cardImg" destination="dGl-Xt-STF" id="3IV-KA-bfn"/>
+                <outlet property="cardView" destination="Fcd-9A-MK5" id="n4m-tL-lsd"/>
+                <outlet property="nameTxtField" destination="Dfx-XN-837" id="W6f-OU-bMl"/>
+                <outlet property="numberTxtField" destination="rrj-5E-uLL" id="3G3-R3-MPK"/>
+                <outlet property="passwordTxtField" destination="s89-L3-cmR" id="w01-Fl-lQR"/>
+                <outlet property="remarkTxtField" destination="wmS-qh-0jR" id="d9W-jl-sld"/>
+            </connections>
+            <point key="canvasLocation" x="106.87022900763358" y="250"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="card_bg" width="343" height="215"/>
+        <image name="chip" width="38" height="28"/>
+        <image name="lock" width="16" height="16"/>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -17,7 +17,7 @@ class EditBankCardViewController: UITableViewController {
 
     func setupTableView(){
         self.view.backgroundColor = hexStringToUIColor(hex:"#F1F0F5")
-        self.tableView.register(UINib(nibName: "CardTableViewCell", bundle: nil), forCellReuseIdentifier: "CardTableViewCell")
+        self.tableView.register(UINib(nibName: "BankCardCell", bundle: nil), forCellReuseIdentifier: "BankCardCell")
         self.tableView.tableFooterView = UIView()
         self.tableView.separatorStyle = .none
     }
@@ -43,7 +43,7 @@ class EditBankCardViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CardTableViewCell", for: indexPath) as! CardTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BankCardCell", for: indexPath) as! BankCardCell
 
 
         return cell

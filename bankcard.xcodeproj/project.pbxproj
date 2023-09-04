@@ -45,6 +45,8 @@
 		C1EEE15C2A9F347700DEA411 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE15B2A9F347700DEA411 /* UIColor+Ex.swift */; };
 		C1EEE15E2AA074B500DEA411 /* UserDefaults+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE15D2AA074B500DEA411 /* UserDefaults+EX.swift */; };
 		C1EEE1AE2AA4BA8900DEA411 /* EditBankCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE1AD2AA4BA8900DEA411 /* EditBankCardViewController.swift */; };
+		C1EEE1B12AA5800700DEA411 /* BankCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE1AF2AA5800700DEA411 /* BankCardCell.swift */; };
+		C1EEE1B22AA5800700DEA411 /* BankCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1EEE1B02AA5800700DEA411 /* BankCardCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +90,8 @@
 		C1EEE15B2A9F347700DEA411 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
 		C1EEE15D2AA074B500DEA411 /* UserDefaults+EX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+EX.swift"; sourceTree = "<group>"; };
 		C1EEE1AD2AA4BA8900DEA411 /* EditBankCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBankCardViewController.swift; sourceTree = "<group>"; };
+		C1EEE1AF2AA5800700DEA411 /* BankCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankCardCell.swift; sourceTree = "<group>"; };
+		C1EEE1B02AA5800700DEA411 /* BankCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankCardCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +166,8 @@
 				C18217F52605CF050010F354 /* AddHeadView.swift */,
 				C18218052605DA920010F354 /* InputBankCardView.xib */,
 				C18218082605DBFF0010F354 /* InputBankCardView.swift */,
+				C1EEE1AF2AA5800700DEA411 /* BankCardCell.swift */,
+				C1EEE1B02AA5800700DEA411 /* BankCardCell.xib */,
 				C1EEE14F2A9EE2F300DEA411 /* BankInputCell.swift */,
 				C1EEE1502A9EE2F300DEA411 /* BankInputCell.xib */,
 				C1EEE1572A9F1DC100DEA411 /* SwitchCell.swift */,
@@ -304,6 +310,7 @@
 				C18217D22604E7560010F354 /* CardTableViewCell.xib in Resources */,
 				C1EEE1522A9EE2F300DEA411 /* BankInputCell.xib in Resources */,
 				C18218062605DA920010F354 /* InputBankCardView.xib in Resources */,
+				C1EEE1B22AA5800700DEA411 /* BankCardCell.xib in Resources */,
 				C1EEE15A2A9F1DC100DEA411 /* SwitchCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +343,7 @@
 				C18589382A32D21B00ABD633 /* ZJTableViewManager.swift in Sources */,
 				C1EEE15E2AA074B500DEA411 /* UserDefaults+EX.swift in Sources */,
 				C18217DE2605A08B0010F354 /* AddCell.swift in Sources */,
+				C1EEE1B12AA5800700DEA411 /* BankCardCell.swift in Sources */,
 				C18218022605DA230010F354 /* TypeBankInfoViewController.swift in Sources */,
 				C18217F02605BF9D0010F354 /* CardType.swift in Sources */,
 				C18217BA2604E1260010F354 /* SceneDelegate.swift in Sources */,
