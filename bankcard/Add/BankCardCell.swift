@@ -36,6 +36,11 @@ class BankCardCell: UITableViewCell {
         remarkTxtField.maxLength = 80
         passwordTxtField.maxLength = 20
         
+        nameTxtField.placeholder = "card name".l10n()
+        remarkTxtField.placeholder = "write something remark".l10n()
+        numberTxtField.placeholder = "card number".l10n()
+        passwordTxtField.placeholder = "password".l10n()
+
         //设置渐变
 //        let layerGradient = getLineGradintLayer(ui:cardImg,fromHexColor:colorGroup[0], toHexColor:colorGroup[1])
 //        cardImg.layer.addSublayer(layerGradient)
@@ -55,9 +60,14 @@ class BankCardCell: UITableViewCell {
         let cardNumber = numberTxtField.text ?? ""
         
         let obj =   CardPassObj(type: 0, name: cardName, cardNumber: cardNumber, password: password, remark: comment)
-        
         return obj
     }
     
+    func setupCardPassObj(obj:CardPassObj){
+        nameTxtField.text = obj.name
+        remarkTxtField.text = obj.remark
+        numberTxtField.text = obj.cardNumber
+        passwordTxtField.text = obj.password
+    }
     
 }

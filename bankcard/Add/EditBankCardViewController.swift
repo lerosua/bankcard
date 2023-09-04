@@ -8,6 +8,18 @@
 import UIKit
 
 class EditBankCardViewController: UITableViewController {
+    var cardItem: CardTableViewCellItem?
+
+      init(item: CardTableViewCellItem) {
+         cardItem = item
+          super.init(style: .plain)
+        // 在此处使用传入的text参数
+        print("Table View Controller initialized with text: \(item)")
+    }
+    required init?(coder: NSCoder) {
+      super.init(coder: coder)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,8 +57,9 @@ class EditBankCardViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BankCardCell", for: indexPath) as! BankCardCell
         cell.cardImg.backgroundColor = .blue
-
-
+        if let obj = self.cardItem?.data{
+            cell.setupCardPassObj(obj:obj)
+        }
         return cell
     }
     
@@ -77,9 +90,8 @@ class EditBankCardViewController: UITableViewController {
     @objc func finishTapped() {
       print("完成按钮被点击")
         
-        let obj =   CardPassObj(type: 1000, name: "", cardNumber: "1100", password: "xxoo", remark: "银行卡")
         //将更新数据发送出去
-        NotificationCenter.default.post(name: .updateCardNotification, object: obj)
+        NotificationCenter.default.post(name: .updateCardNotification, object: cardItem)
         self.dismiss(animated: true, completion: nil)
 
     }

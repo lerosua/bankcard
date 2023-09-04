@@ -124,7 +124,7 @@ class MainViewController: UIViewController {
         
         let item = CardTableViewCellItem(obj: obj)
         dataSection.add(item: item)
-//        item.openCard()
+        item.openCard()
         let index = dataSection.items.count
         item.zPosition = CGFloat(index)
         // cell tap event
@@ -171,7 +171,7 @@ class MainViewController: UIViewController {
 //        manager.reload()
         //保存数据
 //        UserDefaults.standard.set(classArray: self.dataList, key: DataListKey)
-        let vc = EditBankCardViewController()
+        let vc = EditBankCardViewController(item: item)
         let nav = UINavigationController(rootViewController:vc)
         present(nav,animated:true,completion:nil)
 
