@@ -32,7 +32,7 @@ class CardTableViewCellItem: ZJTableViewItem {
         isOpen = true
         cellHeight = openHeight
     }
-
+    
     func closeCard() {
         isOpen = false
         cellHeight = closeHeight
@@ -50,18 +50,20 @@ let gradientColors = [["E42C66","F55B46"],
                       ["E42C66","F55B46"]]
 
 class CardTableViewCell: UITableViewCell, ZJCellProtocol {
-
+    
     var item: CardTableViewCellItem!
     @IBOutlet var nameLabel:UILabel!
     @IBOutlet var numberLabel:UILabel!
     @IBOutlet var passLabel:UILabel!
+    @IBOutlet var hidingPassLabel:UILabel!
+    
     @IBOutlet var editBtn :UIButton!
     @IBOutlet var logoView:UIImageView!
     @IBOutlet var remarkLabel:UILabel!
     @IBOutlet var lockBtn :UIButton!
-
+    
     typealias ZJCellItemClass = CardTableViewCellItem
-
+    
     @IBOutlet var cardView: UIView!
     @IBOutlet var cardImg: UIImageView!
     override func awakeFromNib() {
@@ -87,20 +89,24 @@ class CardTableViewCell: UITableViewCell, ZJCellProtocol {
         layer.zPosition = item.zPosition
     }
     func cellWillAppear() {
-         layer.masksToBounds = false
+        layer.masksToBounds = false
         contentView.layer.masksToBounds = false
         self.nameLabel.text = item.data?.name
         self.numberLabel.text = item.data?.cardNumber
+        self.passLabel.text = item.data?.password
+        self.hidingPassLabel.text = "**** **** ****"
         
         if item.isUnlock {
-            self.passLabel.text = item.data?.password
             self.lockBtn.setImage(UIImage(named: "unlock"), for: .normal)
+            self.passLabel.alpha = 1
+            self.hidingPassLabel.isHidden = true
         }else{
-            self.passLabel.text = "**** **** ****"
             self.lockBtn.setImage(UIImage(named: "lock"), for: .normal)
+            self.passLabel.alpha = 0
+            self.hidingPassLabel.isHidden = false
         }
         
-    
+        
     }
     
     @IBAction func editButtonAction(sender :UIButton){
@@ -111,17 +117,34 @@ class CardTableViewCell: UITableViewCell, ZJCellProtocol {
     }
     @IBAction func showButtonAction(sender :UIButton){
         print("show pass")
-//        if let handler = item.lockHandler {
-//            handler(item)
-//        }
+        //        if let handler = item.lockHandler {
+        //            handler(item)
+        //        }
         item.isUnlock = !item.isUnlock
-        if item.isUnlock {
-            self.passLabel.text = item.data?.password
-            self.lockBtn.setImage(UIImage(named: "unlock"), for: .normal)
-        }else{
-            self.passLabel.text = "**** **** ****"
-            self.lockBtn.setImage(UIImage(named: "lock"), for: .normal)
+        let state = item.isUnlock
+        
+        UIView.animate(withDuration: 0.5,animations : {
+            // label1缩短
+            // label2逐渐显示
+            if state {
+                self.passLabel.alpha = 1
+            }else{
+                self.passLabel.alpha = 0
+            }
+            
+            if state {
+                self.lockBtn.setImage(UIImage(named: "unlock"), for: .normal)
+                
+            }else{
+                self.lockBtn.setImage(UIImage(named: "lock"), for: .normal)
+            }
+            
+        }) { (finished) in
+            // 动画完成后隐藏label1
+            self.hidingPassLabel.isHidden = state
         }
+        
+        
         
     }
     
