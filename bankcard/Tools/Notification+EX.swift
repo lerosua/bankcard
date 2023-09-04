@@ -8,8 +8,8 @@
 import Foundation
 
 extension Notification.Name {
-    static let addCardNotification = Notification(name: "addCardNotification")
-    static let delCardNotification = Notification(name: "delCardNotification")
-    static let updateCardNotification = Notification(name: "updateCardNotification")
+    static let addCardNotification = Notification.Name(rawValue: "addCardNotification")
+    static let delCardNotification = Notification.Name(rawValue: "delCardNotification")
+    static let updateCardNotification = Notification.Name(rawValue: "updateCardNotification")
 
 }

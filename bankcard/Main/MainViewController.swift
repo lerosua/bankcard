@@ -63,17 +63,15 @@ class MainViewController: UIViewController {
                 let addBtn = UIBarButtonItem(image: UIImage(named: "sys_add")!.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(addButtonTapped))
         let sysBtn = UIBarButtonItem(image: UIImage(named: "sys_setting")!.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(sysButtonTapped))
         // 设置间距
-        let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-        space.width = 10
+//        let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+//        space.width = 10
 
-        navigationItem.rightBarButtonItems = [space,addBtn,sysBtn]
- //        navigationItem.leftBarButtonItems = [sysBtn]
+        navigationItem.rightBarButtonItems = [addBtn,sysBtn]
 
     }
     
     @objc func addButtonTapped(){
-//        let vc = AddBankCardViewController(style: .insetGrouped)
-        let vc = EditBankCardViewController()
+        let vc = AddBankCardViewController()
         let nav = UINavigationController(rootViewController:vc)
         present(nav,animated:true,completion:nil)
     }
@@ -115,23 +113,6 @@ class MainViewController: UIViewController {
             }
         }
         
-        
-//        let obj = CardPassObj(type: BankType.Other.rawValue, name: "普通银行", cardNumber: "00481123", password: "passwordxxx", remark: "工资卡")
-//
-//        for index in 0 ..< 5 {
-//            let item = CardTableViewCellItem(obj: obj)
-//            dataSection.add(item: item)
-//            item.zPosition = CGFloat(index)
-//            // cell tap event
-//            item.setSelectionHandler { [unowned self] (selectItem: CardTableViewCellItem) in
-//                self.cellTapEvent(item: selectItem)
-//            }
-//        }
-//        if let lastItem = dataSection.items.last as? CardTableViewCellItem {
-//            // Last cell keep open and don't respond to the tap event
-//            lastItem.openCard()
-//            lastItem.selectionHandler = nil
-//        }
         manager.reload()
 
     }
