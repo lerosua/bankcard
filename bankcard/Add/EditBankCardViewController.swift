@@ -78,7 +78,7 @@ class EditBankCardViewController: UITableViewController {
         
         let obj =   CardPassObj(type: 1000, name: "", cardNumber: "1100", password: "xxoo", remark: "银行卡")
         //将更新数据发送出去
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateObj"), object: obj)
+        NotificationCenter.default.post(name: .addCardNotification, object: obj)
         self.dismiss(animated: true, completion: nil)
 
     }

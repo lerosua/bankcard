@@ -47,6 +47,7 @@
 		C1EEE1AE2AA4BA8900DEA411 /* EditBankCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE1AD2AA4BA8900DEA411 /* EditBankCardViewController.swift */; };
 		C1EEE1B12AA5800700DEA411 /* BankCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE1AF2AA5800700DEA411 /* BankCardCell.swift */; };
 		C1EEE1B22AA5800700DEA411 /* BankCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1EEE1B02AA5800700DEA411 /* BankCardCell.xib */; };
+		C1EEE1B42AA5BAFB00DEA411 /* Notification+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE1B32AA5BAFB00DEA411 /* Notification+EX.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		C1EEE1AD2AA4BA8900DEA411 /* EditBankCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBankCardViewController.swift; sourceTree = "<group>"; };
 		C1EEE1AF2AA5800700DEA411 /* BankCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankCardCell.swift; sourceTree = "<group>"; };
 		C1EEE1B02AA5800700DEA411 /* BankCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankCardCell.xib; sourceTree = "<group>"; };
+		C1EEE1B32AA5BAFB00DEA411 /* Notification+EX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+EX.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 				C1BF5F7A2A38619A00C928F1 /* UIViewController+EX.swift */,
 				C1EEE15B2A9F347700DEA411 /* UIColor+Ex.swift */,
 				C1EEE15D2AA074B500DEA411 /* UserDefaults+EX.swift */,
+				C1EEE1B32AA5BAFB00DEA411 /* Notification+EX.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				C1EEE1AE2AA4BA8900DEA411 /* EditBankCardViewController.swift in Sources */,
 				C1EEE1592A9F1DC100DEA411 /* SwitchCell.swift in Sources */,
 				C18589382A32D21B00ABD633 /* ZJTableViewManager.swift in Sources */,
+				C1EEE1B42AA5BAFB00DEA411 /* Notification+EX.swift in Sources */,
 				C1EEE15E2AA074B500DEA411 /* UserDefaults+EX.swift in Sources */,
 				C18217DE2605A08B0010F354 /* AddCell.swift in Sources */,
 				C1EEE1B12AA5800700DEA411 /* BankCardCell.swift in Sources */,

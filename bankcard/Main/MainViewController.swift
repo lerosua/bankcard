@@ -85,7 +85,9 @@ class MainViewController: UIViewController {
     }
     
     func setupNotification(){
-        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateObj(notification:)), name: NSNotification.Name(rawValue: "updateObj"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateObj(notification:)), name: .updateCardNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(handleDeleteObj(notification:)) , name: .delCardNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleAddObj(notification:)), name: .addCardNotification, object: nil)
     }
     
     func loadData(){
@@ -133,8 +135,7 @@ class MainViewController: UIViewController {
         manager.reload()
 
     }
-    
-    @objc func handleUpdateObj(notification:Notification){
+    @objc func handleAddObj(notification:Notification){
     //添加多一个银行卡数据
         let obj = notification.object as! CardPassObj
         
@@ -159,11 +160,36 @@ class MainViewController: UIViewController {
         
         //保存数据
         UserDefaults.standard.set(classArray: self.dataList, key: DataListKey)
-        
     }
-
+    @objc func handleUpdateObj(notification:Notification){
+    //应该是数据更新
+//        let obj = notification.object as! CardPassObj
+//
+//        manager.reload()
+//
+//        //保存数据
+//        UserDefaults.standard.set(classArray: self.dataList, key: DataListKey)
+    }
+    @objc func handleDeleteObj(notification:Notification){
+    //添加多一个银行卡数据
+        let item = notification.object as! CardTableViewCellItem
+        self.tableView.setEditing(true, animated: true)
+        self.dataList.remove(at: item.indexPath.item)
+        item.delete()
+        manager.reload()
+        //保存数据
+        UserDefaults.standard.set(classArray: self.dataList, key: DataListKey)
+    }
     func cellEditEvent(item: CardTableViewCellItem) {
-        print("edit action====")
+        print("edit action====with \(item.indexPath.item)")
+
+        //test delete
+//        self.tableView.setEditing(true, animated: true)
+//        self.dataList.remove(at: item.indexPath.item)
+//        item.delete()
+//        manager.reload()
+        //保存数据
+//        UserDefaults.standard.set(classArray: self.dataList, key: DataListKey)
         let vc = EditBankCardViewController()
         let nav = UINavigationController(rootViewController:vc)
         present(nav,animated:true,completion:nil)
