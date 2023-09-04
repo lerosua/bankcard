@@ -142,7 +142,7 @@ class MainViewController: UIViewController {
         
         let item = CardTableViewCellItem(obj: obj)
         dataSection.add(item: item)
-        item.openCard()
+//        item.openCard()
         let index = dataSection.items.count
         item.zPosition = CGFloat(index)
         // cell tap event

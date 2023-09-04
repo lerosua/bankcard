@@ -14,6 +14,7 @@ class CardTableViewCellItem: ZJTableViewItem {
     var isOpen = false
     var zPosition: CGFloat = 0
     var data:CardPassObj?
+    var isUnlock = false
     
     override init() {
         super.init()
@@ -36,6 +37,7 @@ class CardTableViewCellItem: ZJTableViewItem {
         isOpen = false
         cellHeight = closeHeight
     }
+    
 }
 
 var colorIndex = 0
@@ -89,8 +91,15 @@ class CardTableViewCell: UITableViewCell, ZJCellProtocol {
         contentView.layer.masksToBounds = false
         self.nameLabel.text = item.data?.name
         self.numberLabel.text = item.data?.cardNumber
-        self.passLabel.text = item.data?.password
-        self.lockBtn.setImage(UIImage(named: "unlock"), for: .selected)
+        
+        if item.isUnlock {
+            self.passLabel.text = item.data?.password
+            self.lockBtn.setImage(UIImage(named: "unlock"), for: .normal)
+        }else{
+            self.passLabel.text = "**** **** ****"
+            self.lockBtn.setImage(UIImage(named: "lock"), for: .normal)
+        }
+        
     
     }
     
@@ -102,9 +111,18 @@ class CardTableViewCell: UITableViewCell, ZJCellProtocol {
     }
     @IBAction func showButtonAction(sender :UIButton){
         print("show pass")
-        if let handler = item.lockHandler {
-            handler(item)
+//        if let handler = item.lockHandler {
+//            handler(item)
+//        }
+        item.isUnlock = !item.isUnlock
+        if item.isUnlock {
+            self.passLabel.text = item.data?.password
+            self.lockBtn.setImage(UIImage(named: "unlock"), for: .normal)
+        }else{
+            self.passLabel.text = "**** **** ****"
+            self.lockBtn.setImage(UIImage(named: "lock"), for: .normal)
         }
+        
     }
     
     

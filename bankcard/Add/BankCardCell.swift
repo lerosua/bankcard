@@ -13,9 +13,9 @@ class BankCardCell: UITableViewCell {
     @IBOutlet var cardImg: UIImageView!
     
     @IBOutlet var nameTxtField: UITextField!
-    @IBOutlet var numberTxtField: UIView!
-    @IBOutlet var remarkTxtField: UIView!
-    @IBOutlet var passwordTxtField: UIView!
+    @IBOutlet var numberTxtField: UITextField!
+    @IBOutlet var remarkTxtField: UITextField!
+    @IBOutlet var passwordTxtField: UITextField!
 
     
     override func awakeFromNib() {
@@ -41,5 +41,18 @@ class BankCardCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func getCardPassObj()->CardPassObj {
+        let cardName = nameTxtField.text ?? ""
+      let password = passwordTxtField.text ?? ""
+      let comment = remarkTxtField.text ?? ""
+      let cardNumber = numberTxtField.text ?? ""
+
+        
+        let obj =   CardPassObj(type: 0, name: cardName, cardNumber: cardNumber, password: password, remark: comment)
+        
+        return obj
+    }
+    
     
 }
