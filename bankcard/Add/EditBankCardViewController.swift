@@ -70,13 +70,15 @@ class EditBankCardViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 248
     }
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+      return 100
+    }
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-
+        let width = UIScreen.main.bounds.width
         let footerView = UIView()
         footerView.backgroundColor = .clear
-
         // 创建按钮时设置内边距
-        let width = UIScreen.main.bounds.width
+
         let button = UIButton(frame: CGRect(x: 13, y: 13, width:  width - 26, height: 50))
         button.setTitle("Done".l10n(), for: .normal)
         button.setTitleColor(.white, for: .normal)

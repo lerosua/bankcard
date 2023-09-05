@@ -33,7 +33,7 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit_gray" translatesAutoresizingMaskIntoConstraints="NO" id="wmO-zl-2TP">
                                         <rect key="frame" x="15" y="12" width="12" height="12"/>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="1111" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="Dfx-XN-837">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="1111" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="Dfx-XN-837">
                                         <rect key="frame" x="40" y="1" width="295" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -60,7 +60,7 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit_gray" translatesAutoresizingMaskIntoConstraints="NO" id="ipW-fb-NGq">
                                         <rect key="frame" x="15" y="12" width="12" height="12"/>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="1111" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="6dJ-Eh-G8g">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="1111" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="6dJ-Eh-G8g">
                                         <rect key="frame" x="40" y="1" width="290" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -96,7 +96,7 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock_gray" translatesAutoresizingMaskIntoConstraints="NO" id="H1w-69-En6">
                                         <rect key="frame" x="15" y="10" width="16" height="16"/>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="1111" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="iFc-8G-jk3">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="1111" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="iFc-8G-jk3">
                                         <rect key="frame" x="40" y="1" width="295" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -120,7 +120,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gi8-zE-wid">
                                 <rect key="frame" x="238" y="147" width="129" height="36"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="111" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="ZjH-Rf-pn6">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="111" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="ZjH-Rf-pn6">
                                         <rect key="frame" x="7" y="1" width="114" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

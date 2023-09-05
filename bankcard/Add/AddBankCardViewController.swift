@@ -51,11 +51,14 @@ class AddBankCardViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 248
     }
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+      return 100
+    }
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
 
+        let width = UIScreen.main.bounds.width
         let footerView = UIView()
         footerView.backgroundColor = .clear
-        let width = UIScreen.main.bounds.width
 
         let label = UILabel(frame: CGRect(x: 13, y: 13, width:  width - 26, height: 40))
         label.numberOfLines = 2

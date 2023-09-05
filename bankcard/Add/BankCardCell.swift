@@ -43,6 +43,8 @@ class BankCardCell: UITableViewCell {
         numberTxtField.placeholder = "last 4 number".l10n()
         passwordTxtField.placeholder = "password".l10n()
         
+        self.selectionStyle = .none
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
