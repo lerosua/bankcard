@@ -30,6 +30,8 @@ class BankCardCell: UITableViewCell {
         cardImg.layer.cornerRadius = radius
         cardImg.clipsToBounds = true
         
+        cardView.backgroundColor = UIColor.hexColor(hex: "#B2BFCA")
+        
         //设置最大长度
         nameTxtField.maxLength = 20
         numberTxtField.maxLength = 30
@@ -40,10 +42,6 @@ class BankCardCell: UITableViewCell {
         remarkTxtField.placeholder = "write something remark".l10n()
         numberTxtField.placeholder = "card number".l10n()
         passwordTxtField.placeholder = "password".l10n()
-
-        //设置渐变
-//        let layerGradient = getLineGradintLayer(ui:cardImg,fromHexColor:colorGroup[0], toHexColor:colorGroup[1])
-//        cardImg.layer.addSublayer(layerGradient)
         
     }
 

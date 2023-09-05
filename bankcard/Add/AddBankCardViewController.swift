@@ -44,7 +44,6 @@ class AddBankCardViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BankCardCell", for: indexPath) as! BankCardCell
-        cell.cardImg.backgroundColor = .green
 
         return cell
     }

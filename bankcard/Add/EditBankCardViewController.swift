@@ -56,7 +56,6 @@ class EditBankCardViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BankCardCell", for: indexPath) as! BankCardCell
-        cell.cardImg.backgroundColor = .blue
         if let obj = self.cardItem?.data{
             cell.setupCardPassObj(obj:obj)
         }
