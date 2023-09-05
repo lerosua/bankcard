@@ -90,12 +90,13 @@ class MainViewController: UIViewController {
     
     func loadData(){
         
-        if let rawList = UserDefaults.standard.data(forKey: DataListKey) {
-            guard let array = try? JSONDecoder().decode([CardPassObj].self, from: rawList) else { return }
-            
-            self.dataList = array
+//        if let rawList = UserDefaults.standard.data(forKey: DataListKey) {
+//            guard let array = try? JSONDecoder().decode([CardPassObj].self, from: rawList) else { return }
+//        if let array = CardPassObj.GetCardPassList(){
+
+            self.dataList = CardPassObj.GetCardPassList()
             var index = 0
-            for obj in array {
+        for obj in self.dataList {
                 let item = CardTableViewCellItem(obj: obj)
                 dataSection.add(item: item)
                 item.zPosition = CGFloat(index)
@@ -111,7 +112,7 @@ class MainViewController: UIViewController {
                 }
                 index += 1
             }
-        }
+//        }
         
         manager.reload()
 
@@ -140,7 +141,9 @@ class MainViewController: UIViewController {
         manager.reload()
         
         //保存数据
-        UserDefaults.standard.set(classArray: self.dataList, key: DataListKey)
+//        UserDefaults.standard.set(classArray: self.dataList, key: DataListKey)
+        CardPassObj.SaveCardPassList(dataList: self.dataList)
+
     }
     @objc func handleUpdateObj(notification:Notification){
     //应该是数据更新
@@ -153,7 +156,8 @@ class MainViewController: UIViewController {
             let obj = self.dataList[item.indexPath.item]
             obj.copywith(item: data)
             //保存数据
-            UserDefaults.standard.set(classArray: self.dataList, key: DataListKey)
+//            UserDefaults.standard.set(classArray: self.dataList, key: DataListKey)
+            CardPassObj.SaveCardPassList(dataList: self.dataList)
             print("update data with \(data)")
         }
     }
@@ -165,7 +169,8 @@ class MainViewController: UIViewController {
         item.delete()
         manager.reload()
         //保存数据
-        UserDefaults.standard.set(classArray: self.dataList, key: DataListKey)
+//        UserDefaults.standard.set(classArray: self.dataList, key: DataListKey)
+        CardPassObj.SaveCardPassList(dataList: self.dataList)
     }
     func cellEditEvent(item: CardTableViewCellItem) {
         print("edit action====with \(item.indexPath.item)")

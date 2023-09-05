@@ -40,7 +40,7 @@ class BankCardCell: UITableViewCell {
         
         nameTxtField.placeholder = "card name".l10n()
         remarkTxtField.placeholder = "write something remark".l10n()
-        numberTxtField.placeholder = "card number".l10n()
+        numberTxtField.placeholder = "last four number".l10n()
         passwordTxtField.placeholder = "password".l10n()
         
     }

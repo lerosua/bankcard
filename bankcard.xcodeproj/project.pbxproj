@@ -46,6 +46,7 @@
 		C1EEE1B42AA5BAFB00DEA411 /* Notification+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE1B32AA5BAFB00DEA411 /* Notification+EX.swift */; };
 		C1EEE1B62AA5D49B00DEA411 /* UITextField+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE1B52AA5D49B00DEA411 /* UITextField+EX.swift */; };
 		C1EEE1B82AA5DD4C00DEA411 /* String+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE1B72AA5DD4C00DEA411 /* String+EX.swift */; };
+		C1EEE1CD2AA71C4E00DEA411 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C1EEE1CC2AA71C4E00DEA411 /* KeychainSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1EEE1CD2AA71C4E00DEA411 /* KeychainSwift in Frameworks */,
 				C1D04CA42A32CC5D00E66C7C /* L10n-swift in Frameworks */,
 				C1D04CA12A32CC3200E66C7C /* EmptyDataSet-Swift in Frameworks */,
 			);
@@ -250,6 +252,7 @@
 			packageProductDependencies = (
 				C1D04CA02A32CC3200E66C7C /* EmptyDataSet-Swift */,
 				C1D04CA32A32CC5D00E66C7C /* L10n-swift */,
+				C1EEE1CC2AA71C4E00DEA411 /* KeychainSwift */,
 			);
 			productName = bankcard;
 			productReference = C18217B42604E1260010F354 /* bankcard.app */;
@@ -283,6 +286,7 @@
 			packageReferences = (
 				C1D04C9F2A32CC3200E66C7C /* XCRemoteSwiftPackageReference "EmptyDataSet-Swift" */,
 				C1D04CA22A32CC5D00E66C7C /* XCRemoteSwiftPackageReference "L10n-swift" */,
+				C1EEE1CB2AA71C4E00DEA411 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = C18217B52604E1260010F354 /* Products */;
 			projectDirPath = "";
@@ -504,14 +508,17 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1000;
 				DEVELOPMENT_TEAM = 97CWPB3835;
 				INFOPLIST_FILE = bankcard/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Band Card Record";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = oneteam.bankcard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -526,14 +533,17 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1000;
 				DEVELOPMENT_TEAM = 97CWPB3835;
 				INFOPLIST_FILE = bankcard/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Band Card Record";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = oneteam.bankcard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -581,6 +591,14 @@
 				minimumVersion = 5.10.0;
 			};
 		};
+		C1EEE1CB2AA71C4E00DEA411 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 20.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -593,6 +611,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C1D04CA22A32CC5D00E66C7C /* XCRemoteSwiftPackageReference "L10n-swift" */;
 			productName = "L10n-swift";
+		};
+		C1EEE1CC2AA71C4E00DEA411 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1EEE1CB2AA71C4E00DEA411 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

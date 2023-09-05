@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import KeychainSwift
 
 extension Encodable {
     var convertToString: String? {
@@ -19,14 +20,14 @@ extension Encodable {
         }
     }
 }
-
+let CardListKey :String = "BankCardListKey"
 class CardPassObj:Codable {
     var type:Int
     var name:String
     var cardNumber:String
     var password:String
     var remark:String
- 
+    
     
     init(type:Int,name:String,cardNumber:String,password:String,remark:String){
         self.type = type
@@ -43,5 +44,27 @@ class CardPassObj:Codable {
         self.password = item.password
         self.type = item.type
     }
+    
+    
+    
+    //保存进keychain里
+   static func SaveCardPassList(dataList:[CardPassObj]){
+        let keychain = KeychainSwift()
+        do{
+            let data = try JSONEncoder().encode(dataList)
+            keychain.set(data,forKey: CardListKey)
+        }catch{
+            print(error)
+        }
+    }
+    static func GetCardPassList()->[CardPassObj]{
+        let keychain = KeychainSwift()
+        guard let data = keychain.getData(CardListKey) else {return []}
+        do {
+            return try JSONDecoder().decode([CardPassObj].self, from: data)
+        }catch{
+            print(error)
+        }
+        return []
+    }
 }
-

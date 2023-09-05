@@ -90,6 +90,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "BankCard"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
