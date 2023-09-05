@@ -34,13 +34,13 @@ class BankCardCell: UITableViewCell {
         
         //设置最大长度
         nameTxtField.maxLength = 20
-        numberTxtField.maxLength = 30
+        numberTxtField.maxLength = 4
         remarkTxtField.maxLength = 80
         passwordTxtField.maxLength = 20
         
-        nameTxtField.placeholder = "card name".l10n()
-        remarkTxtField.placeholder = "write something remark".l10n()
-        numberTxtField.placeholder = "last four number".l10n()
+        nameTxtField.placeholder = "Card name".l10n()
+        remarkTxtField.placeholder = "Remark".l10n()
+        numberTxtField.placeholder = "last 4 number".l10n()
         passwordTxtField.placeholder = "password".l10n()
         
     }

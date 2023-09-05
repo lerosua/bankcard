@@ -9,7 +9,7 @@ import Foundation
 
 extension String{
     func bankNumberString() -> String {
-        let str = self
+        let str = "110011001100" + self
         var result = ""
         for (index, character) in str.enumerated() {
             result.append(character)

@@ -28,17 +28,21 @@ class EditBankCardViewController: UITableViewController {
     }
 
     func setupTableView(){
-        self.view.backgroundColor = hexStringToUIColor(hex:"#F1F0F5")
+        self.view.backgroundColor =  UIColor.hexColor(hex:"#F1F0F5")
         self.tableView.register(UINib(nibName: "BankCardCell", bundle: nil), forCellReuseIdentifier: "BankCardCell")
         self.tableView.tableFooterView = UIView()
         self.tableView.separatorStyle = .none
+        
     }
     
     func setupNavbar() {
         self.title = "Edit Bank Card".l10n()
         let button = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(leftButtonItemClicked(sender:)))
-        button.tintColor = .red
         self.navigationItem.leftBarButtonItem = button
+        
+        let delButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.trash, target: self, action: #selector(rightButtonItemClicked(sender:)))
+        delButton.tintColor = .red
+        self.navigationItem.rightBarButtonItem = delButton
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -68,21 +72,21 @@ class EditBankCardViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
 
-      let footerView = UIView()
-      footerView.backgroundColor = .white
+        let footerView = UIView()
+        footerView.backgroundColor = .clear
 
-      let button = UIButton(type: .system)
-      button.setTitle("Done".l10n(), for: .normal)
-      button.setTitleColor(.systemPink, for: .normal)
-      button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-      button.addTarget(self, action: #selector(finishTapped), for: .touchUpInside)
-
-      footerView.addSubview(button)
-      button.translatesAutoresizingMaskIntoConstraints = false
-      button.centerXAnchor.constraint(equalTo: footerView.centerXAnchor).isActive = true
-      button.centerYAnchor.constraint(equalTo: footerView.centerYAnchor).isActive = true
-
-      return footerView
+        // 创建按钮时设置内边距
+        let width = UIScreen.main.bounds.width
+        let button = UIButton(frame: CGRect(x: 13, y: 13, width:  width - 26, height: 50))
+        button.setTitle("Done".l10n(), for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        button.addTarget(self, action: #selector(finishTapped), for: .touchUpInside)
+        button.backgroundColor = .systemBlue
+        // 设置圆角
+        button.layer.cornerRadius = 8
+        footerView.addSubview(button)
+        return footerView
     }
 
     // 完成按钮点击回调
@@ -111,7 +115,10 @@ class EditBankCardViewController: UITableViewController {
         
         self.dismiss(animated: true, completion: nil)
     }
-    
+    @objc func rightButtonItemClicked(sender:UIBarButtonItem){
+        NotificationCenter.default.post(name: .delCardNotification, object: cardItem)
+        self.dismiss(animated: true, completion: nil)
+    }
     
     func loadData() {
         self.tableView.reloadData()

@@ -16,7 +16,7 @@ class AddBankCardViewController: UITableViewController {
     }
 
     func setupTableView(){
-        self.view.backgroundColor = hexStringToUIColor(hex:"#F1F0F5")
+        self.view.backgroundColor = UIColor.hexColor(hex:"#F1F0F5")
         self.tableView.register(UINib(nibName: "BankCardCell", bundle: nil), forCellReuseIdentifier: "BankCardCell")
         self.tableView.tableFooterView = UIView()
         self.tableView.separatorStyle = .none
@@ -25,7 +25,6 @@ class AddBankCardViewController: UITableViewController {
     func setupNavbar() {
         self.title = "Add Card".l10n()
         let button = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(leftButtonItemClicked(sender:)))
-        button.tintColor = .red
         self.navigationItem.leftBarButtonItem = button
     }
     
@@ -54,21 +53,28 @@ class AddBankCardViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
 
-      let footerView = UIView()
-      footerView.backgroundColor = .white
+        let footerView = UIView()
+        footerView.backgroundColor = .clear
+        let width = UIScreen.main.bounds.width
 
-      let button = UIButton(type: .system)
-      button.setTitle("Done".l10n(), for: .normal)
-      button.setTitleColor(.systemPink, for: .normal)
-      button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-      button.addTarget(self, action: #selector(finishTapped), for: .touchUpInside)
-
-      footerView.addSubview(button)
-      button.translatesAutoresizingMaskIntoConstraints = false
-      button.centerXAnchor.constraint(equalTo: footerView.centerXAnchor).isActive = true
-      button.centerYAnchor.constraint(equalTo: footerView.centerYAnchor).isActive = true
-
-      return footerView
+        let label = UILabel(frame: CGRect(x: 13, y: 13, width:  width - 26, height: 40))
+        label.numberOfLines = 2
+        label.text = "**For account security, only the last 4 digits of the card number should be enterd**".l10n()
+        label.textColor = UIColor.red
+        label.font = UIFont.systemFont(ofSize: 12)
+        
+        // 创建按钮时设置内边距
+        let button = UIButton(frame: CGRect(x: 13, y: 84, width:  width - 26, height: 50))
+        button.setTitle("Done".l10n(), for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        button.addTarget(self, action: #selector(finishTapped), for: .touchUpInside)
+        button.backgroundColor = .systemBlue
+        // 设置圆角
+        button.layer.cornerRadius = 8
+        footerView.addSubview(label)
+        footerView.addSubview(button)
+        return footerView
     }
 
     // 完成按钮点击回调
