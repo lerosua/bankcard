@@ -8,12 +8,19 @@
 import UIKit
 import MessageUI
 
+let kSettingKey = "settings_key"
+let kUseLockKey = "using_lock_key"
+
 class SettingViewController: UITableViewController, MFMailComposeViewControllerDelegate {
 
+    // 配置信息字典
+    var settings = [String: Any]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupTableView()
-        self.setupNavbar()
+        loadSetting()
+        setupTableView()
+        setupNavbar()
     }
 
     func setupTableView(){
@@ -32,8 +39,19 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
         self.navigationItem.rightBarButtonItem = button
     }
 
+    func loadSetting(){
+        // 读取配置信息
+        if let savedSettings = UserDefaults.standard.object(forKey: kSettingKey) as? [String: Any] {
+          settings = savedSettings
+        }
+    }
+    func saveSetting(){
+        // 保存到UserDefaults
+        UserDefaults.standard.set(settings, forKey: kSettingKey)
+        UserDefaults.standard.synchronize()
+    }
+    
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 3
@@ -62,6 +80,15 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
          if indexPath.section == 0 {
              let  cell = tableView.dequeueReusableCell(withIdentifier: "SwitchCell", for: indexPath) as! SwitchCell
             cell.titleLabel.text = "Lock the password".l10n()
+             if let lock = settings[kUseLockKey] as? Bool {
+                 cell.switchBtn.isOn = lock
+             }
+             // 绑定 switchChanged 事件
+             cell.switchChanged = { [weak self] changedSwitch in
+               print("Switch changed: \(changedSwitch.isOn)")
+                 self?.updateSwitchState(changeSwitch:changedSwitch)
+             }
+             
              return cell
 
          }else if indexPath.section == 1 {
@@ -134,5 +161,10 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         self.dismiss(animated: true)
+    }
+    
+    func updateSwitchState(changeSwitch:UISwitch){
+        settings[kUseLockKey] = changeSwitch.isOn
+        saveSetting()
     }
 }

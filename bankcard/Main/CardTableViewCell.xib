@@ -72,16 +72,16 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="qwrtyyu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wU9-wm-lN5">
-                                <rect key="frame" x="48" y="204" width="200" height="14"/>
+                                <rect key="frame" x="52" y="204" width="0.0" height="14"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="fnb-v9-4PN"/>
+                                    <constraint firstAttribute="width" id="fnb-v9-4PN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" systemColor="systemBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="**** **** ****" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oND-t3-iRT">
-                                <rect key="frame" x="48" y="205" width="100" height="19.5"/>
+                                <rect key="frame" x="48" y="205" width="100" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Yr2-cb-7H9"/>
                                 </constraints>
@@ -106,7 +106,6 @@
                             <constraint firstItem="S3q-Mx-LBM" firstAttribute="leading" secondItem="ly5-kh-453" secondAttribute="leading" constant="24" id="0KJ-Bz-vVm"/>
                             <constraint firstItem="die-fv-NAb" firstAttribute="top" secondItem="ly5-kh-453" secondAttribute="top" id="0Rj-pA-Qfq"/>
                             <constraint firstAttribute="bottom" secondItem="8kU-66-PdA" secondAttribute="bottom" constant="14" id="3ZG-la-zo1"/>
-                            <constraint firstItem="oND-t3-iRT" firstAttribute="leading" secondItem="wU9-wm-lN5" secondAttribute="leading" id="6mj-HQ-WVW"/>
                             <constraint firstItem="die-fv-NAb" firstAttribute="leading" secondItem="ly5-kh-453" secondAttribute="leading" id="AoG-33-hLY"/>
                             <constraint firstItem="ZKx-Xv-keV" firstAttribute="width" secondItem="die-fv-NAb" secondAttribute="width" id="BZc-cb-y1l"/>
                             <constraint firstItem="x3P-DU-alJ" firstAttribute="leading" secondItem="x4p-DF-hE2" secondAttribute="leading" id="CFe-wI-erU"/>
@@ -118,12 +117,13 @@
                             <constraint firstAttribute="bottom" secondItem="ZKx-Xv-keV" secondAttribute="bottom" id="Ikz-2P-MtQ"/>
                             <constraint firstItem="x4p-DF-hE2" firstAttribute="top" secondItem="ly5-kh-453" secondAttribute="top" constant="24" id="Jdt-pg-bpM"/>
                             <constraint firstAttribute="bottom" secondItem="die-fv-NAb" secondAttribute="bottom" id="SnJ-as-oGy"/>
+                            <constraint firstItem="oND-t3-iRT" firstAttribute="top" secondItem="Hfc-1C-BSB" secondAttribute="bottom" constant="22" id="TMy-lH-CKS"/>
                             <constraint firstAttribute="trailing" secondItem="UaO-nJ-wiJ" secondAttribute="trailing" constant="10" id="U46-c8-25q"/>
                             <constraint firstItem="x3P-DU-alJ" firstAttribute="top" secondItem="x4p-DF-hE2" secondAttribute="bottom" constant="10" id="WQc-Gq-cXU"/>
                             <constraint firstItem="Hfc-1C-BSB" firstAttribute="leading" secondItem="S3q-Mx-LBM" secondAttribute="leading" id="ZoT-uU-9CK"/>
                             <constraint firstAttribute="trailing" secondItem="die-fv-NAb" secondAttribute="trailing" id="aFg-3M-JnQ"/>
                             <constraint firstItem="ZKx-Xv-keV" firstAttribute="height" secondItem="die-fv-NAb" secondAttribute="height" id="dMZ-lc-y7n"/>
-                            <constraint firstItem="wU9-wm-lN5" firstAttribute="leading" secondItem="8kU-66-PdA" secondAttribute="trailing" constant="-4" id="ea4-Ts-OIZ"/>
+                            <constraint firstItem="wU9-wm-lN5" firstAttribute="leading" secondItem="8kU-66-PdA" secondAttribute="trailing" id="ea4-Ts-OIZ"/>
                             <constraint firstItem="x3P-DU-alJ" firstAttribute="width" secondItem="x4p-DF-hE2" secondAttribute="width" id="fdv-9c-4Jb"/>
                             <constraint firstAttribute="trailing" secondItem="ZKx-Xv-keV" secondAttribute="trailing" id="mTf-uX-FEe"/>
                             <constraint firstItem="x4p-DF-hE2" firstAttribute="leading" secondItem="S3q-Mx-LBM" secondAttribute="leading" id="oNe-Ib-RHQ"/>
@@ -131,6 +131,7 @@
                             <constraint firstItem="8kU-66-PdA" firstAttribute="top" secondItem="Hfc-1C-BSB" secondAttribute="bottom" constant="13" id="sDp-QV-G9b"/>
                             <constraint firstItem="UaO-nJ-wiJ" firstAttribute="centerY" secondItem="8kU-66-PdA" secondAttribute="centerY" id="w5C-0E-uiZ"/>
                             <constraint firstItem="8kU-66-PdA" firstAttribute="leading" secondItem="ly5-kh-453" secondAttribute="leading" constant="12" id="xtS-mR-8Iy"/>
+                            <constraint firstItem="oND-t3-iRT" firstAttribute="trailing" secondItem="ly5-kh-453" secondAttribute="leading" constant="148" id="yyh-ym-igs"/>
                             <constraint firstAttribute="width" secondItem="ly5-kh-453" secondAttribute="height" multiplier="939:593" id="zJa-8s-PKP"/>
                         </constraints>
                     </view>
@@ -149,11 +150,13 @@
                 <outlet property="cardView" destination="ly5-kh-453" id="1gl-w3-YXD"/>
                 <outlet property="editBtn" destination="UaO-nJ-wiJ" id="dhl-5y-hcd"/>
                 <outlet property="hidingPassLabel" destination="oND-t3-iRT" id="I9o-gw-NN3"/>
+                <outlet property="labelWidthConstraint" destination="Yr2-cb-7H9" id="Hnk-Hf-Vu7"/>
                 <outlet property="lockBtn" destination="8kU-66-PdA" id="Qty-ff-3d6"/>
                 <outlet property="logoView" destination="Pzt-rP-wGs" id="E4a-8K-euU"/>
                 <outlet property="nameLabel" destination="x4p-DF-hE2" id="E69-Yg-EhS"/>
                 <outlet property="numberLabel" destination="Hfc-1C-BSB" id="aRJ-pn-6x5"/>
                 <outlet property="passLabel" destination="wU9-wm-lN5" id="SJI-CG-XVw"/>
+                <outlet property="passLabelWidthConstraint" destination="fnb-v9-4PN" id="urN-T5-b9E"/>
                 <outlet property="remarkLabel" destination="x3P-DU-alJ" id="uSq-t0-rCb"/>
             </connections>
             <point key="canvasLocation" x="107.24637681159422" y="250.44642857142856"/>

@@ -63,7 +63,9 @@ class CardTableViewCell: UITableViewCell, ZJCellProtocol {
     @IBOutlet var lockBtn :UIButton!
     
     typealias ZJCellItemClass = CardTableViewCellItem
-    
+    @IBOutlet var labelWidthConstraint: NSLayoutConstraint!
+    @IBOutlet var passLabelWidthConstraint: NSLayoutConstraint!
+
     @IBOutlet var cardView: UIView!
     @IBOutlet var cardImg: UIImageView!
     override func awakeFromNib() {
@@ -98,12 +100,8 @@ class CardTableViewCell: UITableViewCell, ZJCellProtocol {
 
         if item.isUnlock {
             self.lockBtn.setImage(UIImage(named: "unlock"), for: .normal)
-            self.passLabel.alpha = 1
-            self.hidingPassLabel.isHidden = true
         }else{
             self.lockBtn.setImage(UIImage(named: "lock"), for: .normal)
-            self.passLabel.alpha = 0
-            self.hidingPassLabel.isHidden = false
         }
         //处理号码
         // 原始文字
@@ -131,36 +129,44 @@ class CardTableViewCell: UITableViewCell, ZJCellProtocol {
     }
     @IBAction func showButtonAction(sender :UIButton){
         print("show pass")
-        //        if let handler = item.lockHandler {
-        //            handler(item)
-        //        }
+                if let handler = item.lockHandler {
+                    handler(item)
+                }
+
+        
         item.isUnlock = !item.isUnlock
         let state = item.isUnlock
-        
-        UIView.animate(withDuration: 0.5,animations : {
-            // label1缩短
-            // label2逐渐显示
-            if state {
-                self.passLabel.alpha = 1
-            }else{
-                self.passLabel.alpha = 0
-            }
-            
-            if state {
-                self.lockBtn.setImage(UIImage(named: "unlock"), for: .normal)
-                
-            }else{
-                self.lockBtn.setImage(UIImage(named: "lock"), for: .normal)
-            }
-            
-        }) { (finished) in
-            // 动画完成后隐藏label1
-            self.hidingPassLabel.isHidden = state
+        if state {
+            shrinkAnimation()
+        }else{
+            expandAnimation()
         }
-        
-        
         
     }
     
+    func shrinkAnimation() {
+          UIView.animate(withDuration: 1.0, animations: {
+              self.labelWidthConstraint.constant = 0
+              self.passLabelWidthConstraint.constant = 100
+              self.lockBtn.setImage(UIImage(named: "unlock"), for: .normal)
+              self.layoutIfNeeded()
+          }) { (completed) in
+              if completed {
+              }
+          }
+      }
+      
+      func expandAnimation() {
+          UIView.animate(withDuration: 1.0, animations: {
+              self.labelWidthConstraint.constant = 100
+              self.passLabelWidthConstraint.constant = 0
+              self.lockBtn.setImage(UIImage(named: "lock"), for: .normal)
+              self.layoutIfNeeded()
+          }) { (completed) in
+              if completed {
+
+              }
+          }
+      }
     
 }

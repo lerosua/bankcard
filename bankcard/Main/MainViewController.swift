@@ -8,6 +8,7 @@
 import UIKit
 import L10n_swift
 import EmptyDataSet_Swift
+import LocalAuthentication
 
 let DataListKey :String = "bankListKey"
 
@@ -20,6 +21,9 @@ class MainViewController: UIViewController {
     var lastItem: CardTableViewCellItem? //最后一个需要永不关闭
 
     var dataList = [CardPassObj]()
+    lazy var authContext:LAContext = {
+        return LAContext()
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -189,7 +193,14 @@ class MainViewController: UIViewController {
     }
     func cellunLockEvent(item: CardTableViewCellItem) {
         print("show action====")
-
+//         if !item.isUnlock{
+//            //先走验证程序
+//             authContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "验证身份") { success, error in
+//               // 根据认证结果处理
+//                 print("get result \(success) , and error : \(String(describing: error))")
+//             }
+//             
+//        }
     }
 }
 

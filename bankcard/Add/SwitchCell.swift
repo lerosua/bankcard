@@ -23,5 +23,10 @@ class SwitchCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+    // 在CustomCell中
+    var switchChanged: ((_ switch: UISwitch) -> Void)?
+
+    @IBAction func switchValueChanged(_ sender: UISwitch) {
+      switchChanged?(sender)
+    }
 }
