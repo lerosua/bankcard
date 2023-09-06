@@ -20,13 +20,14 @@ extension Encodable {
         }
     }
 }
-let CardListKey :String = "BankCardListKey"
+let CardListKey :String = "BankCardListKey_V1"
 class CardPassObj:Codable {
     var type:Int
     var name:String
     var cardNumber:String
     var password:String
     var remark:String
+    var icon:String = ""
     
     
     init(type:Int,name:String,cardNumber:String,password:String,remark:String){
@@ -43,6 +44,7 @@ class CardPassObj:Codable {
         self.remark = item.remark
         self.password = item.password
         self.type = item.type
+        self.icon = item.icon
     }
     
     

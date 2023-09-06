@@ -52,7 +52,7 @@ class AddBankCardViewController: UITableViewController {
         return 248
     }
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-      return 100
+      return 180
     }
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
 

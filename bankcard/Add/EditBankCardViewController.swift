@@ -71,7 +71,7 @@ class EditBankCardViewController: UITableViewController {
         return 248
     }
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-      return 100
+      return 120
     }
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let width = UIScreen.main.bounds.width

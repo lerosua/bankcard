@@ -17,6 +17,7 @@ class MainViewController: UIViewController {
     var manager: ZJTableViewManager!
     var dataSection: ZJTableViewSection!
     var lastOpenItem: CardTableViewCellItem?
+    var lastItem: CardTableViewCellItem? //最后一个需要永不关闭
 
     var dataList = [CardPassObj]()
     
@@ -29,6 +30,16 @@ class MainViewController: UIViewController {
     }
 
     func cellTapEvent(item: CardTableViewCellItem) {
+        if item == lastItem {
+            lastOpenItem?.closeCard()
+            lastItem?.openCard()
+            manager.updateHeight()
+            //解决动画闪烁问题
+            tableView.fixCellBounds()
+            print("最后一个点击事件")
+            return
+        }
+        
         item.isOpen = !item.isOpen
         if item.isOpen {
             item.openCard()
@@ -62,10 +73,6 @@ class MainViewController: UIViewController {
         title = "Bank Card".l10n()
                 let addBtn = UIBarButtonItem(image: UIImage(named: "sys_add")!.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(addButtonTapped))
         let sysBtn = UIBarButtonItem(image: UIImage(named: "sys_setting")!.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(sysButtonTapped))
-        // 设置间距
-//        let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-//        space.width = 10
-
         navigationItem.rightBarButtonItems = [addBtn,sysBtn]
 
     }
@@ -89,31 +96,28 @@ class MainViewController: UIViewController {
     }
     
     func loadData(){
-        
-//        if let rawList = UserDefaults.standard.data(forKey: DataListKey) {
-//            guard let array = try? JSONDecoder().decode([CardPassObj].self, from: rawList) else { return }
-//        if let array = CardPassObj.GetCardPassList(){
-
-            self.dataList = CardPassObj.GetCardPassList()
-            var index = 0
+    
+        self.dataList = CardPassObj.GetCardPassList()
+        var index = 0
         for obj in self.dataList {
-                let item = CardTableViewCellItem(obj: obj)
-                dataSection.add(item: item)
-                item.zPosition = CGFloat(index)
-                // cell tap event
-                item.setSelectionHandler { [unowned self] (selectItem: CardTableViewCellItem) in
-                    self.cellTapEvent(item: selectItem)
-                }
-                item.setEditHandler{ [unowned self] (selectItem: CardTableViewCellItem) in
-                    self.cellEditEvent(item: selectItem)
-                }
-                item.setLockHandler{ [unowned self] (selectItem: CardTableViewCellItem) in
-                    self.cellunLockEvent(item: selectItem)
-                }
-                index += 1
+            let item = CardTableViewCellItem(obj: obj)
+            dataSection.add(item: item)
+            item.zPosition = CGFloat(index)
+            // cell tap event
+            item.setSelectionHandler { [unowned self] (selectItem: CardTableViewCellItem) in
+                self.cellTapEvent(item: selectItem)
             }
-//        }
-        
+            item.setEditHandler{ [unowned self] (selectItem: CardTableViewCellItem) in
+                self.cellEditEvent(item: selectItem)
+            }
+            item.setLockHandler{ [unowned self] (selectItem: CardTableViewCellItem) in
+                self.cellunLockEvent(item: selectItem)
+            }
+            index += 1
+            lastItem = item
+        }
+        //保持最后一个的展开
+        lastItem?.openCard()
         manager.reload()
 
     }
@@ -138,10 +142,11 @@ class MainViewController: UIViewController {
         item.setLockHandler{ [unowned self] (selectItem: CardTableViewCellItem) in
             self.cellunLockEvent(item: selectItem)
         }
+        lastItem?.closeCard()
+        lastItem = item
         manager.reload()
         
         //保存数据
-//        UserDefaults.standard.set(classArray: self.dataList, key: DataListKey)
         CardPassObj.SaveCardPassList(dataList: self.dataList)
 
     }
@@ -156,7 +161,6 @@ class MainViewController: UIViewController {
             let obj = self.dataList[item.indexPath.item]
             obj.copywith(item: data)
             //保存数据
-//            UserDefaults.standard.set(classArray: self.dataList, key: DataListKey)
             CardPassObj.SaveCardPassList(dataList: self.dataList)
             print("update data with \(data)")
         }
@@ -164,12 +168,16 @@ class MainViewController: UIViewController {
     @objc func handleDeleteObj(notification:Notification){
     //删除一个银行卡数据
         let item = notification.object as! CardTableViewCellItem
-//        self.tableView.setEditing(true, animated: true)
         self.dataList.remove(at: item.indexPath.item)
         item.delete()
+        
+        //重置最后一个
+//        if dataSection.items.count > 0 {
+//            lastItem = dataSection.items.last
+//            lastItem?.openCard()
+//        }
         manager.reload()
         //保存数据
-//        UserDefaults.standard.set(classArray: self.dataList, key: DataListKey)
         CardPassObj.SaveCardPassList(dataList: self.dataList)
     }
     func cellEditEvent(item: CardTableViewCellItem) {
