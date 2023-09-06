@@ -79,7 +79,7 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          if indexPath.section == 0 {
              let  cell = tableView.dequeueReusableCell(withIdentifier: "SwitchCell", for: indexPath) as! SwitchCell
-            cell.titleLabel.text = "Lock the password".l10n()
+            cell.titleLabel.text = "Use System Authentication".l10n()
              if let lock = settings[kUseLockKey] as? Bool {
                  cell.switchBtn.isOn = lock
              }

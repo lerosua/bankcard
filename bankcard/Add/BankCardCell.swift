@@ -16,6 +16,8 @@ class BankCardCell: UITableViewCell {
     @IBOutlet var numberTxtField: UITextField!
     @IBOutlet var remarkTxtField: UITextField!
     @IBOutlet var passwordTxtField: UITextField!
+    // 在cell类中定义textField数组
+    var textFields = [UITextField]()
 
     
     override func awakeFromNib() {
@@ -42,6 +44,25 @@ class BankCardCell: UITableViewCell {
         remarkTxtField.placeholder = "Remark".l10n()
         numberTxtField.placeholder = "last 4 number".l10n()
         passwordTxtField.placeholder = "password".l10n()
+        
+        nameTxtField.delegate = self
+        remarkTxtField.delegate = self
+        numberTxtField.delegate = self
+        passwordTxtField.delegate = self
+
+
+        // 添加textField到数组
+        textFields.append(nameTxtField)
+        textFields.append(remarkTxtField)
+        textFields.append(numberTxtField)
+        textFields.append(passwordTxtField)
+
+        // 监听第一个textField的回车
+        nameTxtField.addTarget(self, action: #selector(textFieldDidReturn), for: .editingDidEndOnExit)
+        remarkTxtField.addTarget(self, action: #selector(textFieldDidReturn), for: .editingDidEndOnExit)
+        numberTxtField.addTarget(self, action: #selector(textFieldDidReturn), for: .editingDidEndOnExit)
+
+        
         
         self.selectionStyle = .none
         
@@ -70,4 +91,27 @@ class BankCardCell: UITableViewCell {
         passwordTxtField.text = obj.password
     }
     
+    // 回车事件处理
+    @objc func textFieldDidReturn(_ textField: UITextField) {
+      // 获取下一个textField
+     let nextTextField = textFields[textFields.firstIndex(of: textField)!+1]
+      nextTextField.becomeFirstResponder()
+    }
+
+}
+
+
+extension BankCardCell:UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+
+        let currentText = textField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+
+        if textField == numberTxtField {
+            return updatedText.count <= 11 //限制号码最多11个
+        }
+        
+        return updatedText.count <= 40 // 限制最大输入40个字符
+    }
 }

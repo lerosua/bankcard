@@ -129,11 +129,9 @@ class CardTableViewCell: UITableViewCell, ZJCellProtocol {
     }
     @IBAction func showButtonAction(sender :UIButton){
         print("show pass")
-                if let handler = item.lockHandler {
-                    handler(item)
-                }
-
-        
+        if let handler = item.lockHandler {
+            handler(item)
+        }
         item.isUnlock = !item.isUnlock
         let state = item.isUnlock
         if state {
