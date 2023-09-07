@@ -82,6 +82,10 @@ class MainViewController: UIViewController {
     }
     
     @objc func addButtonTapped(){
+        if self.dataList.count >= 100 {
+            showNormalAlert(title: "Info".l10n(), message: "Can't be more card".l10n())
+            return
+        }
         let vc = AddBankCardViewController()
         let nav = UINavigationController(rootViewController:vc)
         present(nav,animated:true,completion:nil)
@@ -147,6 +151,10 @@ class MainViewController: UIViewController {
         
         //保存数据
         CardPassObj.SaveCardPassList(dataList: self.dataList)
+        
+        if self.dataList.count == 100 {
+            showNormalAlert(title: "Info".l10n(), message: "Too many card be added".l10n())
+        }
 
     }
     @objc func handleUpdateObj(notification:Notification){
