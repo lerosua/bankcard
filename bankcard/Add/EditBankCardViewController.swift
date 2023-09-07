@@ -28,7 +28,9 @@ class EditBankCardViewController: UITableViewController {
     }
 
     func setupTableView(){
-        self.view.backgroundColor =  UIColor.hexColor(hex:"#F1F0F5")
+//        self.view.backgroundColor =  UIColor.hexColor(hex:"#F1F0F5")
+        self.view.backgroundColor = .secondarySystemBackground
+
         self.tableView.register(UINib(nibName: "BankCardCell", bundle: nil), forCellReuseIdentifier: "BankCardCell")
         self.tableView.tableFooterView = UIView()
         self.tableView.separatorStyle = .none

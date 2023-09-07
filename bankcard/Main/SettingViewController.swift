@@ -96,7 +96,7 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
          }else if indexPath.section == 1 {
             let  cell = tableView.dequeueReusableCell(withIdentifier: "NormalCell", for: indexPath)
              cell.selectionStyle = .none
- 
+             cell.backgroundColor = .systemBackground
             switch indexPath.item {
             case 0 :
                 cell.textLabel?.text = "Privacy policy".l10n()
@@ -110,11 +110,13 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
              if indexPath.item == 0 {
                  let  cell = tableView.dequeueReusableCell(withIdentifier: "NormalCell", for: indexPath)
                  cell.selectionStyle = .none
+                 cell.backgroundColor = .systemBackground
                  cell.textLabel?.text = "BankCard v1.0(2023-08)".l10n()
                  return cell
              }else{
                  let  cell = tableView.dequeueReusableCell(withIdentifier: "NormalCell", for: indexPath)
                  cell.selectionStyle = .none
+                 cell.backgroundColor = .systemBackground
                  cell.textLabel?.text = "contact me".l10n()
                  return cell
              }

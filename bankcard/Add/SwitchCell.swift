@@ -16,6 +16,7 @@ class SwitchCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         self.selectionStyle = .none
+        self.backgroundColor = .systemBackground
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
