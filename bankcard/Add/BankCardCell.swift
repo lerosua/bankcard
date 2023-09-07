@@ -42,7 +42,7 @@ class BankCardCell: UITableViewCell {
         
         nameTxtField.placeholder = "Card name".l10n()
         remarkTxtField.placeholder = "Remark".l10n()
-        numberTxtField.placeholder = "last 4 number".l10n()
+        numberTxtField.placeholder = "****"
         passwordTxtField.placeholder = "password".l10n()
         
         nameTxtField.delegate = self
@@ -109,7 +109,7 @@ extension BankCardCell:UITextFieldDelegate {
         let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
 
         if textField == numberTxtField {
-            return updatedText.count <= 11 //限制号码最多11个
+            return updatedText.count <= 8 //限制号码最多8个
         }
         
         return updatedText.count <= 40 // 限制最大输入40个字符

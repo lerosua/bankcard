@@ -62,7 +62,7 @@ class AddBankCardViewController: UITableViewController {
 
         let label = UILabel(frame: CGRect(x: 13, y: 13, width:  width - 26, height: 40))
         label.numberOfLines = 2
-        label.text = "**For account security, only the last 4 digits of the card number should be enterd**".l10n()
+        label.text = "**** For account security, only the last 4 digits of the card number should be enterd".l10n()
         label.textColor = UIColor.red
         label.font = UIFont.systemFont(ofSize: 12)
         
