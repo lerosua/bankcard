@@ -54,19 +54,6 @@ open class ZJTableViewItem: NSObject {
             handler?(item as! T)
         }
     }
-    //解锁事件回调
-    public var lockHandler: ZJTableViewItemBlock?
-    public func setLockHandler<T: ZJTableViewItem>(_ handler: ((_ callBackItem: T) -> Void)?) {
-        lockHandler = { item in
-            handler?(item as! T)
-        }
-    }
-    // 设置锁处理器方法
-//    public var lockHandler: ZJLockHandler?
-//    public func setLockHandler(handler: @escaping ZJLockHandler) {
-//      lockHandler = handler
-//    }
-//    
 
     public var labelText: String?
     public var detailLabelText: String?

@@ -171,7 +171,7 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
     func updateSwitchState(changeSwitch:UISwitch){
         
         if changeSwitch.isOn {
-            let currentType = LAContext().biometricType
+            let currentType = BCLAContext.shareInstance.biometricType
             if currentType == .none {
                 print("Not support")
                 showNormalAlert(title: "Alert".l10n(), message: "No FaceID/TouchID support".l10n())

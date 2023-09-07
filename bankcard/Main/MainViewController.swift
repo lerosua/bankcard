@@ -114,9 +114,7 @@ class MainViewController: UIViewController {
             item.setEditHandler{ [unowned self] (selectItem: CardTableViewCellItem) in
                 self.cellEditEvent(item: selectItem)
             }
-            item.setLockHandler{ [unowned self] (selectItem: CardTableViewCellItem) in
-                self.cellunLockEvent(item: selectItem)
-            }
+           
             index += 1
             lastItem = item
         }
@@ -142,9 +140,6 @@ class MainViewController: UIViewController {
         }
         item.setEditHandler{ [unowned self] (selectItem: CardTableViewCellItem) in
             self.cellEditEvent(item: selectItem)
-        }
-        item.setLockHandler{ [unowned self] (selectItem: CardTableViewCellItem) in
-            self.cellunLockEvent(item: selectItem)
         }
         lastItem?.closeCard()
         lastItem = item

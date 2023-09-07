@@ -56,7 +56,7 @@ class AddBankCardViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
 
-        let width = UIScreen.main.bounds.width
+        let width = screenWidth
         let footerView = UIView()
         footerView.backgroundColor = .clear
 

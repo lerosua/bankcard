@@ -9,7 +9,7 @@
 import UIKit
 import LocalAuthentication
 
-let openHeight: CGFloat = (UIScreen.main.bounds.size.width - 30) * (593 / 939) + 25
+let openHeight: CGFloat = (screenWidth - 30) * (593 / 939) + 25
 let closeHeight: CGFloat = 54
 class CardTableViewCellItem: ZJTableViewItem {
     var isOpen = false
@@ -130,25 +130,40 @@ class CardTableViewCell: UITableViewCell, ZJCellProtocol {
     }
     @IBAction func showButtonAction(sender :UIButton){
         print("show pass")
-        if let handler = item.lockHandler {
-            handler(item)
-        }
-        if !item.isUnlock {
-            let currentType = LAContext().biometricType
+        
+        let context = BCLAContext.shareInstance
+        
+        if !item.isUnlock && BCLAContext.getUseAuthState() {
+            let currentType = context.biometricType
             if currentType != .none {
-//                authContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "auth".l10n()) { result, error in
-//                    print("get result \(result)")
-//                }
+                context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "auth".l10n()) { result, error in
+                    print("get result \(result)")
+                    if result {
+                        //回主线程操作UI
+                        DispatchQueue.main.async {
+                            self.item.isUnlock = !self.item.isUnlock
+                            let state = self.item.isUnlock
+                            if state {
+                                self.shrinkAnimation()
+                            }else{
+                                self.expandAnimation()
+                            }
+                        }
+                    }else{
+                        print("认证失败 \(String(describing: error))")
+                    }
+                    
+                }
+            }
+        }else{
+            item.isUnlock = !item.isUnlock
+            let state = item.isUnlock
+            if state {
+                shrinkAnimation()
+            }else{
+                expandAnimation()
             }
         }
-        item.isUnlock = !item.isUnlock
-        let state = item.isUnlock
-        if state {
-            shrinkAnimation()
-        }else{
-            expandAnimation()
-        }
-        
     }
     
     func shrinkAnimation() {

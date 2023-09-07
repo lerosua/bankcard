@@ -74,7 +74,7 @@ class EditBankCardViewController: UITableViewController {
       return 120
     }
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let width = UIScreen.main.bounds.width
+        let width = screenWidth
         let footerView = UIView()
         footerView.backgroundColor = .clear
         // 创建按钮时设置内边距
