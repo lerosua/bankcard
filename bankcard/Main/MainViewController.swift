@@ -193,14 +193,15 @@ class MainViewController: UIViewController {
     }
     func cellunLockEvent(item: CardTableViewCellItem) {
         print("show action====")
-//         if !item.isUnlock{
-//            //先走验证程序
-//             authContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "验证身份") { success, error in
-//               // 根据认证结果处理
-//                 print("get result \(success) , and error : \(String(describing: error))")
-//             }
-//             
-//        }
+         if !item.isUnlock{
+             let currentType = LAContext().biometricType
+             if currentType != .none {
+                 authContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "auth".l10n()) { result, error in
+                     print("get result \(result)")
+                 }
+             }
+             
+        }
     }
 }
 

@@ -47,6 +47,7 @@
 		C1EEE1B62AA5D49B00DEA411 /* UITextField+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE1B52AA5D49B00DEA411 /* UITextField+EX.swift */; };
 		C1EEE1B82AA5DD4C00DEA411 /* String+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE1B72AA5DD4C00DEA411 /* String+EX.swift */; };
 		C1EEE1CD2AA71C4E00DEA411 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C1EEE1CC2AA71C4E00DEA411 /* KeychainSwift */; };
+		C1EEE1D72AA9AE6E00DEA411 /* LAContext+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE1D62AA9AE6E00DEA411 /* LAContext+EX.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,7 @@
 		C1EEE1B32AA5BAFB00DEA411 /* Notification+EX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+EX.swift"; sourceTree = "<group>"; };
 		C1EEE1B52AA5D49B00DEA411 /* UITextField+EX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+EX.swift"; sourceTree = "<group>"; };
 		C1EEE1B72AA5DD4C00DEA411 /* String+EX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+EX.swift"; sourceTree = "<group>"; };
+		C1EEE1D62AA9AE6E00DEA411 /* LAContext+EX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LAContext+EX.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 				C1EEE15D2AA074B500DEA411 /* UserDefaults+EX.swift */,
 				C1EEE1B32AA5BAFB00DEA411 /* Notification+EX.swift */,
 				C1EEE1B52AA5D49B00DEA411 /* UITextField+EX.swift */,
+				C1EEE1D62AA9AE6E00DEA411 /* LAContext+EX.swift */,
 				C1EEE1B72AA5DD4C00DEA411 /* String+EX.swift */,
 			);
 			path = Tools;
@@ -329,6 +332,7 @@
 				C18217D826059E350010F354 /* AddViewController.swift in Sources */,
 				C18589392A32D21B00ABD633 /* ZJExpandTreeCellItem.swift in Sources */,
 				C18589372A32D21B00ABD633 /* ZJTableViewItem.swift in Sources */,
+				C1EEE1D72AA9AE6E00DEA411 /* LAContext+EX.swift in Sources */,
 				C18217BC2604E1260010F354 /* MainViewController.swift in Sources */,
 				C18217FE2605D5780010F354 /* Tool.swift in Sources */,
 				C1BF5F7B2A38619A00C928F1 /* UIViewController+EX.swift in Sources */,

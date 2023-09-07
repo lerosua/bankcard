@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LocalAuthentication
 
 let openHeight: CGFloat = (UIScreen.main.bounds.size.width - 30) * (593 / 939) + 25
 let closeHeight: CGFloat = 54
@@ -131,6 +132,14 @@ class CardTableViewCell: UITableViewCell, ZJCellProtocol {
         print("show pass")
         if let handler = item.lockHandler {
             handler(item)
+        }
+        if !item.isUnlock {
+            let currentType = LAContext().biometricType
+            if currentType != .none {
+//                authContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "auth".l10n()) { result, error in
+//                    print("get result \(result)")
+//                }
+            }
         }
         item.isUnlock = !item.isUnlock
         let state = item.isUnlock

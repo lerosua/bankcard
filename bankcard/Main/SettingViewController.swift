@@ -7,6 +7,8 @@
 
 import UIKit
 import MessageUI
+import SafariServices
+import LocalAuthentication
 
 let kSettingKey = "settings_key"
 let kUseLockKey = "using_lock_key"
@@ -59,7 +61,7 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 1 {
-            return 3
+            return 1
         }else if section == 2 {
                 return 2
         }else{
@@ -97,11 +99,7 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
  
             switch indexPath.item {
             case 0 :
-                cell.textLabel?.text = "No Login".l10n()
-            case 1:
-                cell.textLabel?.text = "No data theft".l10n()
-            case 2:
-                cell.textLabel?.text = "Your data is yours".l10n()
+                cell.textLabel?.text = "Privacy policy".l10n()
             default:
                  cell.textLabel?.text = "".l10n()
             }
@@ -138,6 +136,13 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
               print("设备未设置邮件账号")
                 showNormalAlert(title: "Alert".l10n(), message: "Please email me at lerosua+bankcard@gmail.com".l10n())
             }
+        }else if indexPath.section == 1 {
+            guard let url = URL(string: "https://lerosua.montaigne.io/bank-card") else {
+              return
+            }
+
+            let webVC = SFSafariViewController(url: url)
+            present(webVC, animated: true)
         }
     }
     
@@ -164,6 +169,16 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
     }
     
     func updateSwitchState(changeSwitch:UISwitch){
+        
+        if changeSwitch.isOn {
+            let currentType = LAContext().biometricType
+            if currentType == .none {
+                print("Not support")
+                showNormalAlert(title: "Alert".l10n(), message: "No FaceID/TouchID support".l10n())
+                changeSwitch.isOn = false
+                return
+            }
+        }
         settings[kUseLockKey] = changeSwitch.isOn
         saveSetting()
     }

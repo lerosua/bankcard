@@ -9,6 +9,8 @@
 import UIKit
 
 public typealias ZJTableViewItemBlock = (ZJTableViewItem) -> Void
+public typealias ZJLockReusltHandler = (Bool)->Void
+public typealias ZJLockHandler = (ZJTableViewItem, ZJLockReusltHandler) -> Void
 
 open class ZJTableViewItem: NSObject {
     public var tableVManager: ZJTableViewManager {
@@ -59,7 +61,12 @@ open class ZJTableViewItem: NSObject {
             handler?(item as! T)
         }
     }
-    
+    // 设置锁处理器方法
+//    public var lockHandler: ZJLockHandler?
+//    public func setLockHandler(handler: @escaping ZJLockHandler) {
+//      lockHandler = handler
+//    }
+//    
 
     public var labelText: String?
     public var detailLabelText: String?
