@@ -12,9 +12,12 @@
 "Use System Authentication" = "시스템 인증 사용";
 "contact me" = "문의하기";
 "Alert" = "알림";
-"Edit Bank Card" = "은행 카드 편집";
+"Add Card" = "Add Card";
+"Edit Card" = "은행 카드 편집";
 "Card name" = "카드 이름";
 "Remark" = "비고";
 "password" = "비밀번호";
 "Done" = "완료";
+"less name" = "이름은 필수입니다";
+"less password" = "비밀번호는 필수입니다";
 "**** For account security, only the last 4 digits of the card number should be enterd" = "**** 계정 보안을 위해 카드 번호 마지막 4자리만 입력하세요";

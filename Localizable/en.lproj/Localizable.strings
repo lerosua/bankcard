@@ -16,9 +16,12 @@
 "Use System Authentication" ="Use System Authentication";
 "contact me" = "contact me";
 "Alert" = "Alert";
-"Edit Bank Card"= "Edit Bank Card";
+"Add Card" = "Add Card";
+"Edit Card"= "Edit Card";
 "Card name"="Card name";
 "Remark"="Remark";
 "password"="password";
 "Done"="Done";
+"less name" = "Name is required";
+"less password" = "Password is required";
 "**** For account security, only the last 4 digits of the card number should be enterd" = "**** For account security, only the last 4 digits of the card number should be enterd";

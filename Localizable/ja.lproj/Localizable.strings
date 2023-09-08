@@ -12,9 +12,13 @@
 "Use System Authentication" ="システム認証を使用";
 "contact me" = "連絡してください";
 "Alert" = "警告";
-"Edit Bank Card" = "銀行カードを編集";
+"Add Card" = "Add Card";
+"Edit Card" = "銀行カードを編集";
 "Card name" = "カード名";
 "Remark" = "備考";
 "password" = "パスワード";
 "Done" = "完了";
+"less name" = "氏名は必須です";
+"less password" = "パスワードは必須です";
+
 "**** For account security, only the last 4 digits of the card number should be enterd" = "**** アカウントのセキュリティのために、カード番号の下4桁のみを入力してください";

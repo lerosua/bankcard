@@ -38,7 +38,7 @@ class EditBankCardViewController: UITableViewController {
     }
     
     func setupNavbar() {
-        self.title = "Edit Bank Card".l10n()
+        self.title = "Edit Card".l10n()
         let button = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(leftButtonItemClicked(sender:)))
         self.navigationItem.leftBarButtonItem = button
         
