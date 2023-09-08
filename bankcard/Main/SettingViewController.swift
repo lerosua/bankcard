@@ -111,7 +111,7 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
                  let  cell = tableView.dequeueReusableCell(withIdentifier: "NormalCell", for: indexPath)
                  cell.selectionStyle = .none
                  cell.backgroundColor = .systemBackground
-                 cell.textLabel?.text = "BankCard v1.0(2023-08)".l10n()
+                 cell.textLabel?.text = "BankCard v1.0(2023-08)"
                  return cell
              }else{
                  let  cell = tableView.dequeueReusableCell(withIdentifier: "NormalCell", for: indexPath)
