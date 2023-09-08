@@ -10,3 +10,15 @@
 "Password" = "Password"; 
 "No FaceID/TouchID support" = "No FaceID/TouchID support";
 "Privacy policy" = "Privacy policy";
+"Setting" = "Setting";
+"Privacy" = "Privacy";
+"About" = "About";
+"Use System Authentication" ="Use System Authentication";
+"contact me" = "contact me";
+"Alert" = "Alert";
+"Edit Bank Card"= "Edit Bank Card";
+"Card name"="Card name";
+"Remark"="Remark";
+"password"="password";
+"Done"="Done";
+"**** For account security, only the last 4 digits of the card number should be enterd" = "**** For account security, only the last 4 digits of the card number should be enterd";

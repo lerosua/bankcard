@@ -4,9 +4,23 @@
 "ABC" = "中国农业银行";
 "CCB" = "中国建设银行";
 "ICBC" = "中国工商银行";
+"Edit" = "编辑";
 "Bank Card" = "银行卡";
 "Add" = "添加";
 "Card Type" = "卡片类型";
 "Password" = "密码";
 "No FaceID/TouchID support" = "该设备不支持 FaceID 或 TouchID";
 "Privacy policy" = "隐私政策";
+"Setting" = "设置";
+"Privacy" = "隐私";
+"About" = "关于";
+"Use System Authentication" ="使用系统验证";
+"contact me" = "联系我";
+"Alert" = "提示";
+"Edit Bank Card"= "编辑银行卡";
+"Card name"="卡片名称";
+"Remark"="备注";
+"password"="密码";
+"Done"="完成";
+
+"**** For account security, only the last 4 digits of the card number should be enterd" = "**** 为了账户安全,只能输入卡号后4位数字";
