@@ -42,13 +42,14 @@ class CardTableViewCellItem: ZJTableViewItem {
 }
 
 var colorIndex = 0
-let gradientColors = [["E42C66","F55B46"],
-                      ["EABE35","EABE35"],
-                      ["ED713C","ED713C"],
+let gradientColors = [["#9C2CF3","#3A49F9"],
                       ["E42C66","F55B46"],
-                      ["E42C66","F55B46"],
-                      ["E42C66","F55B46"],
-                      ["E42C66","F55B46"]]
+                      ["#EDD822","#F38A0C"],
+                      ["#20B1FF","#0D51D7"],
+                      ["#68EBB5","#00AA7C"],
+                      ["#78EDD3","#1279B6"],
+                      ["#D2217E","#692D91"]
+                      ]
 
 class CardTableViewCell: UITableViewCell, ZJCellProtocol {
     
@@ -86,6 +87,7 @@ class CardTableViewCell: UITableViewCell, ZJCellProtocol {
         let layerGradient = getLineGradintLayer(ui:cardImg,fromHexColor:colorGroup[0], toHexColor:colorGroup[1])
         cardImg.layer.addSublayer(layerGradient)
         colorIndex += 1
+        print("use color index:\(colorIndex)")
         
     }
     func cellPrepared() {
