@@ -139,7 +139,7 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
                 showNormalAlert(title: "Alert".l10n(), message: "Please email me at lerosua+bankcard@gmail.com".l10n())
             }
         }else if indexPath.section == 1 {
-            guard let url = URL(string: "https://lerosua.montaigne.io/bank-card") else {
+            guard let url = URL(string: "https://lerosua.montaigne.io/privacy-policy-bank-card-english") else {
               return
             }
 
