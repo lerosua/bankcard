@@ -12,6 +12,7 @@ import LocalAuthentication
 
 let kSettingKey = "settings_key"
 let kUseLockKey = "using_lock_key"
+let kChangeAppIconKey = "change_appicon_key"
 
 class SettingViewController: UITableViewController, MFMailComposeViewControllerDelegate {
 
@@ -65,7 +66,7 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
         }else if section == 2 {
                 return 2
         }else{
-            return 1
+            return 2
         }
     }
 
@@ -80,19 +81,33 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          if indexPath.section == 0 {
-             let  cell = tableView.dequeueReusableCell(withIdentifier: "SwitchCell", for: indexPath) as! SwitchCell
-            cell.titleLabel.text = "Use System Authentication".l10n()
-             if let lock = settings[kUseLockKey] as? Bool {
-                 cell.switchBtn.isOn = lock
+             if indexPath.item == 0 {
+                 let  cell = tableView.dequeueReusableCell(withIdentifier: "SwitchCell", for: indexPath) as! SwitchCell
+                 cell.titleLabel.text = "Use System Authentication".l10n()
+                 if let lock = settings[kUseLockKey] as? Bool {
+                     cell.switchBtn.isOn = lock
+                 }
+                 // 绑定 switchChanged 事件
+                 cell.switchChanged = { [weak self] changedSwitch in
+                     print("Switch changed: \(changedSwitch.isOn)")
+                     self?.updateSwitchState(changeSwitch:changedSwitch)
+                 }
+                 
+                 return cell
+             }else{
+                 let  cell = tableView.dequeueReusableCell(withIdentifier: "SwitchCell", for: indexPath) as! SwitchCell
+                 cell.titleLabel.text = "Change App Icon".l10n()
+                 if let lock = settings[kChangeAppIconKey] as? Bool {
+                     cell.switchBtn.isOn = lock
+                 }
+                 // 绑定 switchChanged 事件
+                 cell.switchChanged = { [weak self] changedSwitch in
+                     print("Switch changed: \(changedSwitch.isOn)")
+                     self?.updateAppIconState(changeSwitch:changedSwitch)
+                 }
+                 
+                 return cell
              }
-             // 绑定 switchChanged 事件
-             cell.switchChanged = { [weak self] changedSwitch in
-               print("Switch changed: \(changedSwitch.isOn)")
-                 self?.updateSwitchState(changeSwitch:changedSwitch)
-             }
-             
-             return cell
-
          }else if indexPath.section == 1 {
             let  cell = tableView.dequeueReusableCell(withIdentifier: "NormalCell", for: indexPath)
              cell.selectionStyle = .none
@@ -184,4 +199,14 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
         settings[kUseLockKey] = changeSwitch.isOn
         saveSetting()
     }
+    func updateAppIconState(changeSwitch:UISwitch){
+        if changeSwitch.isOn {
+            UIApplication.shared.setAlternateIconName("AppIcon-two")
+        }else{
+            UIApplication.shared.setAlternateIconName(nil,completionHandler: nil)
+        }
+        settings[kChangeAppIconKey] = changeSwitch.isOn
+        saveSetting()
+    }
+    
 }

@@ -21,3 +21,4 @@
 "less name" = "이름은 필수입니다";
 "less password" = "비밀번호는 필수입니다";
 "**** For account security, only the last 4 digits of the card number should be enterd" = "**** 계정 보안을 위해 카드 번호 마지막 4자리만 입력하세요";
+"Change App Icon" = "앱 아이콘 변경하기";
