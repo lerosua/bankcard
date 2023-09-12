@@ -11,7 +11,7 @@ import UIKit
 extension UIViewController {
     func showNormalAlert(title: String, message: String, onOk: (() -> Void)? = nil) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "确定", style: .default) { (_) in
+        let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
             onOk?()
         }
         alertController.addAction(okAction)

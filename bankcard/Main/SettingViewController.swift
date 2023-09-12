@@ -101,7 +101,7 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
             case 0 :
                 cell.textLabel?.text = "Privacy policy".l10n()
             default:
-                 cell.textLabel?.text = "".l10n()
+                 cell.textLabel?.text = ""
             }
             
             return cell
@@ -160,7 +160,7 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
       mailComposerVC.mailComposeDelegate = self // 遵循 MFMailComposeViewControllerDelegate 协议
       
       mailComposerVC.setToRecipients(["lerosua+bankcard@gmail.com"])
-      mailComposerVC.setSubject("关于BankCard的反馈")
+      mailComposerVC.setSubject("Feedback for BankCard")
       mailComposerVC.setMessageBody("Hey, I have some problem with you ....", isHTML: false)
 
       return mailComposerVC
@@ -173,15 +173,26 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
     func updateSwitchState(changeSwitch:UISwitch){
         
         if changeSwitch.isOn {
-            let currentType = BCLAContext.shareInstance.biometricType
-            if currentType == .none {
-                print("Not support")
-                showNormalAlert(title: "Alert".l10n(), message: "No FaceID/TouchID support".l10n())
+            let alertController = UIAlertController(title: "Info".l10n(), message: "Enabling biometric authentication to view your saved bank passwords helps better protect your information".l10n(), preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Confirm".l10n(), style: .default) { (_) in
+                let currentType = BCLAContext.shareInstance.biometricType
+                if currentType == .none {
+                    print("Not support")
+                    self.showNormalAlert(title: "Alert".l10n(), message: "No FaceID/TouchID support".l10n())
+                    changeSwitch.isOn = false
+                    return
+                }
+                self.settings[kUseLockKey] = changeSwitch.isOn
+                self.saveSetting()
+            }
+            let cancelAction = UIAlertAction(title:"Cancel".l10n(),style: .cancel){(_) in
                 changeSwitch.isOn = false
                 return
             }
+            alertController.addAction(cancelAction)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
         }
-        settings[kUseLockKey] = changeSwitch.isOn
-        saveSetting()
+
     }
 }

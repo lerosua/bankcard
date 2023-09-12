@@ -9,10 +9,13 @@
 "Setting" = "설정";
 "Privacy" = "개인 정보 보호";
 "About" = "소개";
-"Use System Authentication" = "시스템 인증 사용";
+"Use System Authentication" = "Face ID/Touch ID 활성화";
 "contact me" = "문의하기";
 "Alert" = "알림";
-"Add Card" = "Add Card";
+"Confirm" = "확인";
+"Info" = "정보";
+"Cancel" = "취소";
+"Add Card" = "카드 추가";
 "Edit Card" = "은행 카드 편집";
 "Card name" = "카드 이름";
 "Remark" = "비고";
@@ -21,3 +24,4 @@
 "less name" = "이름은 필수입니다";
 "less password" = "비밀번호는 필수입니다";
 "**** For account security, only the last 4 digits of the card number should be enterd" = "**** 계정 보안을 위해 카드 번호 마지막 4자리만 입력하세요";
+"Enabling biometric authentication to view your saved bank passwords helps better protect your information"="저장된 은행 계정 비밀번호를 보기 위해 생체인증을 활성화하면 정보를 더 잘 보호할 수 있습니다";

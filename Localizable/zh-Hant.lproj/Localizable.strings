@@ -8,9 +8,12 @@
 "Setting" = "設定";
 "Privacy" = "隱私";
 "About" = "關於";
-"Use System Authentication" = "使用系統驗證";
+"Use System Authentication" = "啟用Face ID/Touch ID";
 "contact me" = "聯繫我";
 "Alert" = "通知";
+"Confirm" = "確認";
+"Info" = "資訊";
+"Cancel" = "取消";
 "Add Card" = "新增卡片";
 "Edit Card" = "編輯卡片";
 "Card name" = "卡片名稱";
@@ -20,3 +23,4 @@
 "Name is required" = "名稱為必填";
 "Password is required" = "密碼為必填";
 "**** For account security, only the last 4 digits of the card number should be entered" = "**** 為了帳號安全,只能輸入卡號後4位數字";
+"Enabling biometric authentication to view your saved bank passwords helps better protect your information"="啟用生物辨識才可檢視您已儲存的銀行密碼,有助於更好地保護您的資訊";
