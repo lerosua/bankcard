@@ -20,6 +20,9 @@ class MainViewController: UIViewController {
     var lastOpenItem: CardTableViewCellItem?
     var lastItem: CardTableViewCellItem? //最后一个需要永不关闭
 
+    var addBtnItem:UIBarButtonItem?
+    var sysBtnItem:UIBarButtonItem?
+    
     var dataList = [CardPassObj]()
     lazy var authContext:LAContext = {
         return LAContext()
@@ -75,10 +78,21 @@ class MainViewController: UIViewController {
     }
     func setupNavbar() {
         title = "Bank Card".l10n()
-                let addBtn = UIBarButtonItem(image: UIImage(named: "sys_add")!.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(addButtonTapped))
+        let addBtn = UIBarButtonItem(image: UIImage(named: "sys_add")!.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(addButtonTapped))
+        addBtnItem = addBtn
         let sysBtn = UIBarButtonItem(image: UIImage(named: "sys_setting")!.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(sysButtonTapped))
+        sysBtnItem = sysBtn
         navigationItem.rightBarButtonItems = [addBtn,sysBtn]
 
+    }
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if traitCollection.userInterfaceStyle == .dark {
+            addBtnItem?.image = UIImage(named: "sys_add_b")?.withRenderingMode(.alwaysOriginal)
+            sysBtnItem?.image = UIImage(named: "sys_setting_b")?.withRenderingMode(.alwaysOriginal)
+        }else{
+            addBtnItem?.image = UIImage(named: "sys_add")?.withRenderingMode(.alwaysOriginal)
+            sysBtnItem?.image = UIImage(named: "sys_setting")?.withRenderingMode(.alwaysOriginal)
+        }
     }
     
     @objc func addButtonTapped(){
