@@ -120,8 +120,18 @@ class EditBankCardViewController: UITableViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @objc func rightButtonItemClicked(sender:UIBarButtonItem){
-        NotificationCenter.default.post(name: .delCardNotification, object: cardItem)
-        self.dismiss(animated: true, completion: nil)
+        
+        let alertController = UIAlertController(title: "Warning".l10n(), message: "This action will permanently delete the current card. Are you sure?".l10n(), preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Confirm".l10n(), style: .destructive) { (_) in
+            NotificationCenter.default.post(name: .delCardNotification, object: self.cardItem)
+            self.dismiss(animated: true, completion: nil)
+        }
+        let cancelAction = UIAlertAction(title:"Cancel".l10n(),style: .cancel){(_) in
+            return
+        }
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     func loadData() {

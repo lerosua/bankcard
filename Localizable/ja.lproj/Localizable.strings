@@ -26,3 +26,4 @@
 
 "**** For account security, only the last 4 digits of the card number should be enterd" = "**** アカウントのセキュリティのために、カード番号の下4桁のみを入力してください";
 "Enabling biometric authentication to view your saved bank passwords helps better protect your information"="保存された銀行のパスワードを表示するには、生体認証を有効にすることで、情報をより安全に保護できます";
+"This action will permanently delete the current card. Are you sure?"="Tこのアクションを実行すると、現在のカードが完全に削除されます。よろしいですか?";

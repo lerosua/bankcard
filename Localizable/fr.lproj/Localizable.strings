@@ -24,3 +24,4 @@
 "Password is required" = "Le mot de passe est obligatoire";
 "**** For account security, only the last 4 digits of the card number should be enterd" = "**** Pour la sécurité du compte, seuls les 4 derniers chiffres du numéro de carte doivent être saisis";
 "Enabling biometric authentication to view your saved bank passwords helps better protect your information"="Activer l'authentification biométrique pour consulter vos mots de passe bancaires enregistrés permet de mieux protéger vos informations";
+"This action will permanently delete the current card. Are you sure?"="Cette action supprimera définitivement la carte actuelle. Êtes-vous sûr ?";

@@ -28,3 +28,4 @@
 "Please email me at lerosua+bankcard@gmail.com" = "请给 lerosua+bankcard@gmail.com 发邮件";
 "**** For account security, only the last 4 digits of the card number should be enterd" = "**** 为了账户安全,只能输入卡号后4位数字";
 "Enabling biometric authentication to view your saved bank passwords helps better protect your information"="启用生物认证才可查看已保存的银行密码,有助于更好地保护您的信息";
+"This action will permanently delete the current card. Are you sure?"="这个操作将会永久删除当前卡片。您确定吗?";

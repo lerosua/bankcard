@@ -21,3 +21,4 @@
 "Password is required" = "密碼為必填項";
 "**** For account security, only the last 4 digits of the card number should be entered" = "**** 為了帳戶安全,只能輸入卡號後4位數字";
 "Enabling biometric authentication to view your saved bank passwords helps better protect your information"="啟用生物辨識才可檢視您已儲存的銀行密碼,有助於更好地保護您的資訊";
+"This action will permanently delete the current card. Are you sure?"="這個動作將會永久刪除當前的卡片。您確定嗎?";
