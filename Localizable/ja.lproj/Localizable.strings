@@ -9,10 +9,13 @@
 "Setting" = "設定";
 "Privacy" = "プライバシー";
 "About" = "約";
-"Use System Authentication" ="システム認証を使用";
+"Use System Authentication" ="Face ID/Touch IDを有効にする";
 "contact me" = "連絡してください";
 "Alert" = "警告";
-"Add Card" = "Add Card";
+"Confirm" = "確認";
+"Info" = "情報";
+"Cancel" = "キャンセル";
+"Add Card" = "カードを追加";
 "Edit Card" = "銀行カードを編集";
 "Card name" = "カード名";
 "Remark" = "備考";
@@ -23,3 +26,6 @@
 
 "**** For account security, only the last 4 digits of the card number should be enterd" = "**** アカウントのセキュリティのために、カード番号の下4桁のみを入力してください";
 "Change App Icon" = "アプリのアイコンを変更する";
+"Enabling biometric authentication to view your saved bank passwords helps better protect your information"="保存された銀行のパスワードを表示するには、生体認証を有効にすることで、情報をより安全に保護できます";
+"This action will permanently delete the current card. Are you sure?"="Tこのアクションを実行すると、現在のカードが完全に削除されます。よろしいですか?";
+

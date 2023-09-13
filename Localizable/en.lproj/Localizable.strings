@@ -9,9 +9,12 @@
 "Setting" = "Setting";
 "Privacy" = "Privacy";
 "About" = "About";
-"Use System Authentication" ="Use System Authentication";
+"Use System Authentication" ="Enable Face ID/Touch ID";
 "contact me" = "Feedback";
 "Alert" = "Alert";
+"Confirm" = "Confirm";
+"Info" = "Info";
+"Cancel"="Cancel";
 "Add Card" = "Add Card";
 "Edit Card"= "Edit Card";
 "Card name"="Card name";
@@ -22,5 +25,6 @@
 "less password" = "Password is required";
 "Please email me at lerosua+bankcard@gmail.com" = "Please email me at lerosua+bankcard@gmail.com";
 "**** For account security, only the last 4 digits of the card number should be enterd" = "**** For account security, only the last 4 digits of the card number should be enterd";
-
 "Change App Icon" = "Change App Icon";
+"Enabling biometric authentication to view your saved bank passwords helps better protect your information"="Enabling biometric authentication to view your saved bank passwords helps better protect your information";
+"This action will permanently delete the current card. Are you sure?"="This action will permanently delete the current card. Are you sure?";
