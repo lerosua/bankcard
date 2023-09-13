@@ -95,6 +95,9 @@
 		C18589302A32D21B00ABD633 /* ZJTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTableViewManager.swift; sourceTree = "<group>"; };
 		C18589322A32D21B00ABD633 /* ZJExpandTreeCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJExpandTreeCellItem.swift; sourceTree = "<group>"; };
 		C18589332A32D21B00ABD633 /* ZJTableViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJTableViewManager.h; sourceTree = "<group>"; };
+		C18E53E42AB14BB50072E65F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		C18E53E52AB14BB50072E65F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		C18E53E62AB14BB50072E65F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C1BF5F7A2A38619A00C928F1 /* UIViewController+EX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+EX.swift"; sourceTree = "<group>"; };
 		C1EEE1532A9F1BDA00DEA411 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		C1EEE1572A9F1DC100DEA411 /* SwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
@@ -304,6 +307,7 @@
 				"zh-HK",
 				"zh-Hant",
 				fr,
+				de,
 			);
 			mainGroup = C18217AB2604E1260010F354;
 			packageReferences = (
@@ -388,6 +392,7 @@
 				C129C7D62AAB59680099CCCB /* zh-HK */,
 				C129C7D92AAB59760099CCCB /* zh-Hant */,
 				C129C7DC2AAB5CE60099CCCB /* fr */,
+				C18E53E42AB14BB50072E65F /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -401,6 +406,7 @@
 				C129C7D72AAB59680099CCCB /* zh-HK */,
 				C129C7DA2AAB59760099CCCB /* zh-Hant */,
 				C129C7DD2AAB5CE60099CCCB /* fr */,
+				C18E53E52AB14BB50072E65F /* de */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -415,6 +421,7 @@
 				C129C7D82AAB59690099CCCB /* zh-HK */,
 				C129C7DB2AAB59760099CCCB /* zh-Hant */,
 				C129C7DE2AAB5CE60099CCCB /* fr */,
+				C18E53E62AB14BB50072E65F /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
