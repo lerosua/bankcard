@@ -77,7 +77,7 @@ class MainViewController: UIViewController {
         
     }
     func setupNavbar() {
-        title = "Bank Card".l10n()
+        title = "VIP Card".l10n()
         let addBtn = UIBarButtonItem(image: UIImage(named: "sys_add")!.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(addButtonTapped))
         addBtnItem = addBtn
         let sysBtn = UIBarButtonItem(image: UIImage(named: "sys_setting")!.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(sysButtonTapped))
