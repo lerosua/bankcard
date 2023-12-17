@@ -76,7 +76,7 @@ class AddBankCardViewController: UITableViewController {
         button.backgroundColor = .systemBlue
         // 设置圆角
         button.layer.cornerRadius = 8
-        footerView.addSubview(label)
+//        footerView.addSubview(label)
         footerView.addSubview(button)
         return footerView
     }

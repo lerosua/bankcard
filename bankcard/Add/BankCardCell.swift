@@ -42,8 +42,8 @@ class BankCardCell: UITableViewCell {
         
         nameTxtField.placeholder = "Card name".l10n()
         remarkTxtField.placeholder = "Remark".l10n()
-        numberTxtField.placeholder = "****"
-        passwordTxtField.placeholder = "password".l10n()
+        numberTxtField.placeholder = "Card number".l10n()
+        passwordTxtField.placeholder = "Date".l10n()
         
         nameTxtField.delegate = self
         remarkTxtField.delegate = self
