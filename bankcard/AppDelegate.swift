@@ -6,14 +6,21 @@
 //
 
 import UIKit
-
+let TapAppId = "a6580fdc481129"
+let TapAppKey = "6ffdfacf348bdf46643043dbfa9709f9"
+let TapPlacementId = "b6580fdceb2a9f"
+let TapVideoId = ""
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        TopOnAdManager.shared.register(withAppId: TapAppId, appKey: TapAppKey)
         return true
     }
 

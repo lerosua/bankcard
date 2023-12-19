@@ -14,6 +14,8 @@ let kSettingKey = "settings_key"
 let kUseLockKey = "using_lock_key"
 let kChangeAppIconKey = "change_appicon_key"
 
+private let appName = ["订阅伽","GameTron","天气.时光"]
+private let appLink = ["https://itunes.apple.com/app/id6467340270","https://itunes.apple.com/app/id6471490323","https://itunes.apple.com/app/id6470151198"]
 class SettingViewController: UITableViewController, MFMailComposeViewControllerDelegate {
 
     // 配置信息字典
@@ -57,14 +59,16 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 3
+        return 4
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 1 {
             return 1
         }else if section == 2 {
-                return 2
+            return 2
+        }else if section == 3 {
+            return appName.count
         }else{
             return 2
         }
@@ -75,6 +79,8 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
             return "About".l10n()
         }else if section == 1{
             return "Privacy".l10n()
+        }else if section == 3 {
+            return "App"
         }
         return ""
     }
@@ -109,24 +115,29 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
                  return cell
              }
          }else if indexPath.section == 1 {
-            let  cell = tableView.dequeueReusableCell(withIdentifier: "NormalCell", for: indexPath)
+             let  cell = tableView.dequeueReusableCell(withIdentifier: "NormalCell", for: indexPath)
              cell.selectionStyle = .none
              cell.backgroundColor = .systemBackground
-            switch indexPath.item {
-            case 0 :
-                cell.textLabel?.text = "Privacy policy".l10n()
-            default:
+             switch indexPath.item {
+             case 0 :
+                 cell.textLabel?.text = "Privacy policy".l10n()
+             default:
                  cell.textLabel?.text = ""
-            }
-            
-            return cell
-
+             }
+             
+             return cell
+         }else if indexPath.section == 3 {
+             let  cell = tableView.dequeueReusableCell(withIdentifier: "NormalCell", for: indexPath)
+             cell.selectionStyle = .none
+             cell.backgroundColor = .systemBackground
+             cell.textLabel?.text = appName[indexPath.item]
+             return cell
          }else{
              if indexPath.item == 0 {
                  let  cell = tableView.dequeueReusableCell(withIdentifier: "NormalCell", for: indexPath)
                  cell.selectionStyle = .none
                  cell.backgroundColor = .systemBackground
-                 cell.textLabel?.text = "VipCard v1.0(2023-08)"
+                 cell.textLabel?.text = "VipCard v1.3.1(2023-12)"
                  return cell
              }else{
                  let  cell = tableView.dequeueReusableCell(withIdentifier: "NormalCell", for: indexPath)
@@ -155,6 +166,13 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
             }
         }else if indexPath.section == 1 {
             guard let url = URL(string: "https://lerosua.montaigne.io/privacy-policy-bank-card-english") else {
+              return
+            }
+
+            let webVC = SFSafariViewController(url: url)
+            present(webVC, animated: true)
+        }else if indexPath.section == 3 {
+            guard let url = URL(string: appLink[indexPath.item]) else {
               return
             }
 

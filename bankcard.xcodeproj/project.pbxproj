@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		615710D6C77EA60A8AD5D956 /* Pods_bankcard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE6ED547BE5BEA48CE43D7EF /* Pods_bankcard.framework */; };
 		C18217B82604E1260010F354 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18217B72604E1260010F354 /* AppDelegate.swift */; };
 		C18217BA2604E1260010F354 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18217B92604E1260010F354 /* SceneDelegate.swift */; };
 		C18217BC2604E1260010F354 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18217BB2604E1260010F354 /* MainViewController.swift */; };
@@ -48,9 +49,11 @@
 		C1EEE1B82AA5DD4C00DEA411 /* String+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE1B72AA5DD4C00DEA411 /* String+EX.swift */; };
 		C1EEE1CD2AA71C4E00DEA411 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C1EEE1CC2AA71C4E00DEA411 /* KeychainSwift */; };
 		C1EEE1D72AA9AE6E00DEA411 /* LAContext+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE1D62AA9AE6E00DEA411 /* LAContext+EX.swift */; };
+		C1F92CE22B31401E00971655 /* TopOnAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F92CE12B31401E00971655 /* TopOnAdManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		80B268583D84B15DC3C6781A /* Pods-bankcard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bankcard.release.xcconfig"; path = "Target Support Files/Pods-bankcard/Pods-bankcard.release.xcconfig"; sourceTree = "<group>"; };
 		C129C7D02AAB183C0099CCCB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		C129C7D12AAB183C0099CCCB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		C129C7D22AAB183C0099CCCB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -111,6 +114,9 @@
 		C1EEE1B52AA5D49B00DEA411 /* UITextField+EX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+EX.swift"; sourceTree = "<group>"; };
 		C1EEE1B72AA5DD4C00DEA411 /* String+EX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+EX.swift"; sourceTree = "<group>"; };
 		C1EEE1D62AA9AE6E00DEA411 /* LAContext+EX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LAContext+EX.swift"; sourceTree = "<group>"; };
+		C1F92CE12B31401E00971655 /* TopOnAdManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopOnAdManager.swift; sourceTree = "<group>"; };
+		C454F61EAEE62807F332E46D /* Pods-bankcard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bankcard.debug.xcconfig"; path = "Target Support Files/Pods-bankcard/Pods-bankcard.debug.xcconfig"; sourceTree = "<group>"; };
+		DE6ED547BE5BEA48CE43D7EF /* Pods_bankcard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bankcard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,17 +127,37 @@
 				C1EEE1CD2AA71C4E00DEA411 /* KeychainSwift in Frameworks */,
 				C1D04CA42A32CC5D00E66C7C /* L10n-swift in Frameworks */,
 				C1D04CA12A32CC3200E66C7C /* EmptyDataSet-Swift in Frameworks */,
+				615710D6C77EA60A8AD5D956 /* Pods_bankcard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C3E014BA21CF492131D9207 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C454F61EAEE62807F332E46D /* Pods-bankcard.debug.xcconfig */,
+				80B268583D84B15DC3C6781A /* Pods-bankcard.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5C9BD4ED86F92B4B394147C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE6ED547BE5BEA48CE43D7EF /* Pods_bankcard.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C18217AB2604E1260010F354 = {
 			isa = PBXGroup;
 			children = (
 				C18217B62604E1260010F354 /* bankcard */,
 				C18217B52604E1260010F354 /* Products */,
+				3C3E014BA21CF492131D9207 /* Pods */,
+				5C9BD4ED86F92B4B394147C3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,6 +178,7 @@
 				C18217D626059E080010F354 /* Add */,
 				C18217D526059DF20010F354 /* Main */,
 				C18217B72604E1260010F354 /* AppDelegate.swift */,
+				C1F92CE12B31401E00971655 /* TopOnAdManager.swift */,
 				C18217B92604E1260010F354 /* SceneDelegate.swift */,
 				C18217BD2604E1260010F354 /* Main.storyboard */,
 				C18217C02604E1260010F354 /* Assets.xcassets */,
@@ -261,9 +288,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C18217C82604E1260010F354 /* Build configuration list for PBXNativeTarget "bankcard" */;
 			buildPhases = (
+				29D603FA168AB91B61107520 /* [CP] Check Pods Manifest.lock */,
 				C18217B02604E1260010F354 /* Sources */,
 				C18217B12604E1260010F354 /* Frameworks */,
 				C18217B22604E1260010F354 /* Resources */,
+				B431FBF6B1A5E99DAFC13F4F /* [CP] Embed Pods Frameworks */,
+				EF77B0A7921797E8466CDE59 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -343,6 +373,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		29D603FA168AB91B61107520 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-bankcard-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B431FBF6B1A5E99DAFC13F4F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bankcard/Pods-bankcard-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bankcard/Pods-bankcard-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bankcard/Pods-bankcard-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF77B0A7921797E8466CDE59 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bankcard/Pods-bankcard-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bankcard/Pods-bankcard-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bankcard/Pods-bankcard-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C18217B02604E1260010F354 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -353,6 +442,7 @@
 				C1EEE1542A9F1BDA00DEA411 /* SettingViewController.swift in Sources */,
 				C18589362A32D21B00ABD633 /* ZJProtocol.swift in Sources */,
 				C182180D2605FE950010F354 /* PassCore.swift in Sources */,
+				C1F92CE22B31401E00971655 /* TopOnAdManager.swift in Sources */,
 				C18217D826059E350010F354 /* AddViewController.swift in Sources */,
 				C18589392A32D21B00ABD633 /* ZJExpandTreeCellItem.swift in Sources */,
 				C18589372A32D21B00ABD633 /* ZJTableViewItem.swift in Sources */,
@@ -549,6 +639,7 @@
 		};
 		C18217C92604E1260010F354 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C454F61EAEE62807F332E46D /* Pods-bankcard.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -577,6 +668,7 @@
 		};
 		C18217CA2604E1260010F354 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80B268583D84B15DC3C6781A /* Pods-bankcard.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
