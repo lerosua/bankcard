@@ -557,7 +557,7 @@
 				CURRENT_PROJECT_VERSION = 1000;
 				DEVELOPMENT_TEAM = 97CWPB3835;
 				INFOPLIST_FILE = bankcard/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "VIP卡片收集";
+				INFOPLIST_KEY_CFBundleDisplayName = "简简单单会员卡";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -585,7 +585,7 @@
 				CURRENT_PROJECT_VERSION = 1000;
 				DEVELOPMENT_TEAM = 97CWPB3835;
 				INFOPLIST_FILE = bankcard/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "VIP卡片收集";
+				INFOPLIST_KEY_CFBundleDisplayName = "简简单单会员卡";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
