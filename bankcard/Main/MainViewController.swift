@@ -9,6 +9,7 @@ import UIKit
 import L10n_swift
 import EmptyDataSet_Swift
 import LocalAuthentication
+import SnapKit
 
 let DataListKey :String = "bankListKey"
 
@@ -22,7 +23,8 @@ class MainViewController: UIViewController {
 
     var addBtnItem:UIBarButtonItem?
     var sysBtnItem:UIBarButtonItem?
-    
+    var bottomView:UIView!
+
     var dataList = [CardPassObj]()
     lazy var authContext:LAContext = {
         return LAContext()
@@ -75,6 +77,18 @@ class MainViewController: UIViewController {
         dataSection = ZJTableViewSection()
         manager.add(section: dataSection)
         
+        self.bottomView = UIView()
+        self.view.addSubview(self.bottomView)
+        self.bottomView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.height.equalTo(200)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+        }
+        self.tableView.snp.makeConstraints { make in
+            make.left.right.top.equalToSuperview()
+            make.bottom.equalTo(self.bottomView)
+        }
+        
     }
     func setupNavbar() {
         title = "VIP Card".l10n()
@@ -115,6 +129,40 @@ class MainViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateObj(notification:)), name: .updateCardNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector:#selector(handleDeleteObj(notification:)) , name: .delCardNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleAddObj(notification:)), name: .addCardNotification, object: nil)
+    }
+    
+    // MARK:-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        TopOnNativeAD.shared.load(placementId: TapNavtiveADId)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            
+            for subview in self.bottomView.subviews{
+                subview.removeFromSuperview()
+            }
+            
+            let myHeader = self.getADHeader()
+            if myHeader.frame.size != CGSizeZero {
+                self.bottomView.addSubview(myHeader)
+                self.tableView.snp.remakeConstraints { make in
+                    make.left.right.top.equalToSuperview()
+                    make.bottom.equalTo(self.bottomView)
+                }
+                self.bottomView.snp.remakeConstraints { make in
+                    make.height.equalTo(myHeader.frame.height)
+                    make.left.right.equalToSuperview()
+                    make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
+                }
+            }else{
+                self.bottomView.snp.remakeConstraints { make in
+                    make.height.equalTo(0)
+                }
+                self.tableView.snp.remakeConstraints { make in
+                    make.edges.equalToSuperview()
+                }
+            }
+            self.tableView.reloadData()
+        }
     }
     
     func loadData(){
@@ -231,7 +279,7 @@ extension MainViewController:EmptyDataSetSource,EmptyDataSetDelegate {
                 return UIImage(named: "empty_bank_list")
     }
     func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
-        let title = "Record local bank card password".l10n()
+        let title = "Record VIP Card ".l10n()
         return NSAttributedString(string: title)
     }
     func emptyDataSetShouldDisplay(_ scrollView: UIScrollView) -> Bool {
@@ -242,6 +290,16 @@ extension MainViewController:EmptyDataSetSource,EmptyDataSetDelegate {
     }
     func verticalOffset(forEmptyDataSet scrollView: UIScrollView) -> CGFloat {
         return -180;
+    }
+    
+    func getADHeader()->UIView {
+        let adView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 200))
+        let naviveItem = SCNativeItem(placementId: TapNavtiveADId)
+        let fixSize = naviveItem.showNative(with: adView)
+        print("get fix adSize \(fixSize)")
+        //重新调整frame
+        adView.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: fixSize)
+        return adView
     }
 }
 

@@ -34,6 +34,12 @@
 		C18589382A32D21B00ABD633 /* ZJTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18589302A32D21B00ABD633 /* ZJTableViewManager.swift */; };
 		C18589392A32D21B00ABD633 /* ZJExpandTreeCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18589322A32D21B00ABD633 /* ZJExpandTreeCellItem.swift */; };
 		C1BF5F7B2A38619A00C928F1 /* UIViewController+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BF5F7A2A38619A00C928F1 /* UIViewController+EX.swift */; };
+		C1CF00E12B3AFE8600F63ED6 /* AlexGromoreMixSDKAdapter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1CF00DF2B3AFE8600F63ED6 /* AlexGromoreMixSDKAdapter.framework */; };
+		C1CF00E22B3AFE8600F63ED6 /* AnyThinkTTAdapter_Mix.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1CF00E02B3AFE8600F63ED6 /* AnyThinkTTAdapter_Mix.xcframework */; };
+		C1CF00E72B3AFE8F00F63ED6 /* TopOnAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CF00E42B3AFE8F00F63ED6 /* TopOnAdManager.swift */; };
+		C1CF00E82B3AFE8F00F63ED6 /* SCNativeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CF00E52B3AFE8F00F63ED6 /* SCNativeItem.swift */; };
+		C1CF00E92B3AFE8F00F63ED6 /* SCNativeSelfRenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CF00E62B3AFE8F00F63ED6 /* SCNativeSelfRenderView.swift */; };
+		C1CF00EC2B3B019B00F63ED6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C1CF00EB2B3B019B00F63ED6 /* SnapKit */; };
 		C1D04CA12A32CC3200E66C7C /* EmptyDataSet-Swift in Frameworks */ = {isa = PBXBuildFile; productRef = C1D04CA02A32CC3200E66C7C /* EmptyDataSet-Swift */; };
 		C1D04CA42A32CC5D00E66C7C /* L10n-swift in Frameworks */ = {isa = PBXBuildFile; productRef = C1D04CA32A32CC5D00E66C7C /* L10n-swift */; };
 		C1EEE1542A9F1BDA00DEA411 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE1532A9F1BDA00DEA411 /* SettingViewController.swift */; };
@@ -49,7 +55,6 @@
 		C1EEE1B82AA5DD4C00DEA411 /* String+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE1B72AA5DD4C00DEA411 /* String+EX.swift */; };
 		C1EEE1CD2AA71C4E00DEA411 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C1EEE1CC2AA71C4E00DEA411 /* KeychainSwift */; };
 		C1EEE1D72AA9AE6E00DEA411 /* LAContext+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEE1D62AA9AE6E00DEA411 /* LAContext+EX.swift */; };
-		C1F92CE22B31401E00971655 /* TopOnAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F92CE12B31401E00971655 /* TopOnAdManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +107,11 @@
 		C18E53E52AB14BB50072E65F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		C18E53E62AB14BB50072E65F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C1BF5F7A2A38619A00C928F1 /* UIViewController+EX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+EX.swift"; sourceTree = "<group>"; };
+		C1CF00DF2B3AFE8600F63ED6 /* AlexGromoreMixSDKAdapter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlexGromoreMixSDKAdapter.framework; sourceTree = "<group>"; };
+		C1CF00E02B3AFE8600F63ED6 /* AnyThinkTTAdapter_Mix.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AnyThinkTTAdapter_Mix.xcframework; sourceTree = "<group>"; };
+		C1CF00E42B3AFE8F00F63ED6 /* TopOnAdManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopOnAdManager.swift; sourceTree = "<group>"; };
+		C1CF00E52B3AFE8F00F63ED6 /* SCNativeItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCNativeItem.swift; sourceTree = "<group>"; };
+		C1CF00E62B3AFE8F00F63ED6 /* SCNativeSelfRenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCNativeSelfRenderView.swift; sourceTree = "<group>"; };
 		C1EEE1532A9F1BDA00DEA411 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		C1EEE1572A9F1DC100DEA411 /* SwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
 		C1EEE1582A9F1DC100DEA411 /* SwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
@@ -114,7 +124,6 @@
 		C1EEE1B52AA5D49B00DEA411 /* UITextField+EX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+EX.swift"; sourceTree = "<group>"; };
 		C1EEE1B72AA5DD4C00DEA411 /* String+EX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+EX.swift"; sourceTree = "<group>"; };
 		C1EEE1D62AA9AE6E00DEA411 /* LAContext+EX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LAContext+EX.swift"; sourceTree = "<group>"; };
-		C1F92CE12B31401E00971655 /* TopOnAdManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopOnAdManager.swift; sourceTree = "<group>"; };
 		C454F61EAEE62807F332E46D /* Pods-bankcard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bankcard.debug.xcconfig"; path = "Target Support Files/Pods-bankcard/Pods-bankcard.debug.xcconfig"; sourceTree = "<group>"; };
 		DE6ED547BE5BEA48CE43D7EF /* Pods_bankcard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bankcard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -126,7 +135,10 @@
 			files = (
 				C1EEE1CD2AA71C4E00DEA411 /* KeychainSwift in Frameworks */,
 				C1D04CA42A32CC5D00E66C7C /* L10n-swift in Frameworks */,
+				C1CF00E22B3AFE8600F63ED6 /* AnyThinkTTAdapter_Mix.xcframework in Frameworks */,
+				C1CF00EC2B3B019B00F63ED6 /* SnapKit in Frameworks */,
 				C1D04CA12A32CC3200E66C7C /* EmptyDataSet-Swift in Frameworks */,
+				C1CF00E12B3AFE8600F63ED6 /* AlexGromoreMixSDKAdapter.framework in Frameworks */,
 				615710D6C77EA60A8AD5D956 /* Pods_bankcard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,6 +166,8 @@
 		C18217AB2604E1260010F354 = {
 			isa = PBXGroup;
 			children = (
+				C1CF00DF2B3AFE8600F63ED6 /* AlexGromoreMixSDKAdapter.framework */,
+				C1CF00E02B3AFE8600F63ED6 /* AnyThinkTTAdapter_Mix.xcframework */,
 				C18217B62604E1260010F354 /* bankcard */,
 				C18217B52604E1260010F354 /* Products */,
 				3C3E014BA21CF492131D9207 /* Pods */,
@@ -172,13 +186,13 @@
 		C18217B62604E1260010F354 /* bankcard */ = {
 			isa = PBXGroup;
 			children = (
+				C1CF00E32B3AFE8F00F63ED6 /* TAD */,
 				C185892A2A32D21B00ABD633 /* ZJTableViewManager */,
 				C18217F82605D09D0010F354 /* Tools */,
 				C18217EE2605BF7E0010F354 /* Model */,
 				C18217D626059E080010F354 /* Add */,
 				C18217D526059DF20010F354 /* Main */,
 				C18217B72604E1260010F354 /* AppDelegate.swift */,
-				C1F92CE12B31401E00971655 /* TopOnAdManager.swift */,
 				C18217B92604E1260010F354 /* SceneDelegate.swift */,
 				C18217BD2604E1260010F354 /* Main.storyboard */,
 				C18217C02604E1260010F354 /* Assets.xcassets */,
@@ -281,6 +295,16 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
+		C1CF00E32B3AFE8F00F63ED6 /* TAD */ = {
+			isa = PBXGroup;
+			children = (
+				C1CF00E42B3AFE8F00F63ED6 /* TopOnAdManager.swift */,
+				C1CF00E52B3AFE8F00F63ED6 /* SCNativeItem.swift */,
+				C1CF00E62B3AFE8F00F63ED6 /* SCNativeSelfRenderView.swift */,
+			);
+			path = TAD;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -304,6 +328,7 @@
 				C1D04CA02A32CC3200E66C7C /* EmptyDataSet-Swift */,
 				C1D04CA32A32CC5D00E66C7C /* L10n-swift */,
 				C1EEE1CC2AA71C4E00DEA411 /* KeychainSwift */,
+				C1CF00EB2B3B019B00F63ED6 /* SnapKit */,
 			);
 			productName = bankcard;
 			productReference = C18217B42604E1260010F354 /* bankcard.app */;
@@ -344,6 +369,7 @@
 				C1D04C9F2A32CC3200E66C7C /* XCRemoteSwiftPackageReference "EmptyDataSet-Swift" */,
 				C1D04CA22A32CC5D00E66C7C /* XCRemoteSwiftPackageReference "L10n-swift" */,
 				C1EEE1CB2AA71C4E00DEA411 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				C1CF00EA2B3B019B00F63ED6 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = C18217B52604E1260010F354 /* Products */;
 			projectDirPath = "";
@@ -442,7 +468,6 @@
 				C1EEE1542A9F1BDA00DEA411 /* SettingViewController.swift in Sources */,
 				C18589362A32D21B00ABD633 /* ZJProtocol.swift in Sources */,
 				C182180D2605FE950010F354 /* PassCore.swift in Sources */,
-				C1F92CE22B31401E00971655 /* TopOnAdManager.swift in Sources */,
 				C18217D826059E350010F354 /* AddViewController.swift in Sources */,
 				C18589392A32D21B00ABD633 /* ZJExpandTreeCellItem.swift in Sources */,
 				C18589372A32D21B00ABD633 /* ZJTableViewItem.swift in Sources */,
@@ -461,7 +486,10 @@
 				C18217DE2605A08B0010F354 /* AddCell.swift in Sources */,
 				C1EEE1B12AA5800700DEA411 /* BankCardCell.swift in Sources */,
 				C18218022605DA230010F354 /* TypeBankInfoViewController.swift in Sources */,
+				C1CF00E92B3AFE8F00F63ED6 /* SCNativeSelfRenderView.swift in Sources */,
 				C18217F02605BF9D0010F354 /* CardType.swift in Sources */,
+				C1CF00E82B3AFE8F00F63ED6 /* SCNativeItem.swift in Sources */,
+				C1CF00E72B3AFE8F00F63ED6 /* TopOnAdManager.swift in Sources */,
 				C18217BA2604E1260010F354 /* SceneDelegate.swift in Sources */,
 				C1EEE1B82AA5DD4C00DEA411 /* String+EX.swift in Sources */,
 				C18217D32604E7560010F354 /* CardTableViewCell.swift in Sources */,
@@ -647,6 +675,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1310;
 				DEVELOPMENT_TEAM = 97CWPB3835;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = bankcard/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "简简单单会员卡";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
@@ -676,6 +708,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1310;
 				DEVELOPMENT_TEAM = 97CWPB3835;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = bankcard/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "简简单单会员卡";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
@@ -719,6 +755,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C1CF00EA2B3B019B00F63ED6 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
 		C1D04C9F2A32CC3200E66C7C /* XCRemoteSwiftPackageReference "EmptyDataSet-Swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Xiaoye220/EmptyDataSet-Swift";
@@ -746,6 +790,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C1CF00EB2B3B019B00F63ED6 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1CF00EA2B3B019B00F63ED6 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
 		C1D04CA02A32CC3200E66C7C /* EmptyDataSet-Swift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C1D04C9F2A32CC3200E66C7C /* XCRemoteSwiftPackageReference "EmptyDataSet-Swift" */;

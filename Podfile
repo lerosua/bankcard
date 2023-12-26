@@ -7,12 +7,12 @@ target 'bankcard' do
   use_frameworks!
 
   # Pods for bankcard
-    pod 'AnyThinkiOS','6.2.82'
+  pod 'AnyThinkiOS','6.2.82'
   pod 'AnyThinkiOS/AnyThinkBaiduAdapter','6.2.82'
   pod 'AnyThinkiOS/AnyThinkKuaiShouAdapter','6.2.82'
-  pod 'AnyThinkiOS/AnyThinkSigmobAdapter','6.2.82'
-  pod 'AnyThinkiOS/AnyThinkTTAdapter','6.2.82'
   pod 'AnyThinkiOS/AnyThinkGDTAdapter','6.2.82'
+  pod 'CSJMBaiduAdapter', '5.325.2'
+  pod 'Ads-Fusion-CN-Beta','5.8.1.0', :subspecs => ['BUAdSDK', 'CSJMediation']
 
   post_install do |installer|
        installer.generated_projects.each do |project|

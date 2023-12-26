@@ -10,6 +10,9 @@ let TapAppId = "a6580fdc481129"
 let TapAppKey = "6ffdfacf348bdf46643043dbfa9709f9"
 let TapPlacementId = "b6580fdceb2a9f"
 let TapVideoId = ""
+let TapNavtiveADId = "b658a838f9ee7c"
+let kScreenWidth:CGFloat =  UIScreen.main.bounds.size.width
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

@@ -1,6 +1,6 @@
 //
 //  TopOnMediation.swift
-//  GMAPP
+//  GMGossip
 //
 //  Created by rosua le on 2023/12/13.
 //
@@ -9,10 +9,12 @@
 import Foundation
 import AnyThinkSplash
 import AnyThinkRewardedVideo
+import AnyThinkNative
 
 enum SCMediationType {
     case rewardedVideoAd
     case splash
+    case native
 }
 
 class TopOnAdManager:NSObject,ATAdLoadingDelegate,ATRewardedVideoDelegate,ATSplashDelegate{
@@ -44,6 +46,8 @@ class TopOnAdManager:NSObject,ATAdLoadingDelegate,ATRewardedVideoDelegate,ATSpla
                 loadRewardedVideo(withPlacementId: placementId)
             case .splash:
                 loadSplash(withPlacementId: placementId)
+            case .native:
+                loadNative(withPlacementId: placementId)
             }
         }
 
@@ -54,7 +58,10 @@ class TopOnAdManager:NSObject,ATAdLoadingDelegate,ATRewardedVideoDelegate,ATSpla
         private func loadRewardedVideo(withPlacementId placementId: String) {
             ATAdManager.shared().loadAD(withPlacementID: placementId, extra: [:], delegate: self)
         }
-
+        private func loadNative(withPlacementId placementId: String){
+            ATAdManager.shared().loadAD(withPlacementID: placementId, extra: [:], delegate: self)
+        }
+    
         // ATAdLoadingDelegate methods
         func didFinishLoadingAD(withPlacementID placementID: String) {
 //            hideLoading(withView: nil)
@@ -72,13 +79,18 @@ class TopOnAdManager:NSObject,ATAdLoadingDelegate,ATRewardedVideoDelegate,ATSpla
                     ATAdManager.shared().showSplash(withPlacementID: placementID, scene: "", window: keyWindow!, delegate: self)
                 } else if rewardVideoPlacementIds.contains(placementID) {
                     ATAdManager.shared().showRewardedVideo(withPlacementID: placementID, in: (keyWindow?.rootViewController)!, delegate: self)
+                }else if placementID == TapNavtiveADId {
+                    print("success load native ad \(placementID)")
+                    
+//                    let naviveItem = SCNativeItem(placementId: TapNavtiveADId)
+//                    naviveItem.showNative(with: keyWindow!)
+                    
                 }
             }
         }
 
         func didFail(toLoadADWithPlacementID placementID: String, error: Error) {
-//            hideLoading(withView: nil)
-//            splashDelegate?.ad(nil, didLoadComplete: false, type: .splash)
+            print("faile load ad :\(error)")
         }
 
         // ATRewardedVideoDelegate methods
@@ -97,6 +109,10 @@ class TopOnAdManager:NSObject,ATAdLoadingDelegate,ATRewardedVideoDelegate,ATSpla
 //            rewardVideoDelegate?.ad(nil, didShowComplete: rewarded, type: .rewardedVideoAd)
 //            let appDelegate = UIApplication.shared.delegate as? AppDelegate
 //            appDelegate?.rewardVideoAdInfo.setShowed()
+
+            if let idfv = UserDefaults.standard.object(forKey: "idfv") as? String {
+//                MobClick.event("walking_reward_video_watch_close_count", attributes: ["idfv": idfv])
+            }
         }
 
         func rewardedVideoDidRewardSuccess(forPlacemenID placementID: String, extra: [AnyHashable : Any]) {
@@ -130,3 +146,47 @@ class TopOnAdManager:NSObject,ATAdLoadingDelegate,ATRewardedVideoDelegate,ATSpla
 //            splashDelegate?.ad(nil, didLoadComplete: false, type: .splash)
         }
     }
+
+extension TopOnAdManager:ATNativeADDelegate{
+    func didShowNativeAd(in adView: ATNativeADView, placementID: String, extra: [AnyHashable : Any]) {
+        print("didShowNativeAd")
+     }
+    
+    func didClickNativeAd(in adView: ATNativeADView, placementID: String, extra: [AnyHashable : Any]) {
+        print("didClickNativeAd")
+
+    }
+}
+
+class TopOnNativeAD:NSObject,ATNativeADDelegate{
+    //单例
+    public static var shared:TopOnNativeAD = {
+        let instance : TopOnNativeAD = TopOnNativeAD()
+        return instance;
+    }()
+    
+    func didShowNativeAd(in adView: ATNativeADView, placementID: String, extra: [AnyHashable : Any]) {
+        print("Native-didShowNativeAd")
+
+    }
+    
+    func didClickNativeAd(in adView: ATNativeADView, placementID: String, extra: [AnyHashable : Any]) {
+        print("Native-didClickNativeAd")
+
+    }
+    
+    func didFinishLoadingAD(withPlacementID placementID: String!) {
+        print("Native-didFinishLoadingAD \(String(describing: placementID)) ")
+
+    }
+    
+    func didFailToLoadAD(withPlacementID placementID: String!, error: Error!) {
+        print("Native-didFailToLoadAD \(String(describing: error))")
+
+    }
+    func load(placementId: String) {
+        
+        ATAdManager.shared().loadAD(withPlacementID: placementId, extra: [kATNativeAdSizeToFitKey:true,kATExtraInfoNativeAdSizeKey:CGSize(width: kScreenWidth, height: 200)], delegate: self)
+    }
+    
+}
