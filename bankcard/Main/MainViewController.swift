@@ -36,6 +36,7 @@ class MainViewController: UIViewController {
         self.setupTableView()
         self.setupNotification()
         self.loadData()
+        self.startADTimer()
     }
 
     func cellTapEvent(item: CardTableViewCellItem) {
@@ -134,35 +135,11 @@ class MainViewController: UIViewController {
     // MARK:-
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        TopOnNativeAD.shared.load(placementId: TapNavtiveADId)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            
-            for subview in self.bottomView.subviews{
-                subview.removeFromSuperview()
-            }
-            
-            let myHeader = self.getADHeader()
-            if myHeader.frame.size != CGSizeZero {
-                self.bottomView.addSubview(myHeader)
-                self.tableView.snp.remakeConstraints { make in
-                    make.left.right.top.equalToSuperview()
-                    make.bottom.equalTo(self.bottomView)
-                }
-                self.bottomView.snp.remakeConstraints { make in
-                    make.height.equalTo(myHeader.frame.height)
-                    make.left.right.equalToSuperview()
-                    make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
-                }
-            }else{
-                self.bottomView.snp.remakeConstraints { make in
-                    make.height.equalTo(0)
-                }
-                self.tableView.snp.remakeConstraints { make in
-                    make.edges.equalToSuperview()
-                }
-            }
-            self.tableView.reloadData()
-        }
+        self.loadAD()
+    }
+    @objc func timerAction(){
+        print("reload ad")
+        self.loadAD()
     }
     
     func loadData(){
@@ -293,13 +270,54 @@ extension MainViewController:EmptyDataSetSource,EmptyDataSetDelegate {
     }
     
     func getADHeader()->UIView {
-        let adView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 200))
+        let adView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 80))
         let naviveItem = SCNativeItem(placementId: TapNavtiveADId)
         let fixSize = naviveItem.showNative(with: adView)
         print("get fix adSize \(fixSize)")
         //重新调整frame
         adView.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: fixSize)
         return adView
+    }
+    
+    func startADTimer(){
+        
+        // 创建定时器
+        Timer.scheduledTimer(timeInterval: 30,
+                                        target: self,
+                                      selector: #selector(timerAction),
+                                      userInfo: nil,
+                                       repeats: true)
+    }
+    func loadAD(){
+        TopOnNativeAD.shared.load(placementId: TapNavtiveADId)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            
+            for subview in self.bottomView.subviews{
+                subview.removeFromSuperview()
+            }
+            
+            let myHeader = self.getADHeader()
+            if myHeader.frame.size != CGSizeZero {
+                self.bottomView.addSubview(myHeader)
+                self.tableView.snp.remakeConstraints { make in
+                    make.left.right.top.equalToSuperview()
+                    make.bottom.equalTo(self.bottomView)
+                }
+                self.bottomView.snp.remakeConstraints { make in
+                    make.height.equalTo(myHeader.frame.height)
+                    make.left.right.equalToSuperview()
+                    make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
+                }
+            }else{
+                self.bottomView.snp.remakeConstraints { make in
+                    make.height.equalTo(0)
+                }
+                self.tableView.snp.remakeConstraints { make in
+                    make.edges.equalToSuperview()
+                }
+            }
+            self.tableView.reloadData()
+        }
     }
 }
 

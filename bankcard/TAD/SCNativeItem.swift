@@ -36,7 +36,7 @@ class SCNativeItem: NSObject, ATNativeADDelegate {
             let offer = ATAdManager.shared().getNativeAdOffer(withPlacementID: placementId)
 
             let config = ATNativeADConfiguration()
-            config.adFrame = CGRect(x: 0, y: 0, width: superView.frame.size.width, height: 200)
+            config.adFrame = CGRect(x: 0, y: 0, width: superView.frame.size.width, height: 80)
             config.rootViewController = UIApplication.shared.keyWindow?.rootViewController
             config.sizeToFit = true
             config.delegate = self

@@ -207,11 +207,11 @@ class SCNativeSelfRenderView: UIView {
 
            self.mainImageView.frame = CGRect(x: 0, y: self.textLabel.frame.origin.y + self.textLabel.frame.size.height + 5, width: superview.frame.size.width, height: superview.frame.size.height - (self.textLabel.frame.origin.y + self.textLabel.frame.size.height + 5))
  
-        
-        let originY = self.textLabel.frame.origin.y + self.textLabel.frame.size.height + 5
-        let height = superview.frame.size.height - originY
-         self.mediaView!.frame = CGRect(x: 0, y: originY, width: superview.frame.size.width, height: height)
-
+        if let view = self.mediaView{
+            let originY = self.textLabel.frame.origin.y + self.textLabel.frame.size.height + 5
+            let height = superview.frame.size.height - originY
+            view.frame = CGRect(x: 0, y: originY, width: superview.frame.size.width, height: height)
+        }
            self.logoImageView.frame = CGRect(x: 0, y: superview.frame.size.height - 35, width: 30, height: 30)
        
     }
